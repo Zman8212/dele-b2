@@ -34,6 +34,10 @@ h3{font-size:16px;margin:16px 0 6px}
 .letters{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
 .lt{min-width:42px;padding:9px 0;border:1px solid var(--line);border-radius:9px;background:transparent;color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
 .lt.sel{background:var(--acc);border-color:var(--acc);color:#fff}
+.opt.ok{border-color:var(--ok);background:var(--okbg)}.opt.bad{border-color:var(--bad);background:var(--badbg)}
+.lt.ok{background:var(--ok);border-color:var(--ok);color:#fff}.lt.bad{background:var(--bad);border-color:var(--bad);color:#fff}
+.lock .opt,.lock .lt{cursor:default;pointer-events:none}
+.fb{margin:8px 0 0}
 .status{position:sticky;top:0;z-index:5;background:var(--ink);color:var(--bg);border-radius:12px;padding:12px 14px;margin:8px 0;font-weight:600}
 .status .sub{font-weight:400;opacity:.8;font-size:14px}
 .player{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px 0}
@@ -220,7 +224,7 @@ function guide(){
 <h2>Как пользоваться страницей</h2>
 <ul>
 <li><b>«Экзамен»</b> — как на настоящем экзамене: время на чтение, аудио два раза, без паузы.</li>
-<li><b>«Тренировка»</b> — можно ставить паузу, переслушивать и замедлять до 0,85×.</li>
+<li><b>«Тренировка»</b> — можно ставить паузу, переслушивать и замедлять до 0,85×. Можно выбрать, когда проверять ответы: сразу после каждого вопроса или в конце.</li>
 <li>После теста — разбор. Нажмите на вопрос, чтобы увидеть расшифровку и переслушать нужный кусок.</li>
 <li>Результаты сохраняются только на этом устройстве.</li>
 </ul>
@@ -231,33 +235,76 @@ function startScreen(id){
  const t=TESTS[id];if(!t)return home();
  app.innerHTML=`<h2>${esc(t.titleRu)}</h2>
  ${t.official?`<div class="card small">${esc(t.noteRu)}</div>`:""}
- <div class="card"><b>Режим «Экзамен»</b><p class="small mut">Как на настоящем экзамене: время на чтение вопросов, каждое аудио два раза, без паузы. Около 40 минут.</p>
- <button class="btn block" id="bx">Начать экзамен</button></div>
- <div class="card"><b>Режим «Тренировка»</b><p class="small mut">Можно ставить паузу, переслушивать и замедлять. Разбор — в конце.</p>
- <button class="btn sec block" id="bp">Начать тренировку</button></div>`;
+ <div class="card"><b>Режим «Тренировка»</b><p class="small mut">Можно ставить паузу, переслушивать и замедлять.</p>
+ <p class="small" style="margin:10px 0 4px"><b>Когда проверять ответы?</b></p>
+ <label class="opt ${chk==="now"?"sel":""}"><input type="radio" name="chk" value="now" ${chk==="now"?"checked":""}><span><b>Сразу после каждого вопроса</b><br><span class="small mut">Выбрали ответ — сразу видно, правильно ли, и почему. Лучше всего для учёбы.</span></span></label>
+ <label class="opt ${chk==="end"?"sel":""}"><input type="radio" name="chk" value="end" ${chk==="end"?"checked":""}><span><b>В конце теста</b><br><span class="small mut">Все ответы и разбор — после 30 вопросов.</span></span></label>
+ <button class="btn block" id="bp">Начать тренировку</button></div>
+ <div class="card"><b>Режим «Экзамен»</b><p class="small mut">Как на настоящем экзамене: время на чтение вопросов, каждое аудио два раза, без паузы. Ответы и разбор — только в конце. Около 40 минут.</p>
+ <button class="btn sec block" id="bx">Начать экзамен</button></div>`;
+ app.querySelectorAll('input[name="chk"]').forEach(i=>i.onchange=()=>{chk=i.value;try{localStorage.setItem(LS_CHK,chk)}catch(e){}
+  app.querySelectorAll('input[name="chk"]').forEach(x=>x.closest(".opt").classList.toggle("sel",x.checked))});
  $("#bx").onclick=()=>{unlockAudio();run(t,"exam")};
- $("#bp").onclick=()=>{unlockAudio();run(t,"practice")};
+ $("#bp").onclick=()=>{unlockAudio();run(t,"practice",chk)};
 }
+const LS_CHK="dele_b2_check_v1";
+let chk=(()=>{try{return localStorage.getItem(LS_CHK)==="end"?"end":"now"}catch(e){return "now"}})();
 
 let R=null; /* current run */
-function run(test,mode){runToken++;R={test,mode,ti:0,answers:{},first:{},started:Date.now()};location.hash="#run";renderTask()}
+function run(test,mode,check){runToken++;R={test,mode,check:mode==="practice"?(check||"end"):"end",checked:{},ti:0,answers:{},first:{},started:Date.now()};location.hash="#run";renderTask()}
 
+const instant=()=>R&&R.mode==="practice"&&R.check==="now";
 function qHTML(test,task,q){
- const n=qNum(test,q),a=R.answers[n];
+ const n=qNum(test,q),a=R.answers[n],done=instant()&&R.checked[n],c=done?correctOf(test,task,q):null;
+ const cls=L=>done?(L===c?"ok":(L===a?"bad":"")):(a===L?"sel":"");
+ const btns=letters=>`<div class="letters">${letters.map(L=>`<button class="lt ${cls(L)}" data-n="${n}" data-v="${L}">${L}</button>`).join("")}</div>`;
+ const open=`<div class="q ${done?"lock":""}" data-q="${n}">`,close=(done?fbHTML(test,task,q):"")+`</div>`;
  if(test.official){
-  if(task.type==="mc")return `<div class="q"><span class="qn">${n}.</span><div class="letters">${["a","b","c"].map(L=>`<button class="lt ${a===L?"sel":""}" data-n="${n}" data-v="${L}">${L}</button>`).join("")}</div></div>`;
+  if(task.type==="mc")return open+`<span class="qn">${n}.</span>${btns(["a","b","c"])}`+close;
   const letters=task.type==="who"?["A","B","C"]:task.letters;
   const lab=task.type==="who"?` <span class="small mut">A = ${esc(task.choices.A)}, B = ${esc(task.choices.B)}, C = ${esc(task.choices.C)}</span>`:"";
-  return `<div class="q"><span class="qn">${n}.</span>${lab}<div class="letters">${letters.map(L=>`<button class="lt ${a===L?"sel":""}" data-n="${n}" data-v="${L}">${L}</button>`).join("")}</div></div>`;
+  return open+`<span class="qn">${n}.</span>${lab}${btns(letters)}`+close;
  }
- if(task.type==="mc")return `<div class="q"><div><span class="qn">${n}.</span>${esc(q.stem)}</div>${q.options.map((o,i)=>{const L="abc"[i];return `<label class="opt ${a===L?"sel":""}"><input type="radio" name="q${n}" data-n="${n}" data-v="${L}" ${a===L?"checked":""}><span><b>${L})</b> ${esc(o.t)}</span></label>`}).join("")}</div>`;
- if(task.type==="who")return `<div class="q"><div><span class="qn">${n}.</span>${esc(q.stem)}</div><div class="letters">${["A","B","C"].map(L=>`<button class="lt ${a===L?"sel":""}" data-n="${n}" data-v="${L}">${L}</button>`).join("")}</div></div>`;
- return `<div class="q"><div><span class="qn">${n}.</span>${esc(q.stem)}</div><div class="letters">${Object.keys(task.statements).map(L=>`<button class="lt ${a===L?"sel":""}" data-n="${n}" data-v="${L}">${L}</button>`).join("")}</div></div>`;
+ if(task.type==="mc")return open+`<div><span class="qn">${n}.</span>${esc(q.stem)}</div>${q.options.map((o,i)=>{const L="abc"[i];return `<label class="opt ${cls(L)}"><input type="radio" name="q${n}" data-n="${n}" data-v="${L}" ${a===L?"checked":""} ${done?"disabled":""}><span><b>${L})</b> ${esc(o.t)}</span></label>`}).join("")}`+close;
+ if(task.type==="who")return open+`<div><span class="qn">${n}.</span>${esc(q.stem)}</div>${btns(["A","B","C"])}`+close;
+ return open+`<div><span class="qn">${n}.</span>${esc(q.stem)}</div>${btns(Object.keys(task.statements))}`+close;
 }
-function bindAnswers(){
- app.querySelectorAll("[data-n]").forEach(el=>{
+/* instant feedback: only the line that proves this answer, so later questions in the same audio are not given away */
+function fbHTML(test,task,q){
+ const n=qNum(test,q),c=correctOf(test,task,q),a=R.answers[n],ok=a===c;
+ let h=`<div class="rv fb ${ok?"ok":"bad"}"><b>${ok?"✓ Правильно":"✗ Неправильно"}</b>`;
+ if(!ok)h+=`<div class="small">Правильный ответ: <b>${esc(labelAns(test,task,q,c))}</b></div>`;
+ if(!test.official){
+  h+=`<p class="small" style="margin:6px 0">${esc(q.whyRu)}</p>`;
+  const tr=!ok?trapOf(test,task,q,a):null;
+  if(tr&&tr.t!=="other")h+=`<p class="small" style="margin:6px 0"><span class="pill">Ловушка: ${TRAPS[tr.t].l}</span> ${esc(tr.why)}</p>`;
+  const ln=evidenceLine(task,q);
+  if(ln)h+=`<details><summary class="small">Где это в аудио</summary><div class="tr">${ln}</div></details>`;
+ }
+ return h+`</div>`;
+}
+function evidenceLine(task,q){
+ const clip=task.clips.find(x=>x.id===q.clip);if(!clip||!q.evidence)return "";
+ const l=clip.lines.find(x=>x.t.includes(q.evidence));if(!l)return "";
+ const ev=esc(q.evidence);return `<p><b>${esc(l.who)}:</b> ${esc(l.t).replace(ev,"<mark>"+ev+"</mark>")}</p>`;
+}
+function tally(){
+ const {test}=R;let ok=0,of=0;
+ for(const task of test.tasks)for(const q of qList(test,task)){const n=qNum(test,q);if(R.checked[n]){of++;if(R.answers[n]===correctOf(test,task,q))ok++}}
+ return of?`Правильно: ${ok} из ${of}`:"Тренировка: выберите ответ — сразу увидите, правильно ли";
+}
+function bindAnswers(root){
+ (root||app).querySelectorAll("[data-n]").forEach(el=>{
   const ev=el.tagName==="INPUT"?"change":"click";
-  el.addEventListener(ev,()=>{const n=+el.dataset.n,v=el.dataset.v;R.answers[n]=v;
+  el.addEventListener(ev,()=>{const n=+el.dataset.n,v=el.dataset.v;
+   if(instant()){
+    if(R.checked[n])return;
+    R.answers[n]=v;R.checked[n]=true;
+    const task=R.test.tasks[R.ti],q=qList(R.test,task).find(x=>qNum(R.test,x)===n),box=app.querySelector(`[data-q="${n}"]`);
+    if(box&&q){box.outerHTML=qHTML(R.test,task,q);const nb=app.querySelector(`[data-q="${n}"]`);if(nb)bindAnswers(nb)}
+    setStatus(tally());return;
+   }
+   R.answers[n]=v;
    app.querySelectorAll(`[data-n="${n}"]`).forEach(x=>{const on=x.dataset.v===v;if(x.tagName==="INPUT"){x.checked=on;x.closest(".opt").classList.toggle("sel",on)}else x.classList.toggle("sel",on)})});
  });
 }
@@ -266,7 +313,7 @@ function renderTask(){
  if(!R)return home();
  const {test,mode}=R,task=test.tasks[R.ti],last=R.ti===test.tasks.length-1;
  let h=`<div class="row" style="justify-content:space-between"><span class="pill">${esc(test.title)} · ${mode==="exam"?"Экзамен":"Тренировка"}</span><span class="pill">Tarea ${task.n} de 5</span></div>`;
- h+=`<div class="status" id="status">${mode==="exam"?"Нажмите «Empezar», когда будете готовы":"Тренировка: слушайте сколько нужно"}</div>`;
+ h+=`<div class="status" id="status">${mode==="exam"?"Нажмите «Empezar», когда будете готовы":instant()?esc(tally()):"Тренировка: слушайте сколько нужно"}</div>`;
  h+=`<button class="btn block" id="tapgo" style="display:none">▶ Нажмите, чтобы продолжить аудио</button>`;
  h+=`<div class="card"><h3 style="margin-top:0">Tarea ${task.n}</h3>`;
  if(test.official){
@@ -335,7 +382,7 @@ function bindPractice(test,task){
 function finish(){
  const {test,mode,answers,first}=R;const sc=score(test,answers,mode==="exam"&&!test.official?first:null);
  const att=loadAttempts();const id=Date.now().toString(36);
- att.push({id,testId:test.id,mode,ts:Date.now(),answers,first:mode==="exam"&&!test.official?first:null,score:sc.s});
+ att.push({id,testId:test.id,mode,check:R.check,ts:Date.now(),answers,first:mode==="exam"&&!test.official?first:null,score:sc.s});
  saveAttempts(att);R=null;location.hash="#r/"+id;
 }
 
@@ -345,7 +392,7 @@ function results(id){
  const sc=score(test,at.answers,at.first);
  const pts=sc.s*25/30,need=30-pts;
  const band=sc.s>=20?["g","Хорошо: вы выше цели. С таким результатом в устной части хватит "+Math.max(0,need).toFixed(1).replace(".",",")+" из 25."]:sc.s>=18?["y","На грани. Нужно ещё "+(20-sc.s)+" "+plural(20-sc.s)+", чтобы выйти на цель 20/30."]:["r","Пока ниже цели 20/30. Это нормально для начала — смотрите разбор ниже, что тренировать."];
- let h=`<h2>Разбор: ${esc(test.titleRu)}</h2><p class="small mut">${new Date(at.ts).toLocaleString("ru-RU")} · ${at.mode==="exam"?"Экзамен":"Тренировка"}</p>`;
+ let h=`<h2>Разбор: ${esc(test.titleRu)}</h2><p class="small mut">${new Date(at.ts).toLocaleString("ru-RU")} · ${at.mode==="exam"?"Экзамен":"Тренировка"+(at.check==="now"?" (проверка после каждого вопроса)":"")}</p>`;
  h+=`<div class="card"><div class="big">${sc.s} / 30</div><p style="margin:4px 0">Это <b>${pts.toFixed(2).replace(".",",")} из 25</b> баллов DELE.</p>
  <p class="small">Чтобы сдать (30 из 50 вместе с устной частью), в устной части нужно будет <b>${need>25?"больше 25 — пока невозможно":Math.max(0,need).toFixed(2).replace(".",",")+" из 25"}</b>.</p>
  <div class="band ${band[0]}">${esc(band[1])}</div>${sc.blanks?`<p class="err"><b>Пустых ответов: ${sc.blanks}.</b> На экзамене это потерянные баллы — всегда отмечайте какой-нибудь вариант.</p>`:""}</div>`;
