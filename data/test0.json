@@ -1,22 +1,112 @@
 {
   "id": "t0",
-  "title": "Prueba 0 (oficial)",
-  "titleRu": "Тест 0 — настоящий официальный тест",
+  "title": "Oficial 1 (examen 2013)",
+  "titleRu": "Официальный тест 1 — экзамен 2013",
   "official": true,
-  "noteRu": "Это настоящий тест Института Сервантеса (экзамен DELE B2, август 2013), с настоящим аудио. Вопросы открываются официальным PDF (одна страница на задание). Аудио уже содержит паузы и два прослушивания, как на экзамене. Здесь вы только отмечаете ответы, как на настоящем листе ответов (Hoja de respuestas).",
+  "noteRu": "Настоящий экзамен DELE B2 Института Сервантеса (август 2013) с настоящим аудио. Аудио уже содержит паузы и два прослушивания, как на экзамене. Вопросы — на официальной странице каждого задания, а ответы вы отмечаете здесь, как на листе ответов (Hoja de respuestas).",
   "base": "https://web.archive.org/web/2026id_/https://examenes.cervantes.es/sites/default/files/",
   "tasks": [
-    {"n": 1, "type": "mc", "first": 1, "count": 6, "audio": "audio/B2/B2_AUDIO1.mp3", "pdf": "b2_ca_t1.pdf", "transcript": "b2_tr_t1.pdf",
-     "key": {"1": "a", "2": "b", "3": "b", "4": "b", "5": "a", "6": "b"}},
-    {"n": 2, "type": "who", "first": 7, "count": 6, "audio": "audio/b2/B2_AUDIO2.mp3", "pdf": "b2_ca_t2.pdf", "transcript": "b2_tr_t2.pdf",
-     "choices": {"A": "Pedro", "B": "Eva", "C": "Ninguno de los dos"},
-     "key": {"7": "C", "8": "A", "9": "A", "10": "B", "11": "C", "12": "A"}},
-    {"n": 3, "type": "mc", "first": 13, "count": 6, "audio": "audio/b2/B2_AUDIO3.mp3", "pdf": "b2_ca_t3.pdf", "transcript": "b2_tr_t3.pdf",
-     "key": {"13": "b", "14": "c", "15": "a", "16": "b", "17": "c", "18": "b"}},
-    {"n": 4, "type": "match", "first": 19, "count": 6, "audio": "audio/b2/B2_AUDIO4.mp3", "pdf": "b2_ca_t4.pdf", "transcript": "b2_tr_t4.pdf",
-     "letters": ["A", "B", "C", "D", "E", "G", "H", "I", "J"],
-     "key": {"19": "D", "20": "A", "21": "I", "22": "B", "23": "C", "24": "H"}},
-    {"n": 5, "type": "mc", "first": 25, "count": 6, "audio": "audio/b2/B2_AUDIO5.mp3", "pdf": "b2_ca_t5.pdf", "transcript": "b2_tr_t5.pdf",
-     "key": {"25": "c", "26": "b", "27": "a", "28": "b", "29": "c", "30": "c"}}
-  ]
+    {
+      "n": 1,
+      "type": "mc",
+      "first": 1,
+      "count": 6,
+      "audio": "audio/B2/B2_AUDIO1.mp3",
+      "pdf": "b2_ca_t1.pdf",
+      "transcript": "b2_tr_t1.pdf",
+      "key": {
+        "1": "a",
+        "2": "b",
+        "3": "b",
+        "4": "b",
+        "5": "a",
+        "6": "b"
+      }
+    },
+    {
+      "n": 2,
+      "type": "who",
+      "first": 7,
+      "count": 6,
+      "audio": "audio/b2/B2_AUDIO2.mp3",
+      "pdf": "b2_ca_t2.pdf",
+      "transcript": "b2_tr_t2.pdf",
+      "choices": {
+        "A": "Pedro",
+        "B": "Eva",
+        "C": "Ninguno de los dos"
+      },
+      "key": {
+        "7": "C",
+        "8": "A",
+        "9": "A",
+        "10": "B",
+        "11": "C",
+        "12": "A"
+      }
+    },
+    {
+      "n": 3,
+      "type": "mc",
+      "first": 13,
+      "count": 6,
+      "audio": "audio/b2/B2_AUDIO3.mp3",
+      "pdf": "b2_ca_t3.pdf",
+      "transcript": "b2_tr_t3.pdf",
+      "key": {
+        "13": "b",
+        "14": "c",
+        "15": "a",
+        "16": "b",
+        "17": "c",
+        "18": "b"
+      }
+    },
+    {
+      "n": 4,
+      "type": "match",
+      "first": 19,
+      "count": 6,
+      "audio": "audio/b2/B2_AUDIO4.mp3",
+      "pdf": "b2_ca_t4.pdf",
+      "transcript": "b2_tr_t4.pdf",
+      "letters": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "key": {
+        "19": "D",
+        "20": "A",
+        "21": "I",
+        "22": "B",
+        "23": "C",
+        "24": "H"
+      }
+    },
+    {
+      "n": 5,
+      "type": "mc",
+      "first": 25,
+      "count": 6,
+      "audio": "audio/b2/B2_AUDIO5.mp3",
+      "pdf": "b2_ca_t5.pdf",
+      "transcript": "b2_tr_t5.pdf",
+      "key": {
+        "25": "c",
+        "26": "b",
+        "27": "a",
+        "28": "b",
+        "29": "c",
+        "30": "c"
+      }
+    }
+  ],
+  "blurbRu": "Настоящий экзамен DELE B2, август 2013 года."
 }

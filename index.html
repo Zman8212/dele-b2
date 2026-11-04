@@ -38,6 +38,8 @@ h3{font-size:16px;margin:16px 0 6px}
 .lt.ok{background:var(--ok);border-color:var(--ok);color:#fff}.lt.bad{background:var(--bad);border-color:var(--bad);color:#fff}
 .lock .opt,.lock .lt{cursor:default;pointer-events:none}
 .fb{margin:8px 0 0}
+.pdf{display:block;width:100%;height:75vh;min-height:420px;border:1px solid var(--line);border-radius:10px;background:#fff;margin:8px 0}
+#pick{width:100%;font:inherit;font-weight:600;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);margin:0 0 6px}
 .status{position:sticky;top:0;z-index:5;background:var(--ink);color:var(--bg);border-radius:12px;padding:12px 14px;margin:8px 0;font-weight:600}
 .status .sub{font-weight:400;opacity:.8;font-size:14px}
 .player{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px 0}
@@ -66,8 +68,9 @@ footer{margin-top:40px;font-size:13px;color:var(--mut)}
 <body>
 <div class="wrap">
 <header><a href="#"><h1>DELE B2 · Audición</h1></a><a class="small mut" href="#history">Мои результаты</a></header>
+<select id="pick" aria-label="Выбрать тест"><option value="">Выбрать тест…</option></select>
 <div id="app"><p class="mut">Загрузка…</p></div>
-<footer>Тренажёр аудирования DELE B2. Тест 0 — официальный материал Института Сервантеса (аудио и PDF открываются с их архивной копии). Результаты хранятся только на этом устройстве.</footer>
+<footer>Тренажёр аудирования DELE B2. Официальные тесты — материалы Института Сервантеса: аудио и вопросы открываются с архивной копии их сайта. Результаты хранятся только на этом устройстве.</footer>
 </div>
 <audio id="aud" preload="auto" playsinline></audio>
 <script>
@@ -98,11 +101,25 @@ const TASK_TXT={
 };
 
 let TESTS={};
+/* order on the page: official tests first, then the ones made for her */
+const ORDER=[["t0","test0"],["o2","official2"],["t1","test1"]];
 async function loadTests(){
- const ids=["test0","test1"];
- for(const id of ids){
-  try{const r=await fetch("data/"+id+".json",{cache:"no-cache"});const d=await r.json();TESTS[d.id]=d}catch(e){console.log("load fail",id,e)}
- }
+ await Promise.all(ORDER.map(async([id,file])=>{
+  try{const r=await fetch("data/"+file+".json",{cache:"no-cache"});const d=await r.json();TESTS[d.id]=d}catch(e){console.log("load fail",file,e)}
+ }));
+ const groups=[["Официальные тесты (Институт Сервантеса)",true],["Тренировочные тесты (созданы для вас)",false]];
+ $("#pick").innerHTML=`<option value="">Выбрать тест…</option>`+groups.map(([lab,off])=>`<optgroup label="${esc(lab)}">${ORDER.map(([id])=>TESTS[id]).filter(t=>t&&!!t.official===off).map(t=>`<option value="${t.id}">${esc(t.titleRu)}</option>`).join("")}</optgroup>`).join("");
+ $("#pick").onchange=()=>{const v=$("#pick").value;location.hash=v?"#t/"+v:"#"};
+}
+/* official material helpers: one PDF/audio per task (test 0) or one shared file with page numbers and start/end seconds (test o2) */
+const qPdf=(test,task)=>test.base+(task.pdf||test.pdf)+(task.page?"#page="+task.page:"");
+const trPdf=(test,task)=>test.base+(task.transcript||test.pdf)+(task.trPage?"#page="+task.trPage:"");
+const taskAudio=(test,task)=>test.base+(task.audio||test.audio);
+const MOBILE=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+function pdfBlock(url,label,page){
+ const btn=`<a class="btn sec block" target="_blank" rel="noopener" href="${url}">${esc(label)}${page?` (стр. ${page})`:""}</a>`;
+ const emb=url+(url.includes("#")?"&":"#")+"view=FitH&navpanes=0";
+ return MOBILE?btn:`<iframe class="pdf" src="${emb}" title="${esc(label)}" loading="lazy"></iframe><a class="small mut" target="_blank" rel="noopener" href="${url}">Открыть в отдельной вкладке</a>`;
 }
 
 /* ---------- answers & scoring ---------- */
@@ -135,10 +152,14 @@ function score(test,answers,first){
 let runToken=0;
 function unlockAudio(){try{aud.src=SILENT;const p=aud.play();if(p&&p.catch)p.catch(()=>{})}catch(e){}}
 function clipUrl(test,clip){return "audio/"+test.id+"/"+clip.id+".mp3"}
-function playSrc(src,rate,tok){
+/* one long official recording can hold several tasks: stop at the task's end second */
+let segEnd=null,segDone=null;
+aud.addEventListener("timeupdate",()=>{if(segEnd!=null&&aud.currentTime>=segEnd){aud.pause();const f=segDone;segEnd=null;segDone=null;if(f)f()}});
+function playSrc(src,rate,tok,start,end){
  return new Promise((res,rej)=>{
-  aud.onended=null;aud.onerror=null;aud.src=src;aud.playbackRate=rate||1;
-  aud.onended=()=>res();aud.onerror=()=>rej(new Error("audio"));
+  aud.onended=null;aud.onerror=null;segEnd=end||null;segDone=end?res:null;
+  aud.src=src+(start?"#t="+start:"");aud.playbackRate=rate||1;
+  aud.onended=()=>{segEnd=null;segDone=null;res()};aud.onerror=()=>rej(new Error("audio"));
   const p=aud.play();
   if(p&&p.catch)p.catch(()=>{showTapToContinue(()=>{aud.play().catch(()=>rej(new Error("blocked")))})});
  }).then(()=>{if(tok!==runToken)throw new Error("cancel")});
@@ -155,11 +176,11 @@ function home(){
  const best=id=>{const a=att.filter(x=>x.testId===id);return a.length?Math.max(...a.map(x=>x.score)):null};
  let h=`<div class="card"><p style="margin-top:0"><b>Тренажёр аудирования DELE B2.</b> Здесь такие же задания, как на экзамене: 5 заданий, 30 вопросов, каждое аудио звучит два раза. После каждого теста вы получаете разбор на русском: баллы как на DELE, самое слабое задание, ловушки, в которые вы попадаете, и объяснение каждого вопроса.</p>
  <a class="btn block" href="#guide">Сначала прочитайте короткий гид (3 минуты)</a></div>`;
- h+=`<h2>Тесты</h2>`;
- for(const id of ["t0","t1"]){const t=TESTS[id];if(!t)continue;const b=best(id);
-  h+=`<div class="card"><div class="row" style="justify-content:space-between"><b>${esc(t.titleRu)}</b>${b!=null?`<span class="pill">лучший: ${b}/30</span>`:""}</div>
-  <p class="small mut">${t.official?"Настоящий официальный тест (2013). Начните с него, чтобы узнать свой уровень.":"Новый тест в формате DELE B2, с разбором каждой ловушки."}</p>
-  <a class="btn block" href="#t/${id}">Открыть</a></div>`}
+ const card=t=>{const b=best(t.id);return `<div class="card"><div class="row" style="justify-content:space-between"><b>${esc(t.titleRu)}</b>${b!=null?`<span class="pill">лучший: ${b}/30</span>`:""}</div>
+  <p class="small mut">${esc(t.blurbRu||"")}</p><a class="btn block" href="#t/${t.id}">Открыть</a></div>`};
+ const list=off=>ORDER.map(([id])=>TESTS[id]).filter(t=>t&&!!t.official===off).map(card).join("");
+ h+=`<h2>Официальные тесты</h2><p class="small mut" style="margin-top:0">Настоящие тесты Института Сервантеса, с настоящим аудио. Начните с них, чтобы узнать свой уровень.</p>${list(true)}`;
+ h+=`<h2>Тренировочные тесты</h2><p class="small mut" style="margin-top:0">Созданы в формате DELE B2. После каждого вопроса — объяснение по-русски и ловушка, в которую можно попасть.</p>${list(false)}`;
  h+=`<p class="small mut">Новые тесты будут появляться здесь. Лучше слушать в наушниках.</p>`;
  app.innerHTML=h;
 }
@@ -215,7 +236,7 @@ function guide(){
 
 <h2>План до экзамена</h2>
 <ul>
-<li><b>Сегодня или завтра:</b> Тест 0 в режиме «Экзамен», чтобы узнать свой уровень.</li>
+<li><b>Сегодня или завтра:</b> официальный тест 1 в режиме «Экзамен», чтобы узнать свой уровень.</li>
 <li><b>Каждые 1–2 дня:</b> новый тест. Сначала «Экзамен», потом разбор ошибок и «Тренировка» на тех же аудио.</li>
 <li><b>12 ноября:</b> последний полный тест в режиме «Экзамен».</li>
 <li><b>13 ноября:</b> первая часть экзамена. Новые тесты уже не нужны, отдыхайте.</li>
@@ -317,13 +338,13 @@ function renderTask(){
  h+=`<button class="btn block" id="tapgo" style="display:none">▶ Нажмите, чтобы продолжить аудио</button>`;
  h+=`<div class="card"><h3 style="margin-top:0">Tarea ${task.n}</h3>`;
  if(test.official){
-  h+=`<p class="small">Вопросы этого задания — в официальном PDF (одна страница). Откройте его, а ответы отмечайте здесь.</p><a class="btn sec block" target="_blank" rel="noopener" href="${test.base+task.pdf}">Открыть вопросы задания ${task.n} (PDF)</a>`;
+  if(mode==="practice")h+=practicePlayers(test,task);
+  h+=`<p class="small">${MOBILE?"Вопросы этого задания — на официальной странице. Откройте её до начала аудио, а ответы отмечайте здесь, ниже.":"Вопросы этого задания — на официальной странице ниже. Ответы отмечайте под ней."}</p>`+pdfBlock(qPdf(test,task),"Вопросы задания "+task.n,task.page);
  } else {
   h+=`<p>${esc(task.instr)}</p><details><summary class="small">Подсказка по-русски</summary><p class="small">${esc(task.hintRu)}</p></details>`;
   if(task.type==="who"&&task.example)h+=`<p class="ex">Ejemplo: 0. ${esc(task.example.stem)} → ${task.example.answer} (${esc(task.choices[task.example.answer])})</p><p class="small"><b>A</b> = ${esc(task.choices.A)} · <b>B</b> = ${esc(task.choices.B)} · <b>C</b> = ${esc(task.choices.C)}</p>`;
   if(task.type==="match")h+=`<table>${Object.entries(task.statements).map(([L,s])=>`<tr><td><b>${L}</b></td><td>${esc(s)}</td></tr>`).join("")}</table>`;
  }
- if(mode==="practice"&&test.official)h+=practicePlayers(test,task);
  h+=`</div>`;
  if(test.official)h+=`<div class="card">${qList(test,task).map(q=>qHTML(test,task,q)).join("")}</div>`;
  else h+=`<div class="card">${task.clips.map((c,i)=>(mode==="practice"?playerHTML(c,i):`<p class="ex" style="margin:14px 0 0">${esc(c.intro)}</p>`)+task.questions.filter(q=>q.clip===c.id).map(q=>qHTML(test,task,q)).join("")).join("")}</div>`;
@@ -342,7 +363,7 @@ async function examTask(test,task){
  try{
   if(test.official){
    setStatus("Слушайте: аудио задания "+task.n,"Паузы и повторы уже внутри аудио, как на экзамене.");
-   await playSrc(test.base+task.audio,1,tok);
+   await playSrc(taskAudio(test,task),1,tok,task.start,task.end);
   } else {
    await wait(task.readSec,"Читайте вопросы",tok);
    for(const [ci,clip] of task.clips.entries()){
@@ -370,9 +391,11 @@ function playerHTML(c,i){return `<div class="player" style="margin-top:10px;bord
 let curSrc="",rate=1;
 function bindPractice(test,task){
  app.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{
-  const src=test.official?test.base+task.audio:clipUrl(test,task.clips[+b.dataset.p]);
+  const off=test.official,src=off?taskAudio(test,task)+(task.start?"#t="+task.start:""):clipUrl(test,task.clips[+b.dataset.p]);
   if(curSrc===src&&!aud.paused){aud.pause();return}
   if(curSrc!==src){aud.src=src;curSrc=src}
+  else if(off&&task.end&&aud.currentTime>=task.end-0.5)aud.currentTime=task.start||0;
+  segEnd=off?(task.end||null):null;segDone=null;
   aud.onended=null;aud.playbackRate=rate;aud.play().catch(()=>setStatus("Не удалось включить аудио","Проверьте интернет."));
  });
  app.querySelectorAll("[data-back]").forEach(b=>b.onclick=()=>{aud.currentTime=Math.max(0,aud.currentTime-5)});
@@ -416,7 +439,7 @@ function results(id){
  if(steps.length)h+=`<div class="card"><h3 style="margin-top:0">Что делать дальше</h3><ol>${steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol></div>`;
  h+=`<h3>Каждый вопрос</h3>`;
  for(const task of test.tasks){
-  h+=`<p class="small mut" style="margin-top:14px"><b>Tarea ${task.n}</b>${test.official?` · <a target="_blank" rel="noopener" href="${test.base+task.transcript}">официальная расшифровка (PDF)</a>`:""}</p>`;
+  h+=`<p class="small mut" style="margin-top:14px"><b>Tarea ${task.n}</b>${test.official?` · <a target="_blank" rel="noopener" href="${trPdf(test,task)}">официальная расшифровка${task.trPage?` (стр. ${task.trPage})`:""}</a>`:""}</p>`;
   for(const q of qList(test,task)){const n=qNum(test,q),c=correctOf(test,task,q),a=at.answers[n];const st=!a?"blank":a===c?"ok":"bad";
    h+=`<div class="rv ${st}"><div><b>${n}.</b> ${test.official?"":esc(q.stem)}</div>`;
    h+=`<div class="small">Ваш ответ: <b>${a?esc(labelAns(test,task,q,a)):"—"}</b> · Правильно: <b>${esc(labelAns(test,task,q,c))}</b></div>`;
@@ -430,7 +453,7 @@ function results(id){
  }
  h+=`<div class="row" style="margin-top:16px"><a class="btn" href="#t/${test.id}">Пройти ещё раз</a><a class="btn sec" href="#">Все тесты</a></div>`;
  app.innerHTML=h;window.scrollTo(0,0);
- app.querySelectorAll("[data-play]").forEach(b=>b.onclick=()=>{const src="audio/"+test.id+"/"+b.dataset.play+".mp3";if(curSrc===src&&!aud.paused){aud.pause();return}aud.onended=null;aud.src=src;curSrc=src;aud.playbackRate=1;aud.play().catch(()=>{})});
+ app.querySelectorAll("[data-play]").forEach(b=>b.onclick=()=>{const src="audio/"+test.id+"/"+b.dataset.play+".mp3";if(curSrc===src&&!aud.paused){aud.pause();return}segEnd=null;segDone=null;aud.onended=null;aud.src=src;curSrc=src;aud.playbackRate=1;aud.play().catch(()=>{})});
 }
 function plural(n){return n===1?"правильный ответ":(n<5?"правильных ответа":"правильных ответов")}
 function labelAns(test,task,q,v){
@@ -459,7 +482,8 @@ function history(){
 
 function route(){
  const hsh=location.hash||"";
- if(hsh!=="#run"&&R){runToken++;aud.pause();R=null}
+ if(hsh!=="#run"&&R){runToken++;aud.pause();segEnd=null;segDone=null;R=null}
+ const m=hsh.match(/^#t\/(\w+)/);$("#pick").value=m&&TESTS[m[1]]?m[1]:(hsh==="#run"&&R?R.test.id:"");
  if(hsh==="#guide")return guide();
  if(hsh==="#history")return history();
  if(hsh.startsWith("#t/"))return startScreen(hsh.slice(3));

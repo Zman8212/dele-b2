@@ -1,7 +1,8 @@
 {
   "id": "t1",
-  "title": "Prueba 1",
-  "titleRu": "Тест 1",
+  "title": "Práctica 1",
+  "titleRu": "Тренировочный тест 1",
+  "blurbRu": "8 минут аудио, 30 вопросов, разбор каждой ловушки по-русски.",
   "official": false,
   "speakers": {
     "Javier": "A",
