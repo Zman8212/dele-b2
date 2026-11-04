@@ -69,6 +69,7 @@ footer{margin-top:40px;font-size:13px;color:var(--mut)}
 <div class="wrap">
 <header><a href="#"><h1>DELE B2 · Audición</h1></a><a class="small mut" href="#history">Мои результаты</a></header>
 <select id="pick" aria-label="Выбрать тест"><option value="">Выбрать тест…</option></select>
+<div id="upd" class="small mut" style="display:none;margin:0 0 6px">Есть новая версия страницы. Она откроется сама, когда вы закончите этот тест.</div>
 <div id="app"><p class="mut">Загрузка…</p></div>
 <footer>Тренажёр аудирования DELE B2. Официальные тесты — материалы Института Сервантеса: аудио и вопросы открываются с архивной копии их сайта. Результаты хранятся только на этом устройстве.</footer>
 </div>
@@ -82,6 +83,23 @@ const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;"
 const LS="dele_b2_attempts_v1";
 function loadAttempts(){try{return JSON.parse(localStorage.getItem(LS)||"[]")}catch(e){return[]}}
 function saveAttempts(a){try{localStorage.setItem(LS,JSON.stringify(a))}catch(e){}}
+/* auto-update: publish stamps VERSION + version.json; an open page reloads itself to the new version (never mid-test) */
+const VERSION="20261104-183906";
+let updPending=false;
+async function checkUpdate(){
+ if(VERSION==="dev")return;
+ try{
+  const r=await fetch("version.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)return;
+  const v=(await r.json()).v;if(!v||v===VERSION)return;
+  if(R){updPending=true;const s=$("#upd");if(s)s.style.display="block";return}
+  let tried="";try{tried=sessionStorage.getItem("dele_upd")||""}catch(e){}
+  if(tried===v)return;
+  try{sessionStorage.setItem("dele_upd",v)}catch(e){}
+  location.replace(location.pathname+"?v="+encodeURIComponent(v)+location.hash);
+ }catch(e){}
+}
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")checkUpdate()});
+setInterval(checkUpdate,5*60*1000);
 
 const TRAPS={
  same_word:{l:"То же слово",d:"В варианте есть слово из аудио, но в аудио оно значит другое или относится к другому.",a:"Услышали слово из варианта — не спешите. Проверьте, к чему оно относится в аудио."},
@@ -484,6 +502,7 @@ function route(){
  const hsh=location.hash||"";
  if(hsh!=="#run"&&R){runToken++;aud.pause();segEnd=null;segDone=null;R=null}
  const m=hsh.match(/^#t\/(\w+)/);$("#pick").value=m&&TESTS[m[1]]?m[1]:(hsh==="#run"&&R?R.test.id:"");
+ if(!R||hsh!=="#run")setTimeout(checkUpdate,0);
  if(hsh==="#guide")return guide();
  if(hsh==="#history")return history();
  if(hsh.startsWith("#t/"))return startScreen(hsh.slice(3));
