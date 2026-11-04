@@ -84,7 +84,7 @@ const LS="dele_b2_attempts_v1";
 function loadAttempts(){try{return JSON.parse(localStorage.getItem(LS)||"[]")}catch(e){return[]}}
 function saveAttempts(a){try{localStorage.setItem(LS,JSON.stringify(a))}catch(e){}}
 /* auto-update: publish stamps VERSION + version.json; an open page reloads itself to the new version (never mid-test) */
-const VERSION="20261104-183906";
+const VERSION="20261104-195106";
 let updPending=false;
 async function checkUpdate(){
  if(VERSION==="dev")return;
@@ -120,7 +120,7 @@ const TASK_TXT={
 
 let TESTS={};
 /* order on the page: official tests first, then the ones made for her */
-const ORDER=[["t0","test0"],["o2","official2"],["t1","test1"]];
+const ORDER=[["t0","test0"],["o2","official2"],["t1","test1"],["t2","test2"],["t3","test3"],["t4","test4"]];
 async function loadTests(){
  await Promise.all(ORDER.map(async([id,file])=>{
   try{const r=await fetch("data/"+file+".json",{cache:"no-cache"});const d=await r.json();TESTS[d.id]=d}catch(e){console.log("load fail",file,e)}
@@ -254,9 +254,9 @@ function guide(){
 
 <h2>План до экзамена</h2>
 <ul>
-<li><b>Сегодня или завтра:</b> официальный тест 1 в режиме «Экзамен», чтобы узнать свой уровень.</li>
-<li><b>Каждые 1–2 дня:</b> новый тест. Сначала «Экзамен», потом разбор ошибок и «Тренировка» на тех же аудио.</li>
-<li><b>12 ноября:</b> последний полный тест в режиме «Экзамен».</li>
+<li><b>Первый день:</b> официальный тест 1 в режиме «Экзамен», чтобы узнать свой уровень.</li>
+<li><b>Дальше по тесту в день:</b> тренировочные тесты 1–4. Сначала «Экзамен», потом разбор ошибок и «Тренировка» на тех же аудио.</li>
+<li><b>12 ноября:</b> официальный тест 2 в режиме «Экзамен», как генеральная репетиция.</li>
 <li><b>13 ноября:</b> первая часть экзамена. Новые тесты уже не нужны, отдыхайте.</li>
 </ul>
 

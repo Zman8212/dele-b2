@@ -1,0 +1,1048 @@
+{
+  "id": "t4",
+  "title": "Práctica 4",
+  "titleRu": "Тренировочный тест 4",
+  "blurbRu": "Полная длина, как на экзамене: 30 вопросов, 10 минут аудио. Темы: переезд на Канары, переводчица из Мексики, световое загрязнение.",
+  "official": false,
+  "tasks": [
+    {
+      "n": 1,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 5,
+      "pauseAfter": 10,
+      "instr": "Usted va a escuchar seis conversaciones breves. Escuchará cada conversación dos veces. Después debe contestar a las preguntas (1-6). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Прочитайте вопрос до прослушивания: он подсказывает, что искать (предложение, причину, план). Остальные детали можно пропускать.",
+      "clips": [
+        {
+          "id": "t1c1",
+          "intro": "Conversación 1. Va a escuchar a una inquilina que habla con el dueño de su piso.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "Buenas, Antonio. Le llamo porque la calefacción lleva tres días sin funcionar y, con el frío que hace, ya no sé qué hacer."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Vaya, lo siento. El técnico de siempre está de vacaciones hasta el lunes. No hace falta que espere: llame usted a otro y luego me pasa la factura, que se la descuento del alquiler."
+            }
+          ]
+        },
+        {
+          "id": "t1c2",
+          "intro": "Conversación 2. Va a escuchar a una mujer que habla con un empleado de correos.",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "El paquete está aquí, pero viene a nombre de su marido, y sin una autorización suya no puedo dárselo."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Mujer",
+              "t": "¿Y no vale con mi carné? Vivimos en la misma casa."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "Lo siento, es la norma. Pero lo guardamos quince días. Basta con que él le firme este papel y usted lo traiga con una copia de su carné."
+            }
+          ]
+        },
+        {
+          "id": "t1c3",
+          "intro": "Conversación 3. Va a escuchar a dos amigos.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "¿Seguimos con lo del sábado? Han dicho que va a llover."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Ya, pero solo por la tarde. Si salimos a las siete y hacemos la ruta corta, a la una estamos en el coche. Lo del lago lo dejamos para otro día."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "Uf, a las siete... Bueno, vale, pero el café lo pones tú."
+            }
+          ]
+        },
+        {
+          "id": "t1c4",
+          "intro": "Conversación 4. Va a escuchar a dos compañeros de trabajo.",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "¿Qué tal la entrevista de ayer? ¿Te hicieron muchas preguntas técnicas?"
+            },
+            {
+              "v": "ES_F2",
+              "who": "Mujer",
+              "t": "Qué va, eso fue lo más fácil. Lo que me pilló fue cuando me pidieron que hablara de un fracaso. Me quedé en blanco. Aun así, esta mañana me han llamado para una segunda entrevista con la directora."
+            }
+          ]
+        },
+        {
+          "id": "t1c5",
+          "intro": "Conversación 5. Va a escuchar a una mujer que habla con un mecánico.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "¿Entonces qué le pasa al coche? Al frenar hacía un ruido rarísimo."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Son las pastillas de freno, que están muy gastadas. Si quiere, se las cambio hoy mismo. Lo del aire acondicionado, en cambio, no era nada: un filtro sucio. Ya lo he limpiado y eso no se lo cobro."
+            }
+          ]
+        },
+        {
+          "id": "t1c6",
+          "intro": "Conversación 6. Va a escuchar a dos amigos.",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "¿Al final fuiste a la exposición de diseño del museo?"
+            },
+            {
+              "v": "ES_F2",
+              "who": "Mujer",
+              "t": "Sí, el domingo. Las sillas y las lámparas eran una maravilla, pero había tanta gente que casi no se veía nada. Y encima no dejaban hacer fotos. Si vuelvo, iré un martes por la mañana, que estará más tranquilo."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 1,
+          "clip": "t1c1",
+          "stem": "¿Qué le propone el dueño del piso?",
+          "options": [
+            {
+              "t": "Esperar a que su técnico vuelva el lunes.",
+              "trap": "opposite",
+              "why": "Наоборот: «No hace falta que espere» — ждать мастера не нужно. Он предлагает другое: «llame usted a otro»."
+            },
+            {
+              "t": "Subirle el alquiler para pagar la reparación.",
+              "trap": "opposite",
+              "why": "Наоборот: счёт за ремонт он вычтет из аренды («se la descuento del alquiler»), то есть она заплатит меньше."
+            },
+            {
+              "t": "Que contrate ella misma a otro profesional.",
+              "ok": true
+            }
+          ],
+          "evidence": "llame usted a otro y luego me pasa la factura",
+          "whyRu": "Хозяин предлагает ей самой вызвать другого мастера, а счёт потом вычесть из аренды."
+        },
+        {
+          "n": 2,
+          "clip": "t1c2",
+          "stem": "¿Qué necesita la mujer para llevarse el paquete?",
+          "options": [
+            {
+              "t": "Solo su propio documento de identidad.",
+              "trap": "opposite",
+              "why": "Она спрашивает «¿Y no vale con mi carné?», а служащий отвечает «Lo siento, es la norma»: её документа недостаточно."
+            },
+            {
+              "t": "Que pasen quince días.",
+              "trap": "time_number",
+              "why": "Пятнадцать дней — это сколько посылка будет храниться на почте, а не сколько нужно ждать."
+            },
+            {
+              "t": "Un permiso firmado por su marido.",
+              "ok": true
+            }
+          ],
+          "evidence": "Basta con que él le firme este papel",
+          "whyRu": "Посылка на имя мужа. Нужна бумага с его подписью (и копия его удостоверения): «autorización» = разрешение."
+        },
+        {
+          "n": 3,
+          "clip": "t1c3",
+          "stem": "¿Qué deciden hacer los amigos?",
+          "options": [
+            {
+              "t": "Madrugar y hacer un recorrido menos largo.",
+              "ok": true
+            },
+            {
+              "t": "Ir hasta el lago antes de que empiece a llover.",
+              "trap": "same_word",
+              "why": "Озеро упоминается, но как раз его откладывают: «Lo del lago lo dejamos para otro día»."
+            },
+            {
+              "t": "Aplazar la excursión hasta que mejore el tiempo.",
+              "trap": "opposite",
+              "why": "Поход не переносят. «lo dejamos para otro día» относится только к озеру."
+            }
+          ],
+          "evidence": "Si salimos a las siete y hacemos la ruta corta",
+          "whyRu": "Дождь обещают после обеда, поэтому они выходят в семь утра и идут короткой дорогой. «Madrugar» = рано вставать."
+        },
+        {
+          "n": 4,
+          "clip": "t1c4",
+          "stem": "¿Qué cuenta la mujer sobre su entrevista?",
+          "options": [
+            {
+              "t": "Ya le han confirmado que el puesto es suyo.",
+              "trap": "assumption",
+              "why": "Ей позвонили, но только чтобы пригласить на второе собеседование. Работу ей пока не дали."
+            },
+            {
+              "t": "Una pregunta la dejó sin saber qué decir.",
+              "ok": true
+            },
+            {
+              "t": "La parte técnica le resultó complicada.",
+              "trap": "opposite",
+              "why": "«Qué va, eso fue lo más fácil»: технические вопросы были самыми лёгкими."
+            }
+          ],
+          "evidence": "Me quedé en blanco.",
+          "whyRu": "«Me quedé en blanco» = растерялась, не знала, что сказать. Так было, когда её попросили рассказать о неудаче."
+        },
+        {
+          "n": 5,
+          "clip": "t1c5",
+          "stem": "Según el mecánico...",
+          "options": [
+            {
+              "t": "hay que sustituir una pieza de los frenos.",
+              "ok": true
+            },
+            {
+              "t": "el coche no estará listo hasta mañana.",
+              "trap": "time_number",
+              "why": "Колодки он может поменять «hoy mismo» — сегодня же."
+            },
+            {
+              "t": "el aire acondicionado tiene una avería seria.",
+              "trap": "opposite",
+              "why": "С кондиционером всё просто: «no era nada: un filtro sucio»."
+            }
+          ],
+          "evidence": "Son las pastillas de freno, que están muy gastadas.",
+          "whyRu": "Тормозные колодки сильно изношены, их нужно менять. «pastillas de freno» = тормозные колодки."
+        },
+        {
+          "n": 6,
+          "clip": "t1c6",
+          "stem": "¿Qué le pareció la exposición a la mujer?",
+          "options": [
+            {
+              "t": "Piensa volver el próximo domingo por la mañana.",
+              "trap": "time_number",
+              "why": "Она была там в воскресенье. Если пойдёт снова, то во вторник утром: «Si vuelvo, iré un martes». И это только «если»."
+            },
+            {
+              "t": "Le encantó, aunque no pudo verla a gusto.",
+              "ok": true
+            },
+            {
+              "t": "Las piezas expuestas no le interesaron demasiado.",
+              "trap": "opposite",
+              "why": "Наоборот, стулья и лампы были «una maravilla»."
+            }
+          ],
+          "evidence": "había tanta gente que casi no se veía nada",
+          "whyRu": "Экспонаты ей понравились, но людей было столько, что почти ничего нельзя было рассмотреть."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "type": "who",
+      "readSec": 20,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar una conversación entre dos amigos, Sara y Raúl. Indique si los enunciados (7-12) se refieren a Sara (A), a Raúl (B) o a ninguno de los dos (C). Escuchará la conversación dos veces.",
+      "hintRu": "Оба говорят об одном и том же: работа, хобби, переезд. Важно, кто сказал это про себя. «Si...», «a veces fantaseo...», «siempre digo que voy a...» — это не факт, а часто вариант C.",
+      "choices": {
+        "A": "Sara",
+        "B": "Raúl",
+        "C": "Ninguno de los dos"
+      },
+      "example": {
+        "stem": "Ha llegado tarde a la cita.",
+        "answer": "B"
+      },
+      "clips": [
+        {
+          "id": "t2c1",
+          "intro": "Raúl y Sara hablan en una cafetería.",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Raúl",
+              "t": "¡Sara! Perdona el retraso, he estado haciendo fotos en el Retiro y se me ha ido el tiempo."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Sara",
+              "t": "¿Fotos? ¿Tú? Si siempre odiabas salir en ellas."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Raúl",
+              "t": "Ya, pero detrás de la cámara es otra cosa. Me la regaló mi hermano por mi cumpleaños y desde entonces no paro. Ahora los sábados me levanto a las seis para coger la mejor luz, fíjate."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Sara",
+              "t": "Qué envidia. Yo antes pintaba, ¿te acuerdas? Lo dejé cuando entré en la agencia y siempre digo que voy a retomarlo, pero nada."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Raúl",
+              "t": "¿Y lo de Canarias? ¿Te lo estás pensando en serio?"
+            },
+            {
+              "v": "ES_F2",
+              "who": "Sara",
+              "t": "Muy en serio. En la empresa me dejan teletrabajar desde donde quiera, así que eso no es problema. Lo que me frena es mi madre: ya está mayor y no me hace gracia tenerla a tres horas de avión."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Raúl",
+              "t": "Te entiendo. Yo a veces también fantaseo con irme, pero luego pienso en lo que gano y se me pasa. En el banco no me va mal, aunque cada día me aburro más."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Sara",
+              "t": "¿Y por qué no te dedicas a la fotografía?"
+            },
+            {
+              "v": "ES_M1",
+              "who": "Raúl",
+              "t": "¡Qué dices! Llevo cuatro meses. Y además, si lo convierto en mi trabajo, dejará de divertirme. Prefiero que siga siendo mi forma de desconectar."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Sara",
+              "t": "Pues yo creo que si me voy, por fin volveré a pintar. Allí tendría menos excusas: el mar, la luz, el buen tiempo..."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Raúl",
+              "t": "Eso dicen todos. ¿Y cuándo tienes que decidirlo?"
+            },
+            {
+              "v": "ES_F2",
+              "who": "Sara",
+              "t": "Antes de marzo, que es cuando se me acaba el contrato del piso. Y oye, si al final me voy, tú te vienes a hacer fotos de los volcanes."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 7,
+          "clip": "t2c1",
+          "stem": "Su nueva afición le ha cambiado los horarios.",
+          "answer": "B",
+          "evidence": "Ahora los sábados me levanto a las seis para coger la mejor luz",
+          "whyRu": "Это Рауль: из-за фотографии он теперь по субботам встаёт в шесть утра.",
+          "wrong": {
+            "A": {
+              "trap": "who",
+              "why": "Сара тоже говорит о хобби (живопись), но она его бросила, и её распорядок не изменился."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Рауль прямо это говорит: «los sábados me levanto a las seis»."
+            }
+          }
+        },
+        {
+          "n": 8,
+          "clip": "t2c1",
+          "stem": "Abandonó una afición al empezar en un empleo.",
+          "answer": "A",
+          "evidence": "Lo dejé cuando entré en la agencia",
+          "whyRu": "Это Сара: она рисовала, но бросила, когда пошла работать в агентство.",
+          "wrong": {
+            "B": {
+              "trap": "opposite",
+              "why": "Рауль, наоборот, недавно начал новое хобби, а не бросил."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Сара прямо это говорит: «Yo antes pintaba... Lo dejé cuando entré en la agencia»."
+            }
+          }
+        },
+        {
+          "n": 9,
+          "clip": "t2c1",
+          "stem": "Le preocupa vivir lejos de un familiar.",
+          "answer": "A",
+          "evidence": "Lo que me frena es mi madre",
+          "whyRu": "Это Сара: её останавливает мама, которая уже немолода. Не хочется жить от неё в трёх часах полёта.",
+          "wrong": {
+            "B": {
+              "trap": "partial",
+              "why": "Рауль тоже сомневается насчёт переезда, но из-за денег («pienso en lo que gano»), а не из-за семьи."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Сара: «Lo que me frena es mi madre». «me frena» = меня сдерживает, останавливает."
+            }
+          }
+        },
+        {
+          "n": 10,
+          "clip": "t2c1",
+          "stem": "Su trabajo le interesa cada vez menos.",
+          "answer": "B",
+          "evidence": "aunque cada día me aburro más",
+          "whyRu": "Это Рауль: в банке всё неплохо, но ему с каждым днём всё скучнее.",
+          "wrong": {
+            "A": {
+              "trap": "assumption",
+              "why": "Сара говорит о работе только то, что ей разрешают работать удалённо. На скуку она не жалуется."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Рауль: «cada día me aburro más»."
+            }
+          }
+        },
+        {
+          "n": 11,
+          "clip": "t2c1",
+          "stem": "Le gustaría vivir de su afición.",
+          "answer": "C",
+          "evidence": "si lo convierto en mi trabajo, dejará de divertirme",
+          "whyRu": "Ни один. Рауль говорит наоборот: если хобби станет работой, оно перестанет радовать. Сара хочет снова рисовать, но о заработке на этом речи нет.",
+          "wrong": {
+            "B": {
+              "trap": "opposite",
+              "why": "Рауль отвечает «¡Qué dices!» и объясняет, что не хочет делать фотографию работой."
+            },
+            "A": {
+              "trap": "assumption",
+              "why": "Сара хочет вернуться к живописи как к хобби. Что она хочет на этом зарабатывать, не сказано."
+            }
+          }
+        },
+        {
+          "n": 12,
+          "clip": "t2c1",
+          "stem": "Ya ha decidido irse a vivir a Canarias.",
+          "answer": "C",
+          "evidence": "si al final me voy",
+          "whyRu": "Ни один. Сара только серьёзно думает и решит до марта: «si al final me voy» — ЕСЛИ уедет. Рауль только иногда мечтает об этом.",
+          "wrong": {
+            "B": {
+              "trap": "assumption",
+              "why": "Рауль лишь иногда мечтает уехать («fantaseo con irme»), и это быстро проходит («se me pasa»)."
+            },
+            "A": {
+              "trap": "time_number",
+              "why": "Решение ещё впереди: «¿Y cuándo tienes que decidirlo?» — «Antes de marzo». Пока это только «si»."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar parte de una entrevista a Valeria Montes, traductora literaria. Escuchará la entrevista dos veces. Después debe contestar a las preguntas (13-18). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Следите за схемой «Mucha gente piensa... Para nada»: сначала звучит чужое мнение, потом её собственное. Ответ — во второй части. У гостьи мексиканский акцент: «camión» = автобус, «ahorita» = сейчас.",
+      "clips": [
+        {
+          "id": "t3c1",
+          "intro": "Entrevista a Valeria Montes, traductora.",
+          "lines": [
+            {
+              "v": "ES_M2",
+              "who": "Periodista",
+              "t": "Hoy nos acompaña Valeria Montes, traductora mexicana que vive en Barcelona y que ha traducido más de cuarenta libros infantiles. Valeria, ¿cómo llegaste a la traducción?"
+            },
+            {
+              "v": "LA_F1",
+              "who": "Valeria",
+              "t": "Pues de pura casualidad, la verdad. Yo era maestra de inglés en Guadalajara y una editorial organizó un concurso de traducción. No gané, ni mucho menos, quedé de las últimas. Pero a la editora le encantó cómo había resuelto un chiste del cuento, y me escribió para ofrecerme un libro pequeñito. Ahí empezó todo."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Periodista",
+              "t": "¿Qué es lo más difícil de traducir para niños?"
+            },
+            {
+              "v": "LA_F1",
+              "who": "Valeria",
+              "t": "Mucha gente piensa que es más fácil porque las frases son cortas. Para nada. Lo complicado es que estos libros se leen en voz alta, así que el ritmo importa tanto como el significado. Una rima en inglés casi nunca funciona en español, y a veces tengo que inventarme otra completamente distinta."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Periodista",
+              "t": "¿Y cómo sabes si funciona?"
+            },
+            {
+              "v": "LA_F1",
+              "who": "Valeria",
+              "t": "Tengo un método muy científico: se lo leo a mi hijo, que tiene siete años. Si se ríe, perfecto. Si a mitad del cuento me pregunta qué hay de cenar, sé que tengo que reescribir esa página. Los niños son críticos durísimos: no te dicen que algo está bien por educación."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Periodista",
+              "t": "Cuéntanos algún error del que te acuerdes con una sonrisa."
+            },
+            {
+              "v": "LA_F1",
+              "who": "Valeria",
+              "t": "Ay, uno muy chistoso, siempre lo platico. En uno de mis primeros libros para una editorial española escribí que la abuela se subía al camión para ir al mercado. En México el camión es el autobús, ¿verdad? Pero aquí el ilustrador dibujó a una abuelita manejando un camión enorme lleno de gallinas. A todos les pareció tan padre que la editora decidió dejarlo así."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Periodista",
+              "t": "¿Y cómo es vivir entre dos formas de hablar español, la de México y la de aquí?"
+            },
+            {
+              "v": "LA_F1",
+              "who": "Valeria",
+              "t": "Divertido. En casa hablamos como en México, aunque mis hijos ya dicen vale y se burlan de mí cuando digo ahorita. En el trabajo depende: unas editoriales me piden el español de aquí y otras uno que sirva para toda Latinoamérica. Al principio me estresaba, pero ahora lo veo como una suerte: oigo diferencias que otros no notan."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Periodista",
+              "t": "Para terminar, ¿qué le dirías a alguien que empieza?"
+            },
+            {
+              "v": "LA_F1",
+              "who": "Valeria",
+              "t": "Que lea muchísimo, pero en su propio idioma. Parece raro, ¿verdad? Traducir es, sobre todo, escribir. El inglés te lo da cualquier curso; escribir bonito en español solo te lo da la lectura. Y que no se desespere: a mí el primer libro me llevó seis meses, y ahorita saco uno en tres semanas."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 13,
+          "clip": "t3c1",
+          "stem": "¿Cómo empezó Valeria a traducir?",
+          "options": [
+            {
+              "t": "Una editora valoró una de sus soluciones.",
+              "ok": true
+            },
+            {
+              "t": "Ganó el primer premio en un concurso de traducción.",
+              "trap": "opposite",
+              "why": "«No gané, ni mucho menos, quedé de las últimas» — она не выиграла, а была одной из последних."
+            },
+            {
+              "t": "Dejó las clases de inglés para estudiar traducción.",
+              "trap": "assumption",
+              "why": "Она была учительницей английского, но об учёбе на переводчика ничего не сказано."
+            }
+          ],
+          "evidence": "a la editora le encantó cómo había resuelto un chiste del cuento",
+          "whyRu": "Конкурс она проиграла, но редактору очень понравилось, как она перевела шутку, и ей предложили книгу. «había resuelto un chiste» здесь = удачно перевела шутку."
+        },
+        {
+          "n": 14,
+          "clip": "t3c1",
+          "stem": "Según Valeria, lo difícil de traducir para niños es que...",
+          "options": [
+            {
+              "t": "los niños pequeños no entienden bien las rimas.",
+              "trap": "assumption",
+              "why": "Рифмы упоминаются, но проблема в том, что английская рифма не работает в испанском, а не в детях."
+            },
+            {
+              "t": "hay que cuidar mucho cómo suena el texto.",
+              "ok": true
+            },
+            {
+              "t": "las frases son muy cortas y sencillas.",
+              "trap": "who",
+              "why": "Это то, что думают другие («Mucha gente piensa que es más fácil porque las frases son cortas»), а не её мнение. Она отвечает «Para nada»."
+            }
+          ],
+          "evidence": "el ritmo importa tanto como el significado",
+          "whyRu": "Детские книги читают вслух, поэтому ритм так же важен, как смысл. «Cómo suena» = как звучит."
+        },
+        {
+          "n": 15,
+          "clip": "t3c1",
+          "stem": "Para comprobar si una traducción funciona, Valeria...",
+          "options": [
+            {
+              "t": "se la enseña a otros traductores.",
+              "trap": "assumption",
+              "why": "Про других переводчиков ничего не сказано."
+            },
+            {
+              "t": "la prueba con un niño de su familia.",
+              "ok": true
+            },
+            {
+              "t": "la reescribe varias veces.",
+              "trap": "same_word",
+              "why": "«reescribir» звучит, но только про страницу, на которой сын заскучал. Это не способ проверки."
+            }
+          ],
+          "evidence": "se lo leo a mi hijo, que tiene siete años",
+          "whyRu": "Она читает перевод вслух сыну: смеётся — хорошо, спрашивает про ужин — надо переписать."
+        },
+        {
+          "n": 16,
+          "clip": "t3c1",
+          "stem": "¿Qué pasó con el error del camión?",
+          "options": [
+            {
+              "t": "El ilustrador lo descubrió a tiempo.",
+              "trap": "opposite",
+              "why": "Наоборот: иллюстратор понял «camión» по-испански и нарисовал огромный грузовик с курами."
+            },
+            {
+              "t": "La editora le pidió que lo corrigiera.",
+              "trap": "opposite",
+              "why": "Наоборот: «la editora decidió dejarlo así» — решила оставить как есть."
+            },
+            {
+              "t": "Al final se mantuvo igual en el libro.",
+              "ok": true
+            }
+          ],
+          "evidence": "la editora decidió dejarlo así",
+          "whyRu": "В Мексике «camión» = автобус, в Испании = грузовик. Рисунок с бабушкой за рулём грузовика всем так понравился («tan padre» = такой классный), что его оставили."
+        },
+        {
+          "n": 17,
+          "clip": "t3c1",
+          "stem": "Sobre vivir entre dos variedades del español, Valeria dice que...",
+          "options": [
+            {
+              "t": "con los años ha aprendido a apreciarlo.",
+              "ok": true
+            },
+            {
+              "t": "todavía le estresa adaptarse a cada editorial.",
+              "trap": "time_number",
+              "why": "Это было «Al principio» — вначале. Сейчас она видит в этом удачу."
+            },
+            {
+              "t": "en casa ya no hablan como en México.",
+              "trap": "opposite",
+              "why": "«En casa hablamos como en México». Дети просто подхватили испанское «vale»."
+            }
+          ],
+          "evidence": "ahora lo veo como una suerte",
+          "whyRu": "Вначале было тяжело, а сейчас она считает это удачей: слышит различия, которых другие не замечают."
+        },
+        {
+          "n": 18,
+          "clip": "t3c1",
+          "stem": "¿Qué aconseja Valeria?",
+          "options": [
+            {
+              "t": "Vivir un tiempo en el país del idioma original.",
+              "trap": "assumption",
+              "why": "Она сама живёт за границей, но в Испании, а не в англоязычной стране. И такого совета она не даёт."
+            },
+            {
+              "t": "Hacer un buen curso de inglés antes de empezar.",
+              "trap": "same_word",
+              "why": "Курс упоминается, но с обратным смыслом: английский даст любой курс, а писать красиво научит только чтение."
+            },
+            {
+              "t": "Leer mucho en el idioma al que traduce.",
+              "ok": true
+            }
+          ],
+          "evidence": "Que lea muchísimo, pero en su propio idioma.",
+          "whyRu": "Совет: много читать на родном языке, то есть на том, на который переводишь («escribir bonito en español»). Перевод — это прежде всего умение писать."
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "type": "match",
+      "readSec": 20,
+      "pauseBetween": 5,
+      "pauseAfter": 10,
+      "instr": "Usted va a escuchar a seis personas que dan consejos para la primera entrevista de trabajo. Escuchará a cada persona dos veces. Seleccione el enunciado (A-I) que corresponde al tema del que habla cada persona (19-24). Hay nueve enunciados. Seleccione seis.",
+      "hintRu": "Многие сначала рассказывают историю неудачи, а совет звучит в конце: «Ahora lo tengo claro...», «Desde entonces...». Ловите именно эту часть.",
+      "statements": {
+        "A": "Investigar a fondo la compañía.",
+        "B": "Preparar alguna cuestión para plantear al entrevistador.",
+        "C": "Cuidar la ropa que se lleva.",
+        "D": "Organizarse para no llegar con prisas.",
+        "E": "Ser honesto sobre las propias carencias.",
+        "F": "Practicar con ayuda de otra persona.",
+        "G": "Prestar atención a los gestos.",
+        "H": "Llevar varias copias del currículum.",
+        "I": "Pedir opinión después de la entrevista."
+      },
+      "clips": [
+        {
+          "id": "t4c1",
+          "intro": "Persona 1",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Persona 1",
+              "t": "En mi primera entrevista iba con mi traje nuevo, muy segura de mí misma. Me preguntaron si sabía usar un programa de contabilidad y dije que sí, sin haberlo abierto nunca. Al día siguiente me hicieron una prueba práctica y fue un desastre. Ahora lo tengo claro: si no sabes algo, dilo y explica cómo lo aprenderías."
+            }
+          ]
+        },
+        {
+          "id": "t4c2",
+          "intro": "Persona 2",
+          "lines": [
+            {
+              "v": "ES_M2",
+              "who": "Persona 2",
+              "t": "Parece obvio, pero mucha gente no lo hace. Antes de mi primera entrevista me pasé una tarde entera leyendo sobre la empresa: qué vendían, quiénes eran sus clientes, qué planes tenían. Cuando el jefe me preguntó por qué quería trabajar allí, le contesté con ejemplos concretos. Meses después me confesó que eso fue lo que me diferenció de los demás."
+            }
+          ]
+        },
+        {
+          "id": "t4c3",
+          "intro": "Persona 3",
+          "lines": [
+            {
+              "v": "LA_M1",
+              "who": "Persona 3",
+              "t": "Mire, a mí una vez me dijeron que yo hablaba muy bien, pero que parecía que quería salir corriendo. Movía la pierna todo el tiempo, no miraba a los ojos y cruzaba los brazos. Desde entonces, antes de cada entrevista, me grabo con el celular respondiendo preguntas y me fijo en lo que hace mi cuerpo, no tanto en lo que digo."
+            }
+          ]
+        },
+        {
+          "id": "t4c4",
+          "intro": "Persona 4",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Persona 4",
+              "t": "Yo soy muy tímida, y en mi primera entrevista me bloqueé con la típica pregunta de cuáles son tus defectos. No supe qué decir. Para la siguiente le pedí a mi hermana que hiciera de entrevistadora, y estuvimos una semana ensayando cada noche. Al principio nos daba la risa, pero el día de verdad las respuestas me salían solas."
+            }
+          ]
+        },
+        {
+          "id": "t4c5",
+          "intro": "Persona 5",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Persona 5",
+              "t": "Al final de casi todas las entrevistas te dicen: ¿quieres preguntar algo? Y la mayoría dice que no, por vergüenza. Error. Yo llevo siempre dos o tres preguntas apuntadas: cómo es un día normal en el puesto, cómo es el equipo... Demuestra interés y, además, te sirve para saber si de verdad quieres ese trabajo."
+            }
+          ]
+        },
+        {
+          "id": "t4c6",
+          "intro": "Persona 6",
+          "lines": [
+            {
+              "v": "ES_F2",
+              "who": "Persona 6",
+              "t": "En mi primera entrevista llegué justísima y sudando, porque el metro se paró y yo no había calculado ningún margen. Pasé los primeros diez minutos intentando calmarme. Desde entonces salgo de casa con una hora de antelación. Si llego demasiado pronto, me tomo un café cerca y repaso mi currículum con calma."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 19,
+          "clip": "t4c1",
+          "stem": "Persona 1",
+          "answer": "E",
+          "evidence": "si no sabes algo, dilo",
+          "whyRu": "Она соврала, что знает программу, и провалила практическое задание. Совет: честно признать, чего не умеешь, и объяснить, как этому научишься.",
+          "wrong": {
+            "C": {
+              "trap": "same_word",
+              "why": "Новый костюм упоминается только в начале истории. Совет не про одежду."
+            }
+          }
+        },
+        {
+          "n": 20,
+          "clip": "t4c2",
+          "stem": "Persona 2",
+          "answer": "A",
+          "evidence": "me pasé una tarde entera leyendo sobre la empresa",
+          "whyRu": "Он заранее изучил компанию: что продаёт, кто клиенты, какие планы. Это его и выделило.",
+          "wrong": {
+            "I": {
+              "trap": "who",
+              "why": "Начальник сам потом сказал, чем он выделился («me confesó»). Но совета попросить отзыв после собеседования нет."
+            }
+          }
+        },
+        {
+          "n": 21,
+          "clip": "t4c3",
+          "stem": "Persona 3",
+          "answer": "G",
+          "evidence": "me fijo en lo que hace mi cuerpo",
+          "whyRu": "Нога дёргалась, взгляд в сторону, руки скрещены. Теперь он следит за жестами и позой.",
+          "wrong": {
+            "F": {
+              "trap": "partial",
+              "why": "Он репетирует, но один, записывая себя на телефон («me grabo con el celular»), и смотрит на тело, а не на ответы."
+            },
+            "I": {
+              "trap": "assumption",
+              "why": "Ему однажды сказали, как он выглядит, но он не советует просить отзыв."
+            }
+          }
+        },
+        {
+          "n": 22,
+          "clip": "t4c4",
+          "stem": "Persona 4",
+          "answer": "F",
+          "evidence": "le pedí a mi hermana que hiciera de entrevistadora",
+          "whyRu": "Сестра играла роль интервьюера, и они неделю репетировали каждый вечер.",
+          "wrong": {
+            "E": {
+              "trap": "same_word",
+              "why": "Вопрос был о недостатках («cuáles son tus defectos»), это похоже на E. Но её совет не в том, чтобы честно говорить о них, а в том, чтобы репетировать с сестрой."
+            },
+            "G": {
+              "trap": "assumption",
+              "why": "Она говорит о застенчивости, но не о жестах и позе."
+            }
+          }
+        },
+        {
+          "n": 23,
+          "clip": "t4c5",
+          "stem": "Persona 5",
+          "answer": "B",
+          "evidence": "Yo llevo siempre dos o tres preguntas apuntadas",
+          "whyRu": "В конце собеседования обычно спрашивают, есть ли вопросы. Совет: заранее подготовить два-три вопроса.",
+          "wrong": {
+            "A": {
+              "trap": "partial",
+              "why": "Он узнаёт о работе прямо на собеседовании, задавая вопросы. Изучать компанию заранее он не советует."
+            }
+          }
+        },
+        {
+          "n": 24,
+          "clip": "t4c6",
+          "stem": "Persona 6",
+          "answer": "D",
+          "evidence": "salgo de casa con una hora de antelación",
+          "whyRu": "Однажды она опоздала из-за метро. Теперь выходит заранее: «con una hora de antelación» = за час.",
+          "wrong": {
+            "H": {
+              "trap": "same_word",
+              "why": "Резюме («currículum») упоминается: она перечитывает его в кафе. Про копии резюме ничего нет."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar una conferencia de una astrónoma española. Escuchará la audición dos veces. Después debe contestar a las preguntas (25-30). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Ищите противопоставления: «no es... sino...», «eso ya lo esperábamos... Lo que nadie esperaba...». Ожидаемое обычно ловушка, а ответ — во второй части.",
+      "clips": [
+        {
+          "id": "t5c1",
+          "intro": "Conferencia de Inés Robles, astrónoma.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Inés",
+              "t": "Buenas tardes. Me llamo Inés Robles y soy astrónoma. Me crie en un pueblo pequeño de Soria, y en verano, al salir de casa por la noche, la Vía Láctea estaba ahí, como un camino de polvo blanco sobre los tejados. Para mí era lo normal. Hace un par de años llevé a ese pueblo a mi sobrina, que tiene diez años y vive en Madrid. Miró hacia arriba y me preguntó si aquello eran nubes."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Inés",
+              "t": "Ese día entendí que un cielo oscuro se está convirtiendo en un lujo. Y no es un problema solo de los que trabajamos con telescopios, ni mucho menos. El exceso de luz por la noche desorienta a las aves que migran, confunde a muchos insectos y altera también nuestro descanso, porque el cuerpo necesita oscuridad para dormir bien. Por no hablar de la energía que gastamos en iluminar un cielo que no lo necesita."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Inés",
+              "t": "La buena noticia es que en España todavía quedan cielos magníficos. Solemos pensar en Canarias, y allí son excepcionales, pero en la península hay rincones increíbles, en zonas de Teruel, de Jaén o de Extremadura. Muchos tienen algo en común: se han ido quedando sin habitantes. Lo que ha sido un drama para esos pueblos, desde el punto de vista del cielo, es casi un tesoro."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Inés",
+              "t": "¿Y qué pueden hacer los ayuntamientos? Quiero dejar claro que nadie pide apagar las farolas. Se trata de iluminar mejor: que la luz apunte al suelo y no hacia arriba, que tenga un tono más cálido y que baje de intensidad a partir de cierta hora, cuando ya casi no pasa nadie por la calle. Son cambios baratos y, además, bastante rápidos."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Inés",
+              "t": "Siempre aparece el mismo miedo: con menos luz, más inseguridad. Pero lo que nos da seguridad no es la cantidad de luz, sino que esté bien colocada. Una farola que te deslumbra, de hecho, no te deja ver quién viene. Hace unos años asesoré a un pueblo de Teruel que cambió todo su alumbrado. Ahorraron bastante en la factura, eso ya lo esperábamos."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Inés",
+              "t": "Lo que nadie esperaba es que, en pleno invierno, cuando antes no venía nadie, las casas rurales empezaran a llenarse de gente que quería ver las estrellas. Así que les propongo algo sencillo: la próxima noche sin luna, salgan de la ciudad, apaguen el móvil y esperen veinte minutos a que los ojos se acostumbren. No volverán a mirar una farola de la misma manera. Muchas gracias."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 25,
+          "clip": "t5c1",
+          "stem": "La astrónoma cuenta que su sobrina...",
+          "options": [
+            {
+              "t": "quiere estudiar astronomía cuando sea mayor.",
+              "trap": "assumption",
+              "why": "Об этом ничего не сказано."
+            },
+            {
+              "t": "no supo qué era lo que veía en el cielo.",
+              "ok": true
+            },
+            {
+              "t": "pasa los veranos en un pueblo de Soria.",
+              "trap": "who",
+              "why": "Лето в деревне в Сории — это детство самой астронома. Племянница живёт в Мадриде, в деревню её привезли один раз («Hace un par de años llevé a ese pueblo a mi sobrina»)."
+            }
+          ],
+          "evidence": "me preguntó si aquello eran nubes",
+          "whyRu": "Племянница никогда не видела Млечный Путь и спросила, не облака ли это."
+        },
+        {
+          "n": 26,
+          "clip": "t5c1",
+          "stem": "Según la conferenciante, el exceso de luz nocturna...",
+          "options": [
+            {
+              "t": "se debe a los anuncios.",
+              "trap": "assumption",
+              "why": "О рекламе не сказано ни слова."
+            },
+            {
+              "t": "preocupa sobre todo a los astrónomos.",
+              "trap": "opposite",
+              "why": "Она говорит обратное: «no es un problema solo de los que trabajamos con telescopios, ni mucho menos»."
+            },
+            {
+              "t": "perjudica a animales y personas.",
+              "ok": true
+            }
+          ],
+          "evidence": "desorienta a las aves que migran, confunde a muchos insectos y altera también nuestro descanso",
+          "whyRu": "Лишний свет мешает птицам и насекомым, а людям — нормально спать."
+        },
+        {
+          "n": 27,
+          "clip": "t5c1",
+          "stem": "¿Qué tienen en común muchos lugares de la península con cielos oscuros?",
+          "options": [
+            {
+              "t": "Cada vez vive menos gente en ellos.",
+              "ok": true
+            },
+            {
+              "t": "Están en zonas de alta montaña.",
+              "trap": "assumption",
+              "why": "Про горы ничего не сказано. Логично, но не прозвучало."
+            },
+            {
+              "t": "Son tan conocidos como los de Canarias.",
+              "trap": "assumption",
+              "why": "Наоборот, «Solemos pensar en Canarias»: обычно вспоминают именно Канары, а места на полуострове известны меньше. Что они так же знамениты, не сказано."
+            }
+          ],
+          "evidence": "se han ido quedando sin habitantes",
+          "whyRu": "Из этих мест уехали люди. Для деревень это беда, а для неба почти сокровище."
+        },
+        {
+          "n": 28,
+          "clip": "t5c1",
+          "stem": "¿Qué propone que hagan los ayuntamientos?",
+          "options": [
+            {
+              "t": "Apagar el alumbrado público por la noche.",
+              "trap": "opposite",
+              "why": "«nadie pide apagar las farolas» — фонари выключать никто не предлагает."
+            },
+            {
+              "t": "Modificar la orientación y la potencia del alumbrado.",
+              "ok": true
+            },
+            {
+              "t": "Iluminar solo las calles por las que pasa más gente.",
+              "trap": "assumption",
+              "why": "Она говорит о времени, а не об улицах: свет должен становиться слабее «a partir de cierta hora, cuando ya casi no pasa nadie». Освещать только оживлённые улицы она не предлагает."
+            }
+          ],
+          "evidence": "que la luz apunte al suelo y no hacia arriba",
+          "whyRu": "Свет должен быть направлен вниз, быть более тёплым и становиться слабее после определённого часа."
+        },
+        {
+          "n": 29,
+          "clip": "t5c1",
+          "stem": "Sobre la seguridad, la astrónoma afirma que...",
+          "options": [
+            {
+              "t": "las calles oscuras son más peligrosas.",
+              "trap": "who",
+              "why": "Это страх многих людей («Siempre aparece el mismo miedo»), а не её мнение. Она с ним спорит."
+            },
+            {
+              "t": "las farolas potentes ayudan a ver mejor.",
+              "trap": "opposite",
+              "why": "Наоборот: фонарь, который слепит, мешает увидеть, кто идёт."
+            },
+            {
+              "t": "importa más dónde está la luz que cuánta hay.",
+              "ok": true
+            }
+          ],
+          "evidence": "no es la cantidad de luz, sino que esté bien colocada",
+          "whyRu": "Конструкция «no es... sino...»: важно не количество света, а то, как он расположен."
+        },
+        {
+          "n": 30,
+          "clip": "t5c1",
+          "stem": "¿Qué fue lo inesperado en el pueblo de Teruel?",
+          "options": [
+            {
+              "t": "La llegada de visitantes en temporada baja.",
+              "ok": true
+            },
+            {
+              "t": "Que volvieran a vivir allí familias jóvenes.",
+              "trap": "assumption",
+              "why": "Звучит логично после разговора о пустеющих деревнях, но об этом не сказано."
+            },
+            {
+              "t": "El dinero que ahorraron en electricidad.",
+              "trap": "partial",
+              "why": "Экономия была, но её ждали: «eso ya lo esperábamos». Вопрос про неожиданное."
+            }
+          ],
+          "evidence": "en pleno invierno, cuando antes no venía nadie, las casas rurales empezaran a llenarse de gente",
+          "whyRu": "Неожиданно зимой, когда раньше никто не приезжал, сельские дома стали заполняться людьми, которые хотели смотреть на звёзды."
+        }
+      ]
+    }
+  ]
+}

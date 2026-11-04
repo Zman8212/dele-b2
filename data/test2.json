@@ -1,0 +1,1049 @@
+{
+  "id": "t2",
+  "title": "Práctica 2",
+  "titleRu": "Тренировочный тест 2",
+  "blurbRu": "Полная длина, как на экзамене: 30 вопросов, 10 минут аудио. Темы: реставратор старых картин, кофе в Колумбии (колумбийский акцент), аргентинец в задании 4.",
+  "official": false,
+  "tasks": [
+    {
+      "n": 1,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 5,
+      "pauseAfter": 10,
+      "instr": "Usted va a escuchar seis conversaciones breves. Escuchará cada conversación dos veces. Después debe contestar a las preguntas (1-6). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Часто в диалоге звучат два-три варианта (предложения, планы), а вопрос — про то, что в итоге решили. Ждите последней реплики: решение обычно в ней.",
+      "clips": [
+        {
+          "id": "t1c1",
+          "intro": "Conversación 1. Va a escuchar a dos vecinos.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "Perdona, ¿sabes hasta cuándo van a durar las obras del tercero? Llevo una semana despertándome a las ocho con el taladro."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Hasta finales de mes, según el cartel del portal. Yo ya he hablado con el presidente de la comunidad y ha quedado en pedirles que no empiecen antes de las nueve."
+            }
+          ]
+        },
+        {
+          "id": "t1c2",
+          "intro": "Conversación 2. Va a escuchar a un cliente y a una dependienta en una tienda.",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "Buenas. Quería devolver esta chaqueta. Me la regalaron y me queda pequeña, pero no tengo el tique."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Mujer",
+              "t": "Sin tique no le puedo devolver el dinero, lo siento. Lo que sí puedo hacer es cambiársela por otra talla o darle un vale para gastar aquí."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "Vale, pues una talla más, por favor."
+            }
+          ]
+        },
+        {
+          "id": "t1c3",
+          "intro": "Conversación 3. Va a escuchar a dos compañeros de trabajo.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "Rubén, ¿te importa si la reunión de mañana a las diez la hacemos por videollamada? Es que me traen la lavadora y tengo que quedarme en casa toda la mañana."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Mejor no. En vez de hacerla por videollamada, ¿por qué no la pasamos al jueves? Así viene también Ramón, que mañana está de viaje, y lo cerramos todo."
+            }
+          ]
+        },
+        {
+          "id": "t1c4",
+          "intro": "Conversación 4. Va a escuchar a dos amigos.",
+          "lines": [
+            {
+              "v": "ES_F2",
+              "who": "Mujer",
+              "t": "¿Reservo en el italiano de siempre para el sábado?"
+            },
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "Uf, la última vez tardaron una hora en traernos la pizza. ¿Y si probamos el vietnamita nuevo de la plaza? Dicen que no es caro."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Mujer",
+              "t": "Vale, pero allí no admiten reservas por teléfono, solo en su web. Esta noche me encargo yo."
+            }
+          ]
+        },
+        {
+          "id": "t1c5",
+          "intro": "Conversación 5. Va a escuchar a un hombre que llama a su centro de salud.",
+          "lines": [
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Buenos días. Quería pedir cita con la doctora Romero; llevo unos días con dolor de garganta."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "La doctora está de vacaciones hasta el lunes. Le puedo dar cita con su sustituto mañana a las once o, si no le corre prisa, con ella el martes."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Prefiero esperar, que ella ya me conoce."
+            }
+          ]
+        },
+        {
+          "id": "t1c6",
+          "intro": "Conversación 6. Va a escuchar a una pareja que prepara un viaje.",
+          "lines": [
+            {
+              "v": "ES_F2",
+              "who": "Mujer",
+              "t": "¿Has visto? Han convocado huelga de trenes el viernes. Adiós a nuestro fin de semana en Salamanca."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "Tranquila, que el sábado los trenes funcionan con normalidad. Salimos ese día temprano y volvemos el domingo, como teníamos pensado. Perdemos una noche de hotel, pero en coche ni hablar, que con tanto tráfico llego destrozado."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 1,
+          "clip": "t1c1",
+          "stem": "¿Qué ha hecho el hombre?",
+          "options": [
+            {
+              "t": "Ha recurrido a otra persona para solucionarlo.",
+              "ok": true
+            },
+            {
+              "t": "Se ha quejado directamente a los obreros.",
+              "trap": "assumption",
+              "why": "С рабочими он не говорил. Он поговорил с председателем совета жильцов («el presidente de la comunidad»), а уже председатель пообещал поговорить с рабочими."
+            },
+            {
+              "t": "Ha conseguido que las obras terminen antes.",
+              "trap": "time_number",
+              "why": "Ремонт так и продлится до конца месяца («Hasta finales de mes»). Договорились только о том, чтобы не начинать раньше девяти."
+            }
+          ],
+          "evidence": "Yo ya he hablado con el presidente de la comunidad y ha quedado en pedirles",
+          "whyRu": "Он поговорил с председателем совета жильцов, и тот пообещал («ha quedado en») попросить рабочих не начинать раньше девяти. То есть он обратился к другому человеку, а не к рабочим."
+        },
+        {
+          "n": 2,
+          "clip": "t1c2",
+          "stem": "¿Qué va a hacer el cliente?",
+          "options": [
+            {
+              "t": "Comprar otra cosa con un vale.",
+              "trap": "partial",
+              "why": "Сертификат («un vale») ему предложили, но он выбрал другое."
+            },
+            {
+              "t": "Recuperar el dinero de la chaqueta.",
+              "trap": "opposite",
+              "why": "Без чека деньги не вернут: «Sin tique no le puedo devolver el dinero»."
+            },
+            {
+              "t": "Llevarse la misma prenda en otro tamaño.",
+              "ok": true
+            }
+          ],
+          "evidence": "Vale, pues una talla más, por favor.",
+          "whyRu": "Он просит «una talla más» — ту же куртку на размер больше. «Prenda» = предмет одежды, «tamaño» = размер."
+        },
+        {
+          "n": 3,
+          "clip": "t1c3",
+          "stem": "¿Qué propone el hombre?",
+          "options": [
+            {
+              "t": "Hacer la reunión por videollamada desde casa.",
+              "trap": "who",
+              "why": "Это предлагает она. Он предлагает другое: «En vez de hacerla por videollamada», перенести на четверг."
+            },
+            {
+              "t": "Retrasarla para que pueda asistir otro compañero.",
+              "ok": true
+            },
+            {
+              "t": "Hacer la reunión mañana a la hora prevista, sin Ramón.",
+              "trap": "time_number",
+              "why": "Он предлагает четверг, а не завтра. И как раз чтобы Рамон смог прийти («Así viene también Ramón»)."
+            }
+          ],
+          "evidence": "¿por qué no la pasamos al jueves? Así viene también Ramón",
+          "whyRu": "«la pasamos al jueves» = перенесём на четверг. Тогда сможет прийти и Рамон, который завтра в поездке."
+        },
+        {
+          "n": 4,
+          "clip": "t1c4",
+          "stem": "Al final, los amigos deciden que...",
+          "options": [
+            {
+              "t": "volverán al restaurante de siempre.",
+              "trap": "opposite",
+              "why": "В итальянском в прошлый раз ждали пиццу час, поэтому он предлагает новое место, и она соглашается («Vale»)."
+            },
+            {
+              "t": "ella reservará por internet en otro sitio.",
+              "ok": true
+            },
+            {
+              "t": "cambiarán de restaurante porque el italiano es caro.",
+              "trap": "same_word",
+              "why": "Слово «caro» звучит, но про вьетнамский ресторан: «no es caro». Итальянский не подошёл из-за медленного обслуживания."
+            }
+          ],
+          "evidence": "solo en su web. Esta noche me encargo yo.",
+          "whyRu": "Они идут во вьетнамский ресторан, а бронировать можно только на сайте. «me encargo yo» = я этим займусь."
+        },
+        {
+          "n": 5,
+          "clip": "t1c5",
+          "stem": "¿Qué decide el paciente?",
+          "options": [
+            {
+              "t": "Pedir cita para el lunes.",
+              "trap": "time_number",
+              "why": "До понедельника врач в отпуске. Приём у неё — во вторник («con ella el martes»)."
+            },
+            {
+              "t": "Ir mañana a la consulta de otro médico.",
+              "trap": "partial",
+              "why": "Это ему предложили (заместитель завтра в одиннадцать), но он отказался."
+            },
+            {
+              "t": "Ver a su médica habitual, aunque sea más tarde.",
+              "ok": true
+            }
+          ],
+          "evidence": "Prefiero esperar, que ella ya me conoce.",
+          "whyRu": "Он готов подождать до вторника, потому что она его уже знает. «Habitual» = свой, постоянный."
+        },
+        {
+          "n": 6,
+          "clip": "t1c6",
+          "stem": "¿Qué propone el hombre?",
+          "options": [
+            {
+              "t": "Salir un día más tarde de lo previsto.",
+              "ok": true
+            },
+            {
+              "t": "Volver un día más tarde de lo previsto.",
+              "trap": "time_number",
+              "why": "Возвращаются в воскресенье, как и планировали («como teníamos pensado»). Меняется только день отъезда."
+            },
+            {
+              "t": "Hacer el viaje en coche para evitar la huelga.",
+              "trap": "opposite",
+              "why": "«en coche ni hablar» — на машине ни за что, из-за пробок."
+            }
+          ],
+          "evidence": "el sábado los trenes funcionan con normalidad. Salimos ese día temprano",
+          "whyRu": "Забастовка в пятницу, поэтому он предлагает выехать в субботу. Отсюда «Perdemos una noche de hotel» — одна ночь в отеле пропадает."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "type": "who",
+      "readSec": 20,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar una conversación telefónica entre dos amigos, Pablo y Nuria. Indique si los enunciados (7-12) se refieren a Pablo (A), a Nuria (B) o a ninguno de los dos (C). Escuchará la conversación dos veces.",
+      "hintRu": "Оба говорят на одни и те же темы: работа, деньги, спорт, транспорт. Поэтому важно не «о чём», а «кто и в каком времени»: уже сделал, делает сейчас или только думает («estoy pensando», «si al final...»).",
+      "choices": {
+        "A": "Pablo",
+        "B": "Nuria",
+        "C": "Ninguno de los dos"
+      },
+      "example": {
+        "stem": "Acaba de cambiar de empresa.",
+        "answer": "B"
+      },
+      "clips": [
+        {
+          "id": "t2c1",
+          "intro": "Pablo y Nuria hablan por teléfono.",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Pablo",
+              "t": "¡Nuria! ¿Qué tal la primera semana en el trabajo nuevo?"
+            },
+            {
+              "v": "ES_F2",
+              "who": "Nuria",
+              "t": "Agotadora, pero estoy contenta. El equipo es majísimo y aprendo un montón. Lo único, que ahora entro a las ocho y me cuesta horrores madrugar. En la otra empresa no empezaba hasta las diez."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Pablo",
+              "t": "Te entiendo. Yo llevo meses saliendo tardísimo de la oficina, por eso estoy pensando en apuntarme a un curso de cocina los martes. Necesito algo que me obligue a desconectar."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Nuria",
+              "t": "¿Tú, cocinando? Si no sabes ni freír un huevo."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Pablo",
+              "t": "Por eso mismo. Mi hermana hizo uno el año pasado y ahora le salen unos arroces buenísimos. Lo malo es que cuesta trescientos euros y todavía no sé si me compensa."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Nuria",
+              "t": "Hombre, si vas a ir de verdad, sí. Yo en enero pagué tres meses de yoga por adelantado y fui tres veces. Nunca más."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Pablo",
+              "t": "Ya, a mí me pasaría lo mismo, seguro. ¿Y ahora qué haces por las tardes?"
+            },
+            {
+              "v": "ES_F2",
+              "who": "Nuria",
+              "t": "Nada, llego muerta y me tiro en el sofá. Pero en primavera quiero volver a nadar, que lo echo de menos."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Pablo",
+              "t": "Oye, y con el sueldo nuevo, ¿te vas a cambiar de piso por fin?"
+            },
+            {
+              "v": "ES_F2",
+              "who": "Nuria",
+              "t": "Qué va. Gano algo más, pero no tanto. Lo que sí he hecho es comprarme una bici para ir a trabajar, porque el metro a esas horas va hasta arriba."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Pablo",
+              "t": "Pues yo sigo yendo en coche y los atascos me ponen de los nervios. Bueno, si al final me apunto al curso, el primer plato que aprenda te lo preparo a ti."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Nuria",
+              "t": "Trato hecho. Pero que no sea un huevo frito."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 7,
+          "clip": "t2c1",
+          "stem": "Lleva mal tener que empezar a trabajar tan temprano.",
+          "answer": "B",
+          "evidence": "ahora entro a las ocho y me cuesta horrores madrugar",
+          "whyRu": "Нурия: теперь она начинает в восемь, и рано вставать ей ужасно тяжело («me cuesta horrores madrugar»). «Llevar mal» = тяжело переносить.",
+          "wrong": {
+            "A": {
+              "trap": "time_number",
+              "why": "У Пабло проблема не с началом, а с концом рабочего дня: он поздно уходит с работы («saliendo tardísimo»)."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Нурия прямо это говорит: «me cuesta horrores madrugar»."
+            }
+          }
+        },
+        {
+          "n": 8,
+          "clip": "t2c1",
+          "stem": "Busca una actividad que le ayude a olvidarse del trabajo.",
+          "answer": "A",
+          "evidence": "Necesito algo que me obligue a desconectar.",
+          "whyRu": "Пабло хочет пойти на курс кулинарии, чтобы отвлечься от работы: «algo que me obligue a desconectar».",
+          "wrong": {
+            "B": {
+              "trap": "assumption",
+              "why": "Нурия тоже хочет заняться плаванием, но потому что скучает по нему («lo echo de menos»), а не чтобы забыть о работе."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Пабло говорит это прямо: «Necesito algo que me obligue a desconectar»."
+            }
+          }
+        },
+        {
+          "n": 9,
+          "clip": "t2c1",
+          "stem": "Ya ha pagado el curso de cocina.",
+          "answer": "C",
+          "evidence": "todavía no sé si me compensa",
+          "whyRu": "Никто. Пабло ещё не решил, стоит ли курс своих трёхсот евро («todavía no sé si me compensa»), и в конце говорит «si al final me apunto» — если всё-таки запишется.",
+          "wrong": {
+            "A": {
+              "trap": "assumption",
+              "why": "Пабло только думает о курсе («estoy pensando en apuntarme»). Он не записался и не заплатил."
+            },
+            "B": {
+              "trap": "same_word",
+              "why": "Нурия действительно заплатила заранее, но за йогу, а не за кулинарию."
+            }
+          }
+        },
+        {
+          "n": 10,
+          "clip": "t2c1",
+          "stem": "Pagó una actividad que casi no aprovechó.",
+          "answer": "B",
+          "evidence": "pagué tres meses de yoga por adelantado y fui tres veces",
+          "whyRu": "Нурия заплатила за три месяца йоги и сходила всего три раза. Деньги почти пропали.",
+          "wrong": {
+            "A": {
+              "trap": "time_number",
+              "why": "Пабло только предполагает: «a mí me pasaría lo mismo» — со мной было бы так же. Он ещё ничего не оплатил, а историю про йогу рассказывает Нурия."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Нурия: «pagué tres meses de yoga... y fui tres veces»."
+            }
+          }
+        },
+        {
+          "n": 11,
+          "clip": "t2c1",
+          "stem": "Piensa mudarse ahora que gana más.",
+          "answer": "C",
+          "evidence": "Qué va. Gano algo más, pero no tanto.",
+          "whyRu": "Никто. На вопрос о переезде Нурия отвечает «Qué va» — вовсе нет: зарплата выросла, но ненамного.",
+          "wrong": {
+            "A": {
+              "trap": "assumption",
+              "why": "Пабло о переезде вообще не говорит, он только задаёт вопрос."
+            },
+            "B": {
+              "trap": "opposite",
+              "why": "Нурия говорит наоборот: «Qué va». Она купила велосипед, а квартиру менять не собирается."
+            }
+          }
+        },
+        {
+          "n": 12,
+          "clip": "t2c1",
+          "stem": "Continúa desplazándose de una manera que le irrita.",
+          "answer": "A",
+          "evidence": "yo sigo yendo en coche y los atascos me ponen de los nervios",
+          "whyRu": "Пабло по-прежнему ездит на машине, и пробки его бесят («me ponen de los nervios»).",
+          "wrong": {
+            "B": {
+              "trap": "time_number",
+              "why": "Нурии не нравилось переполненное метро, но она уже пересела на велосипед. Это в прошлом, а сейчас она так не ездит."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Пабло: «sigo yendo en coche y los atascos me ponen de los nervios»."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar parte de una entrevista a Tomás Varela, restaurador de pintura antigua. Escuchará la entrevista dos veces. Después debe contestar a las preguntas (13-18). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Короткий вопрос журналистки подсказывает, о чём будет следующий ответ. Читая задания заранее, найдите для каждого «ключевое слово» темы (начало, ошибка, совет) и ждите его в вопросе ведущей.",
+      "clips": [
+        {
+          "id": "t3c1",
+          "intro": "Entrevista a Tomás Varela, restaurador.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "Buenas tardes. Hoy nos acompaña Tomás Varela, que lleva treinta años restaurando pintura antigua. Tomás, ¿cómo llegaste a este oficio?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Tomás",
+              "t": "Pues de rebote. Yo quería ser arquitecto, pero no me llegó la nota. Un verano me salió un trabajo de ayudante en una ermita de Soria, solo para sacarme un dinero. El primer día me dieron un bisturí y un algodón, y cuando vi aparecer un azul intenso debajo de siglos de humo, lo tuve claro. Al curso siguiente me matriculé en restauración."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "¿Cuál ha sido el encargo más difícil de tu carrera?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Tomás",
+              "t": "Unos murales del siglo quince en una iglesia de Teruel. Y no tanto por la pintura, que estaba bastante bien, sino por el edificio. Había humedad por todas partes: limpiábamos una zona y a las dos semanas volvía a salir la mancha. Pasamos casi un año arreglando el tejado y los muros antes de tocar un solo pincel. Los vecinos pensaban que estábamos de vacaciones."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "¿Y los errores? Supongo que también los habrá."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Tomás",
+              "t": "Claro, sobre todo al principio. El peor fue con una tabla pequeña del siglo dieciséis: usé un disolvente demasiado fuerte y me llevé parte del dorado original. Nadie se dio cuenta, pero yo lo sé, y todavía me duele. Desde entonces pruebo cada producto en una esquina escondida, aunque me lleve la mañana entera. Las prisas son el peor enemigo de este oficio."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "¿Qué es lo que la gente no sabe de vuestro trabajo?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Tomás",
+              "t": "Que no estamos para dejar las obras como nuevas. Mucha gente piensa que el restaurador pinta encima, y es justo al revés: intervenimos lo mínimo. Además, todo lo que añadimos tiene que poder quitarse. Si dentro de cien años alguien inventa un método mejor, tiene que poder deshacer lo que hice yo sin dañar el original."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "Muchos jóvenes sueñan con dedicarse a esto. ¿Qué les dirías?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Tomás",
+              "t": "Que lo que hace falta no es tanto talento como paciencia. Dibujar bien ayuda, claro, pero lo difícil es pasarte seis horas mirando un trozo de pared del tamaño de una moneda sin despistarte. Y que no se agobien si los primeros años cuestan: a todos nos ha pasado."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "¿Y se puede vivir de la restauración?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Tomás",
+              "t": "Se puede, pero que nadie espere hacerse rico. Casi todos somos autónomos y vamos de obra en obra: hay años buenos y años en los que no sale casi nada. Yo siempre digo que este oficio se elige por amor o no se elige."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 13,
+          "clip": "t3c1",
+          "stem": "Tomás empezó en la restauración...",
+          "options": [
+            {
+              "t": "porque desde pequeño soñaba con ser restaurador.",
+              "trap": "opposite",
+              "why": "Он хотел стать архитектором («Yo quería ser arquitecto»), а в реставрацию попал случайно («de rebote»)."
+            },
+            {
+              "t": "con un empleo temporal que aceptó por dinero.",
+              "ok": true
+            },
+            {
+              "t": "gracias a un profesor que tuvo en la universidad.",
+              "trap": "assumption",
+              "why": "Никакого преподавателя нет. На реставрацию он поступил только после той летней работы."
+            }
+          ],
+          "evidence": "Un verano me salió un trabajo de ayudante en una ermita de Soria, solo para sacarme un dinero.",
+          "whyRu": "Летом он устроился помощником, просто чтобы подзаработать («sacarme un dinero»), и там понял, что это его дело."
+        },
+        {
+          "n": 14,
+          "clip": "t3c1",
+          "stem": "Lo más complicado del trabajo en Teruel fue...",
+          "options": [
+            {
+              "t": "tener que reparar antes la propia iglesia.",
+              "ok": true
+            },
+            {
+              "t": "lo que opinaban los vecinos de su trabajo.",
+              "trap": "partial",
+              "why": "Соседи действительно думали, что реставраторы отдыхают («Los vecinos pensaban que estábamos de vacaciones»), но это шутка, а не главная трудность. Главная — само здание."
+            },
+            {
+              "t": "el mal estado de las pinturas.",
+              "trap": "opposite",
+              "why": "Наоборот: росписи были в неплохом состоянии («que estaba bastante bien»)."
+            }
+          ],
+          "evidence": "no tanto por la pintura, que estaba bastante bien, sino por el edificio",
+          "whyRu": "Конструкция «no tanto por... sino por...»: трудность была не в живописи, а в здании. Почти год чинили крышу и стены."
+        },
+        {
+          "n": 15,
+          "clip": "t3c1",
+          "stem": "Desde aquel error, Tomás...",
+          "options": [
+            {
+              "t": "ya no utiliza disolventes en sus restauraciones.",
+              "trap": "assumption",
+              "why": "Он не говорит, что отказался от растворителей. Он просто сначала их проверяет."
+            },
+            {
+              "t": "procura acabar cada encargo en el menor tiempo posible.",
+              "trap": "opposite",
+              "why": "Наоборот: «Las prisas son el peor enemigo de este oficio» — спешка главный враг. Он готов потратить на одну проверку целое утро."
+            },
+            {
+              "t": "antes de usar un producto, lo prueba donde no se nota.",
+              "ok": true
+            }
+          ],
+          "evidence": "Desde entonces pruebo cada producto en una esquina escondida",
+          "whyRu": "Теперь он пробует каждое средство в незаметном углу. «una esquina escondida» = «donde no se nota»."
+        },
+        {
+          "n": 16,
+          "clip": "t3c1",
+          "stem": "Según Tomás, una regla de su trabajo es que...",
+          "options": [
+            {
+              "t": "cualquier material que aplica debe poder retirarse.",
+              "ok": true
+            },
+            {
+              "t": "la obra tiene que quedar como recién pintada.",
+              "trap": "opposite",
+              "why": "Он говорит прямо обратное: «no estamos para dejar las obras como nuevas»."
+            },
+            {
+              "t": "hay que usar siempre los métodos más modernos.",
+              "trap": "same_word",
+              "why": "«un método mejor» звучит, но про будущее: через сто лет кто-то может придумать метод лучше."
+            }
+          ],
+          "evidence": "todo lo que añadimos tiene que poder quitarse",
+          "whyRu": "Всё, что реставратор добавляет, должно сниматься («tiene que poder quitarse»). «Retirarse» = сниматься, убираться."
+        },
+        {
+          "n": 17,
+          "clip": "t3c1",
+          "stem": "Para Tomás, lo más importante en un restaurador es...",
+          "options": [
+            {
+              "t": "saber dibujar con mucha precisión y soltura.",
+              "trap": "partial",
+              "why": "Он говорит, что умение рисовать помогает («ayuda, claro»), но после этого идёт «pero»: главное в другом."
+            },
+            {
+              "t": "tener un talento especial para la pintura.",
+              "trap": "opposite",
+              "why": "«no es tanto talento como paciencia» — талант как раз НЕ главное."
+            },
+            {
+              "t": "saber concentrarse durante mucho rato.",
+              "ok": true
+            }
+          ],
+          "evidence": "pasarte seis horas mirando un trozo de pared del tamaño de una moneda sin despistarte",
+          "whyRu": "Самое трудное — шесть часов смотреть на кусочек стены размером с монету и не отвлекаться («sin despistarte»). Это терпение и концентрация."
+        },
+        {
+          "n": 18,
+          "clip": "t3c1",
+          "stem": "Sobre la situación económica de los restauradores, Tomás dice que...",
+          "options": [
+            {
+              "t": "cada año es más difícil encontrar encargos.",
+              "trap": "assumption",
+              "why": "Он не говорит, что становится всё хуже. Годы просто разные: хорошие и плохие."
+            },
+            {
+              "t": "sus ingresos no son estables.",
+              "ok": true
+            },
+            {
+              "t": "la mayoría tiene un contrato fijo.",
+              "trap": "opposite",
+              "why": "Наоборот: почти все работают на себя («autónomos») от заказа к заказу."
+            }
+          ],
+          "evidence": "hay años buenos y años en los que no sale casi nada",
+          "whyRu": "Бывают хорошие годы, а бывают такие, когда работы почти нет. Значит, доход нестабильный."
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "type": "match",
+      "readSec": 20,
+      "pauseBetween": 5,
+      "pauseAfter": 10,
+      "instr": "Usted va a escuchar a seis personas que dan consejos para aprender una lengua extranjera de adulto. Escuchará a cada persona dos veces. Seleccione el enunciado (A-I) que corresponde al tema del que habla cada persona (19-24). Hay nueve enunciados. Seleccione seis.",
+      "hintRu": "Ищите фразу, где человек говорит, что ему помогло: «lo que me funcionó», «lo que me cambió todo», «mi truco es». Чаще всего главная мысль именно там, а всё остальное — фон и ловушки.",
+      "statements": {
+        "A": "No preocuparse por cometer errores.",
+        "B": "Practicar poco tiempo, pero de forma constante.",
+        "C": "Aprender con series y películas.",
+        "D": "Quedar con un nativo para conversar.",
+        "E": "Estudiar a partir de las propias aficiones.",
+        "F": "Pasar una temporada en el extranjero.",
+        "G": "Ponerse objetivos que se puedan cumplir.",
+        "H": "Ir a clases con un buen profesor.",
+        "I": "Repetir en voz alta lo que se escucha."
+      },
+      "clips": [
+        {
+          "id": "t4c1",
+          "intro": "Persona 1",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Persona 1",
+              "t": "Empecé con el alemán a los cuarenta y cinco. Al principio estudiaba tres horas los sábados en una academia, y el lunes ya no me acordaba de nada. Lo que me funcionó fue cambiar el chip: veinte minutos al día en el autobús, con el móvil, sin saltarme ni uno. Así avancé el doble."
+            }
+          ]
+        },
+        {
+          "id": "t4c2",
+          "intro": "Persona 2",
+          "lines": [
+            {
+              "v": "ES_M2",
+              "who": "Persona 2",
+              "t": "A mí lo que me frenaba era la vergüenza. Entendía bastante inglés, pero no abría la boca por miedo a hacer el ridículo. En un viaje a Escocia no me quedó otra que preguntar por la calle, y vi que a nadie le importaban mis fallos: solo querían entenderme. Desde entonces hablo, aunque sea mal."
+            }
+          ]
+        },
+        {
+          "id": "t4c3",
+          "intro": "Persona 3",
+          "lines": [
+            {
+              "v": "ES_F2",
+              "who": "Persona 3",
+              "t": "No sirve de nada memorizar listas de palabras que nunca vas a usar. A mí me encantan las plantas, así que empecé a leer foros italianos de jardinería. Como el tema me interesaba, el vocabulario se me quedaba solo. Mi profesora decía que aprendía palabras rarísimas, pero yo disfrutaba, y eso es lo que te hace seguir."
+            }
+          ]
+        },
+        {
+          "id": "t4c4",
+          "intro": "Persona 4",
+          "lines": [
+            {
+              "v": "LA_M2",
+              "who": "Persona 4",
+              "t": "Mirá, yo estudié portugués con libros durante años y no me animaba a hablar. Lo que me cambió todo fue un intercambio con un brasileño del laburo que quería mejorar su castellano. Nos juntábamos los jueves en un bar, media hora en cada idioma. Che, en tres meses aprendí más que en cinco años de academia. Si tenés la chance, hacelo."
+            }
+          ]
+        },
+        {
+          "id": "t4c5",
+          "intro": "Persona 5",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Persona 5",
+              "t": "El error típico es querer hablar como un nativo en un año. Así solo consigues frustrarte. Yo, con el francés, me puse metas pequeñas: primero, pedir en un restaurante; luego, seguir las noticias; después, ver una película sin subtítulos. Cada vez que conseguía una, me sentía capaz de la siguiente."
+            }
+          ]
+        },
+        {
+          "id": "t4c6",
+          "intro": "Persona 6",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Persona 6",
+              "t": "Tengo cincuenta y ocho años y el oído ya no es lo que era. Mi truco es imitar: pongo un trozo corto de un pódcast, lo paro y digo cada frase igual que el locutor, copiando hasta la entonación. Mi marido se ríe desde la cocina, pero mi pronunciación ha mejorado muchísimo. Leer en silencio no te enseña a hablar."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 19,
+          "clip": "t4c1",
+          "stem": "Persona 1",
+          "answer": "B",
+          "evidence": "veinte minutos al día en el autobús, con el móvil, sin saltarme ni uno",
+          "whyRu": "Три часа раз в неделю не работали. Помогло заниматься по двадцать минут, но каждый день, без пропусков.",
+          "wrong": {
+            "H": {
+              "trap": "opposite",
+              "why": "Академия упоминается, но как то, что НЕ сработало: к понедельнику она всё забывала."
+            }
+          }
+        },
+        {
+          "n": 20,
+          "clip": "t4c2",
+          "stem": "Persona 2",
+          "answer": "A",
+          "evidence": "a nadie le importaban mis fallos",
+          "whyRu": "Ему мешал стыд. Он понял, что его ошибки никого не волнуют, и теперь говорит, даже если неправильно.",
+          "wrong": {
+            "F": {
+              "trap": "assumption",
+              "why": "Поездка в Шотландию — лишь место, где он это понял. Совета пожить за границей нет, и «un viaje» — это не «una temporada»."
+            }
+          }
+        },
+        {
+          "n": 21,
+          "clip": "t4c3",
+          "stem": "Persona 3",
+          "answer": "E",
+          "evidence": "Como el tema me interesaba, el vocabulario se me quedaba solo.",
+          "whyRu": "Она любит растения и читала итальянские форумы о садоводстве. Тема интересная, поэтому слова запоминались сами.",
+          "wrong": {
+            "H": {
+              "trap": "same_word",
+              "why": "Преподавательница упоминается только мимоходом: она замечала, что ученица учит «palabras rarísimas». Совет не про хорошего учителя."
+            }
+          }
+        },
+        {
+          "n": 22,
+          "clip": "t4c4",
+          "stem": "Persona 4",
+          "answer": "D",
+          "evidence": "Lo que me cambió todo fue un intercambio con un brasileño",
+          "whyRu": "Всё изменил языковой обмен с бразильцем: раз в неделю они встречались и говорили по полчаса на каждом языке. «Laburo» = работа (Аргентина).",
+          "wrong": {
+            "A": {
+              "trap": "partial",
+              "why": "Он упоминает, что не решался говорить («no me animaba a hablar»), но помогла ему не смелость, а встречи с носителем."
+            },
+            "H": {
+              "trap": "opposite",
+              "why": "Пять лет в академии дали меньше, чем три месяца обмена."
+            }
+          }
+        },
+        {
+          "n": 23,
+          "clip": "t4c5",
+          "stem": "Persona 5",
+          "answer": "G",
+          "evidence": "me puse metas pequeñas",
+          "whyRu": "Он ставил маленькие цели и шёл от одной к другой. «Metas» = «objetivos».",
+          "wrong": {
+            "C": {
+              "trap": "same_word",
+              "why": "Фильм без субтитров — это одна из его целей, а не способ учить язык."
+            }
+          }
+        },
+        {
+          "n": 24,
+          "clip": "t4c6",
+          "stem": "Persona 6",
+          "answer": "I",
+          "evidence": "digo cada frase igual que el locutor, copiando hasta la entonación",
+          "whyRu": "Она ставит отрывок, останавливает и повторяет каждую фразу вслух, копируя интонацию. Так улучшилось произношение.",
+          "wrong": {
+            "C": {
+              "trap": "assumption",
+              "why": "Она слушает подкаст, а не сериалы или фильмы. Главное — повторять вслух, а не что слушать."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar una conferencia de un agrónomo colombiano. Escuchará la audición dos veces. Después debe contestar a las preguntas (25-30). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Колумбийский акцент мягкий и чёткий. Слова, которые могут сбить: «finca» = ферма, «vereda» = сельский район, «tinto» = чашка чёрного кофе, «muchachos» = ребята. Следите за «ojo, no es que... el problema es...» — это поправка, и ответ после неё.",
+      "clips": [
+        {
+          "id": "t5c1",
+          "intro": "Conferencia de Hernán Restrepo, agrónomo.",
+          "lines": [
+            {
+              "v": "LA_M1",
+              "who": "Hernán",
+              "t": "Muy buenas tardes. Mi nombre es Hernán Restrepo, soy agrónomo y crecí en una finca cafetera cerca de Manizales. Mi papá sembraba café, y antes de él, mi abuelo. Yo, la verdad, no quería saber nada del campo: me fui a estudiar a Bogotá pensando en no volver. Pero en la universidad descubrí que todo lo que había visto de niño tenía una explicación científica, y eso me atrapó."
+            },
+            {
+              "v": "LA_M1",
+              "who": "Hernán",
+              "t": "Hoy les quiero hablar de algo que nos preocupa mucho: el clima ya no es el de antes. El café es una planta delicada. Necesita lluvia en ciertos meses y sol en otros. Ojo, no es que llueva menos; el problema es que ahora llueve cuando debería hacer sol, y al revés. Mi papá dice que antes miraba el cielo y sabía qué iba a pasar. Hoy no se atreve ni a adivinar."
+            },
+            {
+              "v": "LA_M1",
+              "who": "Hernán",
+              "t": "¿Y qué consecuencias tiene eso? Primero, la flor se cae antes de tiempo y la cosecha sale más pequeña. Segundo, con el calor suben plagas que antes no llegaban a la montaña. Hay un hongo, la roya, que en mi infancia casi no se veía por allá arriba. Por culpa de ese hongo, un vecino nuestro perdió casi la mitad de la cosecha y estuvo a punto de vender la tierra."
+            },
+            {
+              "v": "LA_M1",
+              "who": "Hernán",
+              "t": "Ahora, lo bonito: los pequeños productores no se han quedado de brazos cruzados. Mucha gente cree que la solución tiene que venir de afuera, de grandes empresas o de tecnología cara, pero lo que yo veo en las veredas es otra cosa. Están volviendo a sembrar árboles entre el café, como hacían los abuelos. La sombra baja la temperatura, guarda la humedad, y los pájaros que viven ahí se comen muchos insectos."
+            },
+            {
+              "v": "LA_M1",
+              "who": "Hernán",
+              "t": "También se están organizando. En mi vereda, veinte familias crearon una asociación: comparten una estación meteorológica, compran juntas semillas más resistentes y venden su café sin intermediarios. Eso sí, no les voy a mentir: cambiar cuesta. Una planta nueva tarda unos tres años en dar fruto, y no todas las familias pueden aguantar tanto sin ingresos."
+            },
+            {
+              "v": "LA_M1",
+              "who": "Hernán",
+              "t": "¿Mi conclusión? El café colombiano no va a desaparecer, pero sí va a cambiar. A lo mejor en unos años se siembra más arriba. A los muchachos de mi pueblo les digo que el campo no es el pasado: hacen falta personas que sepan de suelos, de clima y de computadores. Y si ustedes se toman un tinto mañana, piensen un poquito en quién lo cultivó. Muchas gracias."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 25,
+          "clip": "t5c1",
+          "stem": "Hernán se dedicó a la agronomía porque...",
+          "options": [
+            {
+              "t": "su padre insistió en que estudiara algo relacionado con el campo.",
+              "trap": "assumption",
+              "why": "Отец упоминается только как фермер. Ни о какой его просьбе не сказано."
+            },
+            {
+              "t": "quería continuar con la finca familiar, como su padre y su abuelo.",
+              "trap": "opposite",
+              "why": "Наоборот: он «no quería saber nada del campo» и уехал учиться, думая не возвращаться."
+            },
+            {
+              "t": "le fascinó la ciencia que explicaba lo que vivió de pequeño.",
+              "ok": true
+            }
+          ],
+          "evidence": "todo lo que había visto de niño tenía una explicación científica, y eso me atrapó",
+          "whyRu": "В университете он понял, что всё, что он видел в детстве, имеет научное объяснение, и это его увлекло («me atrapó»)."
+        },
+        {
+          "n": 26,
+          "clip": "t5c1",
+          "stem": "Según Hernán, el principal problema del clima es que...",
+          "options": [
+            {
+              "t": "cada año llueve menos.",
+              "trap": "opposite",
+              "why": "Он прямо говорит: «no es que llueva menos» — дождей не меньше."
+            },
+            {
+              "t": "las lluvias ya no llegan cuando se esperan.",
+              "ok": true
+            },
+            {
+              "t": "las plantas de café se han vuelto más delicadas.",
+              "trap": "same_word",
+              "why": "Слово «delicada» есть, но кофе всегда был нежным растением. Изменился климат, а не растение."
+            }
+          ],
+          "evidence": "el problema es que ahora llueve cuando debería hacer sol, y al revés",
+          "whyRu": "Конструкция «no es que... el problema es que...»: дождей не меньше, но они идут не в своё время."
+        },
+        {
+          "n": 27,
+          "clip": "t5c1",
+          "stem": "¿Qué le pasó a un vecino de Hernán?",
+          "options": [
+            {
+              "t": "Una enfermedad le arruinó parte de la cosecha.",
+              "ok": true
+            },
+            {
+              "t": "Tuvo que vender su finca por culpa de una plaga.",
+              "trap": "opposite",
+              "why": "«estuvo a punto de vender» = чуть не продал. Значит, НЕ продал."
+            },
+            {
+              "t": "Perdió toda la cosecha de aquel año por el hongo.",
+              "trap": "time_number",
+              "why": "Не весь урожай, а почти половину («casi la mitad»)."
+            }
+          ],
+          "evidence": "Por culpa de ese hongo, un vecino nuestro perdió casi la mitad de la cosecha",
+          "whyRu": "Из-за грибка (ржавчина, «la roya») сосед потерял почти половину урожая («casi la mitad de la cosecha»). «Enfermedad» здесь = болезнь растений, «parte» = часть, а не весь урожай."
+        },
+        {
+          "n": 28,
+          "clip": "t5c1",
+          "stem": "Según Hernán, muchos pequeños productores...",
+          "options": [
+            {
+              "t": "recuperan una técnica agrícola tradicional.",
+              "ok": true
+            },
+            {
+              "t": "han cambiado el café por otros árboles.",
+              "trap": "same_word",
+              "why": "Деревья сажают МЕЖДУ кофейными кустами («entre el café»), а не вместо кофе."
+            },
+            {
+              "t": "han invertido en tecnología cara para sus fincas.",
+              "trap": "opposite",
+              "why": "Так думают многие («Mucha gente cree que la solución tiene que venir de afuera»), но сам он видит другое: крестьяне возвращаются к старому способу. Метеостанция у них одна на двадцать семей, это не дорогая техника."
+            }
+          ],
+          "evidence": "Están volviendo a sembrar árboles entre el café, como hacían los abuelos.",
+          "whyRu": "Они снова сажают деревья среди кофе, «como hacían los abuelos». Это и есть «técnica agrícola tradicional» — старый, дедовский способ."
+        },
+        {
+          "n": 29,
+          "clip": "t5c1",
+          "stem": "Las familias de la asociación...",
+          "options": [
+            {
+              "t": "reciben ayuda de una gran empresa.",
+              "trap": "assumption",
+              "why": "Большие компании упоминаются раньше, как то, во что верят другие. Про помощь ассоциации никто не говорит."
+            },
+            {
+              "t": "comercializan el café por su cuenta.",
+              "ok": true
+            },
+            {
+              "t": "tienen plantas nuevas que dan fruto en un año.",
+              "trap": "time_number",
+              "why": "Новому растению нужно около трёх лет («unos tres años»), чтобы дать урожай."
+            }
+          ],
+          "evidence": "venden su café sin intermediarios",
+          "whyRu": "Они продают кофе без посредников, то есть сами. «Comercializar» = продавать."
+        },
+        {
+          "n": 30,
+          "clip": "t5c1",
+          "stem": "Al final de la charla, Hernán...",
+          "options": [
+            {
+              "t": "pide al público que compre solo café colombiano.",
+              "trap": "assumption",
+              "why": "Он просит только подумать о том, кто вырастил кофе («piensen un poquito en quién lo cultivó»), а не покупать его."
+            },
+            {
+              "t": "anuncia que el café colombiano acabará desapareciendo.",
+              "trap": "opposite",
+              "why": "«no va a desaparecer, pero sí va a cambiar» — не исчезнет, а изменится."
+            },
+            {
+              "t": "anima a los jóvenes a buscar su futuro en el campo.",
+              "ok": true
+            }
+          ],
+          "evidence": "el campo no es el pasado: hacen falta personas que sepan de suelos",
+          "whyRu": "Молодёжи он говорит, что деревня — не прошлое: там нужны люди, которые разбираются в почвах, климате и компьютерах. Значит, у молодых в деревне есть будущее."
+        }
+      ]
+    }
+  ]
+}

@@ -219,7 +219,7 @@
           "stem": "La mujer cuenta que en su viaje...",
           "options": [
             {
-              "t": "el alojamiento no era como esperaba.",
+              "t": "el alojamiento la decepcionó.",
               "ok": true
             },
             {
@@ -581,7 +581,7 @@
               "why": "Порядок событий: в Гранаду она переехала ПОСЛЕ того, как ушла из агентства."
             },
             {
-              "t": "compaginó los dos trabajos durante un tiempo.",
+              "t": "combinó dos ocupaciones.",
               "ok": true
             },
             {
