@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>DELE B2 · Audición</title>
+<style>
+:root{--bg:#f7f5f0;--card:#fff;--ink:#1d1d1f;--mut:#6b6b70;--line:#e4e1da;--acc:#c2410c;--acc2:#9a3412;--ok:#15803d;--okbg:#e7f6ec;--bad:#b91c1c;--badbg:#fdecec;--mid:#a16207;--midbg:#fdf6e3;--mark:#fde68a}
+@media (prefers-color-scheme:dark){:root{--bg:#141414;--card:#1e1e20;--ink:#f2f2f2;--mut:#a1a1a6;--line:#333;--acc:#fb923c;--acc2:#fdba74;--ok:#4ade80;--okbg:#12301d;--bad:#f87171;--badbg:#3a1414;--mid:#facc15;--midbg:#352c0c;--mark:#7a5d00}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 80px}
+header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+header a{color:inherit;text-decoration:none}
+h1{font-size:20px;margin:0}
+h2{font-size:19px;margin:22px 0 8px}
+h3{font-size:16px;margin:16px 0 6px}
+.mut{color:var(--mut)}
+.small{font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
+.btn{display:inline-block;border:0;border-radius:10px;padding:12px 16px;font:inherit;font-weight:600;background:var(--acc);color:#fff;cursor:pointer;text-decoration:none;text-align:center}
+.btn.sec{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.block{display:block;width:100%;margin:8px 0}
+.btn:disabled{opacity:.45;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:13px;border:1px solid var(--line)}
+.q{border-top:1px solid var(--line);padding:12px 0}
+.q:first-child{border-top:0}
+.qn{font-weight:700;margin-right:6px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border:1px solid var(--line);border-radius:10px;margin:6px 0;cursor:pointer}
+.opt input{margin-top:4px;transform:scale(1.25)}
+.opt.sel{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 8%,transparent)}
+.letters{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.lt{min-width:42px;padding:9px 0;border:1px solid var(--line);border-radius:9px;background:transparent;color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
+.lt.sel{background:var(--acc);border-color:var(--acc);color:#fff}
+.status{position:sticky;top:0;z-index:5;background:var(--ink);color:var(--bg);border-radius:12px;padding:12px 14px;margin:8px 0;font-weight:600}
+.status .sub{font-weight:400;opacity:.8;font-size:14px}
+.player{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px 0}
+.player .lbl{flex:1 1 100%;font-size:14px;color:var(--mut)}
+.tbtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:9px;padding:8px 12px;font:inherit;cursor:pointer}
+details{margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:14px}
+td,th{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left;vertical-align:top}
+.bar{height:10px;border-radius:6px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc)}
+.big{font-size:40px;font-weight:800;line-height:1.1}
+.band{border-radius:12px;padding:12px 14px;margin:10px 0}
+.band.g{background:var(--okbg);color:var(--ok)}.band.y{background:var(--midbg);color:var(--mid)}.band.r{background:var(--badbg);color:var(--bad)}
+.rv{border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0}
+.rv.ok{border-left:5px solid var(--ok)}.rv.bad{border-left:5px solid var(--bad)}.rv.blank{border-left:5px solid var(--mid)}
+.tr{font-size:14px;background:var(--bg);border-radius:10px;padding:10px;margin-top:8px}
+.tr p{margin:4px 0}
+mark{background:var(--mark);color:inherit;padding:0 2px;border-radius:3px}
+.ex{font-size:14px;color:var(--mut)}
+.guide p,.guide li{max-width:65ch}
+.err{color:var(--bad)}
+footer{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a href="#"><h1>DELE B2 · Audición</h1></a><a class="small mut" href="#history">Мои результаты</a></header>
+<div id="app"><p class="mut">Загрузка…</p></div>
+<footer>Тренажёр аудирования DELE B2. Тест 0 — официальный материал Института Сервантеса (аудио и PDF открываются с их архивной копии). Результаты хранятся только на этом устройстве.</footer>
+</div>
+<audio id="aud" preload="auto" playsinline></audio>
+<script>
+"use strict";
+const SILENT="data:audio/mpeg;base64,SUQzBAAAAAAAIlRTU0UAAAAOAAADTGF2ZjYyLjMuMTAwAAAAAAAAAAAAAAD/83DAAAAAAAAAAAAASW5mbwAAAA8AAAAKAAAEywA7Ozs7Ozs7OztRUVFRUVFRUVFRZ2dnZ2dnZ2dnZ319fX19fX19fX2SkpKSkpKSkpKSqKioqKioqKioqL6+vr6+vr6+vr7U1NTU1NTU1NTU6urq6urq6urq6v////////////8AAAAATGF2YzYyLjExAAAAAAAAAAAAAAAAJAMGAAAAAAAABMv4D8q5AAAAAAAAAAAAAAAAAP/zQMQAAAADSAAAAABMQU1FMy4xMDBVVVVVVVVVVVVVTEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//NCxFsAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//NAxKQAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy4xMDBVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/80LEowAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy4xMDBVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/80DEpAAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsSjAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//NCxKMAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//NAxKQAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/80LEowAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU=";
+const $=s=>document.querySelector(s);
+const app=$("#app"), aud=$("#aud");
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const LS="dele_b2_attempts_v1";
+function loadAttempts(){try{return JSON.parse(localStorage.getItem(LS)||"[]")}catch(e){return[]}}
+function saveAttempts(a){try{localStorage.setItem(LS,JSON.stringify(a))}catch(e){}}
+
+const TRAPS={
+ same_word:{l:"То же слово",d:"В варианте есть слово из аудио, но в аудио оно значит другое или относится к другому.",a:"Услышали слово из варианта — не спешите. Проверьте, к чему оно относится в аудио."},
+ time_number:{l:"Время или число",d:"Перепутаны время, число или порядок событий: было / будет / только «если…».",a:"Следите за временем глаголов (было, будет, «la próxima vez», «si…») и за тем, что именно считают цифры."},
+ opposite:{l:"Наоборот",d:"В аудио сказано противоположное, часто через отрицание (no, qué va, para nada, sin…).",a:"Ловите отрицания: no, qué va, para nada, sin, en vez de, al contrario."},
+ assumption:{l:"Додумывание",d:"Звучит логично, но в аудио этого не говорили.",a:"Выбирайте только то, что прямо сказано. «Логично» не значит «сказано»."},
+ partial:{l:"Правда, но не ответ",d:"Это упоминается или правда, но не отвечает именно на этот вопрос.",a:"Перед вторым прослушиванием перечитайте вопрос: что именно спрашивают?"},
+ who:{l:"Не тот человек",d:"Это сказал или сделал другой человек.",a:"Следите, кто говорит. В задании 2 ставьте букву сразу во время прослушивания."},
+ other:{l:"Другое",d:"",a:""}
+};
+const TASK_TXT={
+ 1:{name:"Задание 1 · шесть коротких диалогов",a:"В каждом диалоге один вопрос. Сначала поймите, что спрашивают: цель, причину, план. Правильный ответ почти всегда сказан другими словами."},
+ 2:{name:"Задание 2 · кто это сказал",a:"Ставьте букву сразу во время первого прослушивания. Вариант C (ни один) выбирайте, если человек только планирует («si…»), говорит противоположное или никто такого не говорил."},
+ 3:{name:"Задание 3 · интервью",a:"Вопросы идут в том же порядке, что и интервью. Пропустили ответ — выберите лучший вариант и слушайте дальше, не застревайте."},
+ 4:{name:"Задание 4 · шесть советов",a:"Слушайте главную мысль, а не отдельные слова: говорящие специально упоминают слова из чужих вариантов. Три варианта лишние."},
+ 5:{name:"Задание 5 · лекция",a:"Длинный монолог, часто с латиноамериканским акцентом. Вопросы по порядку. Ответы часто после «no… sino…», «lo que más…», «lo único…»."}
+};
+
+let TESTS={};
+async function loadTests(){
+ const ids=["test0","test1"];
+ for(const id of ids){
+  try{const r=await fetch("data/"+id+".json",{cache:"no-cache"});const d=await r.json();TESTS[d.id]=d}catch(e){console.log("load fail",id,e)}
+ }
+}
+
+/* ---------- answers & scoring ---------- */
+function correctOf(test,task,q){
+ if(test.official) return task.key[String(q)];
+ if(task.type==="mc"){const i=q.options.findIndex(o=>o.ok);return "abc"[i]}
+ return q.answer;
+}
+function qList(test,task){
+ if(test.official){const a=[];for(let i=0;i<task.count;i++)a.push(task.first+i);return a}
+ return task.questions;
+}
+const qNum=(test,q)=>test.official?q:q.n;
+function trapOf(test,task,q,ans){
+ if(test.official||!ans) return null;
+ if(task.type==="mc"){const o=q.options["abc".indexOf(ans)];return o&&o.trap?{t:o.trap,why:o.why}:null}
+ const w=(q.wrong||{})[ans];return w?{t:w.trap,why:w.why}:{t:"other",why:""};
+}
+function score(test,answers,first){
+ let s=0,blanks=0,f=0,fCount=0;const per={},traps={};
+ for(const task of test.tasks){per[task.n]={ok:0,of:0};
+  for(const q of qList(test,task)){const n=qNum(test,q),c=correctOf(test,task,q),a=answers[n];per[task.n].of++;
+   if(!a)blanks++;else if(a===c){s++;per[task.n].ok++}else{const tr=trapOf(test,task,q,a);if(tr){traps[tr.t]=(traps[tr.t]||0)+1}}
+   if(first&&Object.prototype.hasOwnProperty.call(first,n)){fCount++;if(first[n]===c)f++}
+  }}
+ return {s,blanks,per,traps,f,fCount};
+}
+
+/* ---------- audio helpers ---------- */
+let runToken=0;
+function unlockAudio(){try{aud.src=SILENT;const p=aud.play();if(p&&p.catch)p.catch(()=>{})}catch(e){}}
+function clipUrl(test,clip){return "audio/"+test.id+"/"+clip.id+".mp3"}
+function playSrc(src,rate,tok){
+ return new Promise((res,rej)=>{
+  aud.onended=null;aud.onerror=null;aud.src=src;aud.playbackRate=rate||1;
+  aud.onended=()=>res();aud.onerror=()=>rej(new Error("audio"));
+  const p=aud.play();
+  if(p&&p.catch)p.catch(()=>{showTapToContinue(()=>{aud.play().catch(()=>rej(new Error("blocked")))})});
+ }).then(()=>{if(tok!==runToken)throw new Error("cancel")});
+}
+function showTapToContinue(fn){const b=$("#tapgo");if(b){b.style.display="block";b.onclick=()=>{b.style.display="none";fn()}}}
+function wait(sec,label,tok){
+ return new Promise((res,rej)=>{let t=sec;const tick=()=>{if(tok!==runToken)return rej(new Error("cancel"));setStatus(label+": "+t+" с");if(t<=0)return res();t--;setTimeout(tick,1000)};tick()});
+}
+function setStatus(main,sub){const el=$("#status");if(el)el.innerHTML=esc(main)+(sub?'<div class="sub">'+esc(sub)+"</div>":"")}
+
+/* ---------- views ---------- */
+function home(){
+ const att=loadAttempts();
+ const best=id=>{const a=att.filter(x=>x.testId===id);return a.length?Math.max(...a.map(x=>x.score)):null};
+ let h=`<div class="card"><p style="margin-top:0"><b>Тренажёр аудирования DELE B2.</b> Здесь такие же задания, как на экзамене: 5 заданий, 30 вопросов, каждое аудио звучит два раза. После каждого теста вы получаете разбор на русском: баллы как на DELE, самое слабое задание, ловушки, в которые вы попадаете, и объяснение каждого вопроса.</p>
+ <a class="btn block" href="#guide">Сначала прочитайте короткий гид (3 минуты)</a></div>`;
+ h+=`<h2>Тесты</h2>`;
+ for(const id of ["t0","t1"]){const t=TESTS[id];if(!t)continue;const b=best(id);
+  h+=`<div class="card"><div class="row" style="justify-content:space-between"><b>${esc(t.titleRu)}</b>${b!=null?`<span class="pill">лучший: ${b}/30</span>`:""}</div>
+  <p class="small mut">${t.official?"Настоящий официальный тест (2013). Начните с него, чтобы узнать свой уровень.":"Новый тест в формате DELE B2, с разбором каждой ловушки."}</p>
+  <a class="btn block" href="#t/${id}">Открыть</a></div>`}
+ h+=`<p class="small mut">Новые тесты будут появляться здесь. Лучше слушать в наушниках.</p>`;
+ app.innerHTML=h;
+}
+
+function guide(){
+ const trapLis=Object.entries(TRAPS).filter(([k])=>k!=="other").map(([k,v])=>`<li><b>${v.l}.</b> ${v.d}</li>`).join("");
+ app.innerHTML=`<div class="guide">
+<h2>Как устроено аудирование DELE B2</h2>
+<ul>
+<li>40 минут, 5 заданий, 30 вопросов.</li>
+<li>Каждое аудио звучит <b>два раза</b>. Паузу и перемотку сделать нельзя.</li>
+<li>Перед каждым заданием есть 20–30 секунд, чтобы прочитать вопросы. Используйте их полностью.</li>
+<li>Ответы отмечают на отдельном листе (Hoja de respuestas).</li>
+<li>Акцент в основном испанский (Испания), но бывает и латиноамериканский. В официальном тесте задание 5 читает колумбиец: он говорит «carro», а не «coche».</li>
+</ul>
+<table><tr><th>Задание</th><th>Что звучит</th><th>Что делать</th></tr>
+<tr><td>1</td><td>6 коротких диалогов</td><td>по одному вопросу a/b/c</td></tr>
+<tr><td>2</td><td>разговор двух друзей</td><td>6 фраз: это сказал он (A), она (B) или никто (C)?</td></tr>
+<tr><td>3</td><td>интервью (радио, ТВ)</td><td>6 вопросов a/b/c</td></tr>
+<tr><td>4</td><td>6 человек дают советы</td><td>соединить каждого с одной из фраз (3 лишние)</td></tr>
+<tr><td>5</td><td>лекция или выступление</td><td>6 вопросов a/b/c</td></tr></table>
+
+<h2>Как считают баллы</h2>
+<ul>
+<li>1 балл за правильный ответ. За ошибку баллы <b>не снимают</b>. Поэтому <b>никогда не оставляйте пустых ответов</b>: не знаете — угадайте.</li>
+<li>30 вопросов переводятся в 25 баллов.</li>
+<li>Аудирование считается вместе с устной частью: нужно <b>30 из 50</b> в сумме.</li>
+<li><b>Цель: 20 из 30</b> здесь (около 17 баллов). Тогда в устной части хватит 13 из 25.</li>
+</ul>
+
+<h2>Главные ловушки</h2>
+<p>Пример из официального теста. Певец говорит: вчера они впервые («por primera vez») выступили в Мексике, осталось три концерта в Перу, а в туре они уже три месяца. Варианты ответа: «тур начался в Мексике», «закончится в Перу», «длится три недели». Правильно — «закончится в Перу». Два других варианта берут слова из аудио, но меняют смысл.</p>
+<ul>${trapLis}</ul>
+
+<h2>Стратегия: два прослушивания</h2>
+<ol>
+<li><b>До аудио.</b> Прочитайте вопросы и найдите в каждом главное слово: кто? когда? почему? что планирует?</li>
+<li><b>Первое прослушивание.</b> Общий смысл. Отметьте предварительный ответ.</li>
+<li><b>Второе прослушивание.</b> Проверьте ловушку: к чему относится слово, которое вы услышали? Это было, будет или только «если»?</li>
+<li><b>Не застревайте.</b> Пропустили — отметьте лучший вариант и слушайте следующий вопрос.</li>
+</ol>
+
+<h2>По заданиям</h2>
+<ul>${[1,2,3,4,5].map(n=>`<li><b>${TASK_TXT[n].name}.</b> ${TASK_TXT[n].a}</li>`).join("")}</ul>
+
+<h2>Слова-сигналы</h2>
+<ul>
+<li><b>Наоборот / отрицание:</b> no, qué va, para nada, sin, en vez de, al contrario.</li>
+<li><b>Здесь главное:</b> lo que más…, lo único…, no… sino…, lo malo fue…, la verdad es que…</li>
+<li><b>Время:</b> la próxima vez, antes de / después de, todavía, ya, dentro de…, si + presente («если…»).</li>
+<li><b>Латиноамериканские слова:</b> carro (coche), computadora (ordenador), celular (móvil), manejar (conducir), ustedes вместо vosotros.</li>
+</ul>
+
+<h2>План до экзамена</h2>
+<ul>
+<li><b>Сегодня или завтра:</b> Тест 0 в режиме «Экзамен», чтобы узнать свой уровень.</li>
+<li><b>Каждые 1–2 дня:</b> новый тест. Сначала «Экзамен», потом разбор ошибок и «Тренировка» на тех же аудио.</li>
+<li><b>12 ноября:</b> последний полный тест в режиме «Экзамен».</li>
+<li><b>13 ноября:</b> первая часть экзамена. Новые тесты уже не нужны, отдыхайте.</li>
+</ul>
+
+<h2>Как пользоваться страницей</h2>
+<ul>
+<li><b>«Экзамен»</b> — как на настоящем экзамене: время на чтение, аудио два раза, без паузы.</li>
+<li><b>«Тренировка»</b> — можно ставить паузу, переслушивать и замедлять до 0,85×.</li>
+<li>После теста — разбор. Нажмите на вопрос, чтобы увидеть расшифровку и переслушать нужный кусок.</li>
+<li>Результаты сохраняются только на этом устройстве.</li>
+</ul>
+<a class="btn block" href="#">К тестам</a></div>`;
+}
+
+function startScreen(id){
+ const t=TESTS[id];if(!t)return home();
+ app.innerHTML=`<h2>${esc(t.titleRu)}</h2>
+ ${t.official?`<div class="card small">${esc(t.noteRu)}</div>`:""}
+ <div class="card"><b>Режим «Экзамен»</b><p class="small mut">Как на настоящем экзамене: время на чтение вопросов, каждое аудио два раза, без паузы. Около 40 минут.</p>
+ <button class="btn block" id="bx">Начать экзамен</button></div>
+ <div class="card"><b>Режим «Тренировка»</b><p class="small mut">Можно ставить паузу, переслушивать и замедлять. Разбор — в конце.</p>
+ <button class="btn sec block" id="bp">Начать тренировку</button></div>`;
+ $("#bx").onclick=()=>{unlockAudio();run(t,"exam")};
+ $("#bp").onclick=()=>{unlockAudio();run(t,"practice")};
+}
+
+let R=null; /* current run */
+function run(test,mode){runToken++;R={test,mode,ti:0,answers:{},first:{},started:Date.now()};location.hash="#run";renderTask()}
+
+function qHTML(test,task,q){
+ const n=qNum(test,q),a=R.answers[n];
+ if(test.official){
+  if(task.type==="mc")return `<div class="q"><span class="qn">${n}.</span><div class="letters">${["a","b","c"].map(L=>`<button class="lt ${a===L?"sel":""}" data-n="${n}" data-v="${L}">${L}</button>`).join("")}</div></div>`;
+  const letters=task.type==="who"?["A","B","C"]:task.letters;
+  const lab=task.type==="who"?` <span class="small mut">A = ${esc(task.choices.A)}, B = ${esc(task.choices.B)}, C = ${esc(task.choices.C)}</span>`:"";
+  return `<div class="q"><span class="qn">${n}.</span>${lab}<div class="letters">${letters.map(L=>`<button class="lt ${a===L?"sel":""}" data-n="${n}" data-v="${L}">${L}</button>`).join("")}</div></div>`;
+ }
+ if(task.type==="mc")return `<div class="q"><div><span class="qn">${n}.</span>${esc(q.stem)}</div>${q.options.map((o,i)=>{const L="abc"[i];return `<label class="opt ${a===L?"sel":""}"><input type="radio" name="q${n}" data-n="${n}" data-v="${L}" ${a===L?"checked":""}><span><b>${L})</b> ${esc(o.t)}</span></label>`}).join("")}</div>`;
+ if(task.type==="who")return `<div class="q"><div><span class="qn">${n}.</span>${esc(q.stem)}</div><div class="letters">${["A","B","C"].map(L=>`<button class="lt ${a===L?"sel":""}" data-n="${n}" data-v="${L}">${L}</button>`).join("")}</div></div>`;
+ return `<div class="q"><div><span class="qn">${n}.</span>${esc(q.stem)}</div><div class="letters">${Object.keys(task.statements).map(L=>`<button class="lt ${a===L?"sel":""}" data-n="${n}" data-v="${L}">${L}</button>`).join("")}</div></div>`;
+}
+function bindAnswers(){
+ app.querySelectorAll("[data-n]").forEach(el=>{
+  const ev=el.tagName==="INPUT"?"change":"click";
+  el.addEventListener(ev,()=>{const n=+el.dataset.n,v=el.dataset.v;R.answers[n]=v;
+   app.querySelectorAll(`[data-n="${n}"]`).forEach(x=>{const on=x.dataset.v===v;if(x.tagName==="INPUT"){x.checked=on;x.closest(".opt").classList.toggle("sel",on)}else x.classList.toggle("sel",on)})});
+ });
+}
+
+function renderTask(){
+ if(!R)return home();
+ const {test,mode}=R,task=test.tasks[R.ti],last=R.ti===test.tasks.length-1;
+ let h=`<div class="row" style="justify-content:space-between"><span class="pill">${esc(test.title)} · ${mode==="exam"?"Экзамен":"Тренировка"}</span><span class="pill">Tarea ${task.n} de 5</span></div>`;
+ h+=`<div class="status" id="status">${mode==="exam"?"Нажмите «Empezar», когда будете готовы":"Тренировка: слушайте сколько нужно"}</div>`;
+ h+=`<button class="btn block" id="tapgo" style="display:none">▶ Нажмите, чтобы продолжить аудио</button>`;
+ h+=`<div class="card"><h3 style="margin-top:0">Tarea ${task.n}</h3>`;
+ if(test.official){
+  h+=`<p class="small">Вопросы этого задания — в официальном PDF (одна страница). Откройте его, а ответы отмечайте здесь.</p><a class="btn sec block" target="_blank" rel="noopener" href="${test.base+task.pdf}">Открыть вопросы задания ${task.n} (PDF)</a>`;
+ } else {
+  h+=`<p>${esc(task.instr)}</p><details><summary class="small">Подсказка по-русски</summary><p class="small">${esc(task.hintRu)}</p></details>`;
+  if(task.type==="who"&&task.example)h+=`<p class="ex">Ejemplo: 0. ${esc(task.example.stem)} → ${task.example.answer} (${esc(task.choices[task.example.answer])})</p><p class="small"><b>A</b> = ${esc(task.choices.A)} · <b>B</b> = ${esc(task.choices.B)} · <b>C</b> = ${esc(task.choices.C)}</p>`;
+  if(task.type==="match")h+=`<table>${Object.entries(task.statements).map(([L,s])=>`<tr><td><b>${L}</b></td><td>${esc(s)}</td></tr>`).join("")}</table>`;
+ }
+ if(mode==="practice"&&test.official)h+=practicePlayers(test,task);
+ h+=`</div>`;
+ if(test.official)h+=`<div class="card">${qList(test,task).map(q=>qHTML(test,task,q)).join("")}</div>`;
+ else h+=`<div class="card">${task.clips.map((c,i)=>(mode==="practice"?playerHTML(c,i):`<p class="ex" style="margin:14px 0 0">${esc(c.intro)}</p>`)+task.questions.filter(q=>q.clip===c.id).map(q=>qHTML(test,task,q)).join("")).join("")}</div>`;
+ if(mode==="exam")h+=`<button class="btn block" id="go">Empezar tarea ${task.n}</button>`;
+ h+=`<div class="row" style="justify-content:space-between;margin-top:8px">${R.ti>0&&mode==="practice"?`<button class="btn sec" id="prev">← Назад</button>`:"<span></span>"}<button class="btn ${mode==="exam"?"sec":""}" id="next">${last?"Закончить и посмотреть разбор":"Следующее задание →"}</button></div>`;
+ app.innerHTML=h;bindAnswers();window.scrollTo(0,0);
+ if(mode==="practice")bindPractice(test,task);
+ if($("#prev"))$("#prev").onclick=()=>{runToken++;aud.pause();R.ti--;renderTask()};
+ $("#next").onclick=()=>{if(mode==="exam"&&!R.taskDone&&!confirmSkip())return;runToken++;aud.pause();R.taskDone=false;if(last)finish();else{R.ti++;renderTask()}};
+ if(mode==="exam")$("#go").onclick=()=>{$("#go").style.display="none";unlockAudio();examTask(test,task)};
+}
+function confirmSkip(){const s=$("#status");if(s&&!s.dataset.warned){s.dataset.warned="1";setStatus("Задание ещё идёт. Нажмите ещё раз, чтобы перейти дальше.");return false}return true}
+
+async function examTask(test,task){
+ const tok=++runToken;R.taskDone=false;
+ try{
+  if(test.official){
+   setStatus("Слушайте: аудио задания "+task.n,"Паузы и повторы уже внутри аудио, как на экзамене.");
+   await playSrc(test.base+task.audio,1,tok);
+  } else {
+   await wait(task.readSec,"Читайте вопросы",tok);
+   for(const [ci,clip] of task.clips.entries()){
+    const qs=task.questions.filter(q=>q.clip===clip.id);
+    setStatus(clip.intro,"Прослушивание 1 из 2");await playSrc(clipUrl(test,clip),1,tok);
+    await wait(task.pauseBetween,"Пауза",tok);
+    qs.forEach(q=>{R.first[q.n]=R.answers[q.n]||""});
+    setStatus(clip.intro,"Прослушивание 2 из 2");await playSrc(clipUrl(test,clip),1,tok);
+    await wait(task.pauseAfter,ci===task.clips.length-1?"Время на ответы":"Следующий фрагмент через",tok);
+   }
+  }
+  R.taskDone=true;setStatus("Задание "+task.n+" закончено","Нажмите кнопку внизу, чтобы продолжить.");
+  const nb=$("#next");if(nb){nb.classList.remove("sec");nb.scrollIntoView({behavior:"smooth",block:"center"})}
+ }catch(e){
+  if(e.message==="audio")setStatus("Не удалось загрузить аудио","Проверьте интернет и нажмите «Empezar» ещё раз.");
+  if(e.message!=="cancel"&&$("#go"))$("#go").style.display="block";
+ }
+}
+
+function practicePlayers(test,task){
+ if(test.official)return `<div class="player"><span class="lbl">Аудио задания ${task.n} (официальное)</span><button class="tbtn" data-p="0">▶ / ❚❚</button><button class="tbtn" data-back="1">↺ 5 с</button><button class="tbtn" data-rate="1">Скорость 1×</button></div>`;
+ return "";
+}
+function playerHTML(c,i){return `<div class="player" style="margin-top:10px;border-top:1px solid var(--line);padding-top:12px"><span class="lbl">${esc(c.intro)}</span><button class="tbtn" data-p="${i}">▶ / ❚❚</button><button class="tbtn" data-back="1">↺ 5 с</button><button class="tbtn" data-rate="1">Скорость ${rate===1?"1×":"0,85×"}</button></div>`}
+let curSrc="",rate=1;
+function bindPractice(test,task){
+ app.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{
+  const src=test.official?test.base+task.audio:clipUrl(test,task.clips[+b.dataset.p]);
+  if(curSrc===src&&!aud.paused){aud.pause();return}
+  if(curSrc!==src){aud.src=src;curSrc=src}
+  aud.onended=null;aud.playbackRate=rate;aud.play().catch(()=>setStatus("Не удалось включить аудио","Проверьте интернет."));
+ });
+ app.querySelectorAll("[data-back]").forEach(b=>b.onclick=()=>{aud.currentTime=Math.max(0,aud.currentTime-5)});
+ app.querySelectorAll("[data-rate]").forEach(b=>b.onclick=()=>{rate=rate===1?0.85:1;aud.playbackRate=rate;app.querySelectorAll("[data-rate]").forEach(x=>x.textContent="Скорость "+(rate===1?"1×":"0,85×"))});
+}
+
+function finish(){
+ const {test,mode,answers,first}=R;const sc=score(test,answers,mode==="exam"&&!test.official?first:null);
+ const att=loadAttempts();const id=Date.now().toString(36);
+ att.push({id,testId:test.id,mode,ts:Date.now(),answers,first:mode==="exam"&&!test.official?first:null,score:sc.s});
+ saveAttempts(att);R=null;location.hash="#r/"+id;
+}
+
+function results(id){
+ const at=loadAttempts().find(x=>x.id===id);if(!at)return home();
+ const test=TESTS[at.testId];if(!test)return home();
+ const sc=score(test,at.answers,at.first);
+ const pts=sc.s*25/30,need=30-pts;
+ const band=sc.s>=20?["g","Хорошо: вы выше цели. С таким результатом в устной части хватит "+Math.max(0,need).toFixed(1).replace(".",",")+" из 25."]:sc.s>=18?["y","На грани. Нужно ещё "+(20-sc.s)+" "+plural(20-sc.s)+", чтобы выйти на цель 20/30."]:["r","Пока ниже цели 20/30. Это нормально для начала — смотрите разбор ниже, что тренировать."];
+ let h=`<h2>Разбор: ${esc(test.titleRu)}</h2><p class="small mut">${new Date(at.ts).toLocaleString("ru-RU")} · ${at.mode==="exam"?"Экзамен":"Тренировка"}</p>`;
+ h+=`<div class="card"><div class="big">${sc.s} / 30</div><p style="margin:4px 0">Это <b>${pts.toFixed(2).replace(".",",")} из 25</b> баллов DELE.</p>
+ <p class="small">Чтобы сдать (30 из 50 вместе с устной частью), в устной части нужно будет <b>${need>25?"больше 25 — пока невозможно":Math.max(0,need).toFixed(2).replace(".",",")+" из 25"}</b>.</p>
+ <div class="band ${band[0]}">${esc(band[1])}</div>${sc.blanks?`<p class="err"><b>Пустых ответов: ${sc.blanks}.</b> На экзамене это потерянные баллы — всегда отмечайте какой-нибудь вариант.</p>`:""}</div>`;
+ h+=`<div class="card"><h3 style="margin-top:0">По заданиям</h3>`;
+ let weakest=null;
+ for(const task of test.tasks){const p=sc.per[task.n];if(!weakest||p.ok/p.of<weakest.r)weakest={n:task.n,r:p.ok/p.of};
+  h+=`<div style="margin:10px 0"><div class="row" style="justify-content:space-between"><span>${esc(TASK_TXT[task.n].name)}</span><b>${p.ok}/${p.of}</b></div><div class="bar"><i style="width:${p.ok/p.of*100}%"></i></div></div>`}
+ h+=`</div>`;
+ const trapE=Object.entries(sc.traps).filter(([k])=>k!=="other").sort((a,b)=>b[1]-a[1]);
+ if(!test.official){
+  h+=`<div class="card"><h3 style="margin-top:0">В какие ловушки вы попали</h3>`;
+  h+=trapE.length?trapE.map(([k,v])=>`<p><b>${TRAPS[k].l}: ${v} ${v===1?"раз":(v<5?"раза":"раз")}</b><br><span class="small">${esc(TRAPS[k].d)}</span></p>`).join(""):`<p>Ни одной ловушки — отлично!</p>`;
+  if(at.first&&sc.fCount)h+=`<p class="small">После <b>первого</b> прослушивания у вас было правильно ${sc.f} из ${sc.fCount}, после второго — ${sc.s}. ${sc.s>sc.f?"Второе прослушивание помогает: используйте его, чтобы проверять ловушки.":"Второе прослушивание пока ничего не меняет: используйте его, чтобы проверить ловушку в вашем ответе."}</p>`;
+  h+=`</div>`;
+ }
+ const steps=[];
+ if(sc.blanks)steps.push("Никогда не оставляйте пустых ответов: за ошибку баллы не снимают.");
+ if(weakest&&weakest.r<1)steps.push(TASK_TXT[weakest.n].name+": "+TASK_TXT[weakest.n].a);
+ if(trapE.length)steps.push("Главная ловушка — «"+TRAPS[trapE[0][0]].l+"». "+TRAPS[trapE[0][0]].a);
+ if(test.official)steps.push("Откройте официальную расшифровку слабого задания и послушайте его ещё раз в режиме «Тренировка».");
+ if(steps.length)h+=`<div class="card"><h3 style="margin-top:0">Что делать дальше</h3><ol>${steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol></div>`;
+ h+=`<h3>Каждый вопрос</h3>`;
+ for(const task of test.tasks){
+  h+=`<p class="small mut" style="margin-top:14px"><b>Tarea ${task.n}</b>${test.official?` · <a target="_blank" rel="noopener" href="${test.base+task.transcript}">официальная расшифровка (PDF)</a>`:""}</p>`;
+  for(const q of qList(test,task)){const n=qNum(test,q),c=correctOf(test,task,q),a=at.answers[n];const st=!a?"blank":a===c?"ok":"bad";
+   h+=`<div class="rv ${st}"><div><b>${n}.</b> ${test.official?"":esc(q.stem)}</div>`;
+   h+=`<div class="small">Ваш ответ: <b>${a?esc(labelAns(test,task,q,a)):"—"}</b> · Правильно: <b>${esc(labelAns(test,task,q,c))}</b></div>`;
+   if(!test.official){
+    h+=`<p class="small" style="margin:6px 0">${esc(q.whyRu)}</p>`;
+    const tr=st==="bad"?trapOf(test,task,q,a):null;
+    if(tr&&tr.t!=="other")h+=`<p class="small" style="margin:6px 0"><span class="pill">Ловушка: ${TRAPS[tr.t].l}</span> ${esc(tr.why)}</p>`;
+    h+=`<details><summary class="small">Расшифровка и аудио</summary><div class="tr">${transcriptHTML(task,q)}</div><button class="tbtn" data-play="${esc(q.clip)}" style="margin-top:8px">▶ Переслушать фрагмент</button></details>`;
+   }
+   h+=`</div>`}
+ }
+ h+=`<div class="row" style="margin-top:16px"><a class="btn" href="#t/${test.id}">Пройти ещё раз</a><a class="btn sec" href="#">Все тесты</a></div>`;
+ app.innerHTML=h;window.scrollTo(0,0);
+ app.querySelectorAll("[data-play]").forEach(b=>b.onclick=()=>{const src="audio/"+test.id+"/"+b.dataset.play+".mp3";if(curSrc===src&&!aud.paused){aud.pause();return}aud.onended=null;aud.src=src;curSrc=src;aud.playbackRate=1;aud.play().catch(()=>{})});
+}
+function plural(n){return n===1?"правильный ответ":(n<5?"правильных ответа":"правильных ответов")}
+function labelAns(test,task,q,v){
+ if(!v)return "—";
+ if(test.official){if(task.type==="who")return v+" ("+task.choices[v]+")";return v}
+ if(task.type==="mc")return v+") "+q.options["abc".indexOf(v)].t;
+ if(task.type==="who")return v+" ("+task.choices[v]+")";
+ return v+". "+task.statements[v];
+}
+function transcriptHTML(task,q){
+ const clip=task.clips.find(c=>c.id===q.clip);if(!clip)return "";
+ return clip.lines.map(l=>{let t=esc(l.t);const ev=esc(q.evidence);if(ev&&t.includes(ev))t=t.replace(ev,"<mark>"+ev+"</mark>");return `<p><b>${esc(l.who)}:</b> ${t}</p>`}).join("");
+}
+
+function history(){
+ const att=loadAttempts().slice().sort((a,b)=>a.ts-b.ts);
+ let h=`<h2>Мои результаты</h2>`;
+ if(!att.length){app.innerHTML=h+`<p>Пока нет результатов. Начните с Теста 0.</p><a class="btn" href="#">К тестам</a>`;return}
+ const W=320,H=140,pad=24,n=att.length;
+ const x=i=>pad+(n===1?0:(W-2*pad)*i/(n-1)),y=s=>H-pad-(H-2*pad)*s/30;
+ const pts=att.map((a,i)=>`${x(i)},${y(a.score)}`).join(" ");
+ h+=`<div class="card"><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Баллы по попыткам"><line x1="${pad}" x2="${W-pad}" y1="${y(20)}" y2="${y(20)}" stroke="currentColor" stroke-dasharray="4 4" opacity=".5"/><text x="${W-pad}" y="${y(20)-4}" font-size="10" text-anchor="end" fill="currentColor" opacity=".7">цель 20</text><polyline points="${pts}" fill="none" stroke="var(--acc)" stroke-width="2.5"/>${att.map((a,i)=>`<circle cx="${x(i)}" cy="${y(a.score)}" r="4" fill="var(--acc)"/>`).join("")}</svg></div>`;
+ h+=`<div class="card"><table><tr><th>Дата</th><th>Тест</th><th>Режим</th><th>Баллы</th></tr>${att.slice().reverse().map(a=>`<tr><td>${new Date(a.ts).toLocaleDateString("ru-RU")}</td><td>${esc((TESTS[a.testId]||{}).titleRu||a.testId)}</td><td>${a.mode==="exam"?"Экзамен":"Тренировка"}</td><td><a href="#r/${a.id}">${a.score}/30</a></td></tr>`).join("")}</table></div>`;
+ app.innerHTML=h;
+}
+
+function route(){
+ const hsh=location.hash||"";
+ if(hsh!=="#run"&&R){runToken++;aud.pause();R=null}
+ if(hsh==="#guide")return guide();
+ if(hsh==="#history")return history();
+ if(hsh.startsWith("#t/"))return startScreen(hsh.slice(3));
+ if(hsh.startsWith("#r/"))return results(hsh.slice(3));
+ if(hsh==="#run")return R?renderTask():home();
+ return home();
+}
+window.addEventListener("hashchange",route);
+loadTests().then(route);
+</script>
+</body>
+</html>

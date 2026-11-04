@@ -1,0 +1,462 @@
+{
+  "id": "t1",
+  "title": "Prueba 1",
+  "titleRu": "Тест 1",
+  "official": false,
+  "speakers": {
+    "Javier": "A",
+    "Lucía": "B"
+  },
+  "tasks": [
+    {
+      "n": 1,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 5,
+      "pauseAfter": 10,
+      "instr": "Usted va a escuchar seis conversaciones breves. Escuchará cada conversación dos veces. Después debe contestar a las preguntas (1-6). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Шесть коротких диалогов, по одному вопросу на каждый. Ответ почти всегда сказан другими словами, не теми, что в варианте.",
+      "clips": [
+        {
+          "id": "t1c1",
+          "intro": "Conversación 1. Va a escuchar a dos compañeros de trabajo.",
+          "lines": [
+            {"v": "ES_F1", "who": "Mujer", "t": "Oye, Luis, ¿te importaría presentar tú el informe en la reunión del jueves? Es que me han cambiado la cita con el médico y no llego. Ya lo tengo terminado; solo tendrías que leerlo antes para no ir a ciegas."},
+            {"v": "ES_M1", "who": "Hombre", "t": "Vale, sin problema. Pero pásamelo mañana como muy tarde, ¿eh?"}
+          ]
+        },
+        {
+          "id": "t1c2",
+          "intro": "Conversación 2. Va a escuchar a una mujer que habla con un empleado de una estación de tren.",
+          "lines": [
+            {"v": "ES_F2", "who": "Mujer", "t": "Perdone, ¿el tren de las seis y media para Valencia sale de esta vía?"},
+            {"v": "ES_M2", "who": "Hombre", "t": "Normalmente sí, pero hoy hay obras y sale de la vía siete. Además, lleva veinte minutos de retraso, así que tiene tiempo de sobra para tomarse un café."},
+            {"v": "ES_F2", "who": "Mujer", "t": "Ah, pues menos mal."}
+          ]
+        },
+        {
+          "id": "t1c3",
+          "intro": "Conversación 3. Va a escuchar a dos amigos.",
+          "lines": [
+            {"v": "ES_M1", "who": "Hombre", "t": "¿Al final os quedasteis con el piso de Gràcia?"},
+            {"v": "ES_F2", "who": "Mujer", "t": "Qué va. Nos encantaban la terraza y el barrio, pero el dueño quería que firmáramos un contrato de cinco años, y nosotros no sabemos dónde estaremos dentro de dos. Así que seguimos buscando."}
+          ]
+        },
+        {
+          "id": "t1c4",
+          "intro": "Conversación 4. Va a escuchar a una estudiante y a su profesor.",
+          "lines": [
+            {"v": "ES_F1", "who": "Mujer", "t": "Profesor, ¿podría entregarle el trabajo el lunes en vez del viernes? Es que he estado enferma toda la semana."},
+            {"v": "ES_M2", "who": "Hombre", "t": "Mira, el plazo es el mismo para todos. Pero si me traes un justificante médico, te lo acepto el lunes sin bajarte la nota."}
+          ]
+        },
+        {
+          "id": "t1c5",
+          "intro": "Conversación 5. Va a escuchar a dos personas que hablan de un viaje.",
+          "lines": [
+            {"v": "ES_M2", "who": "Hombre", "t": "¿Qué tal por Asturias? ¿Te llovió mucho?"},
+            {"v": "ES_F1", "who": "Mujer", "t": "Pues mira, solo un día, y lo aprovechamos para ver museos. Lo malo fue el hotel: las fotos de la web no tenían nada que ver con la realidad. La próxima vez reservo un apartamento, aunque me cueste un poco más."}
+          ]
+        },
+        {
+          "id": "t1c6",
+          "intro": "Conversación 6. Va a escuchar a dos socios de un estudio de diseño.",
+          "lines": [
+            {"v": "ES_F2", "who": "Mujer", "t": "Este mes nos han llegado tantos encargos que no damos abasto. Yo no quiero rechazar ninguno, pero tampoco podemos pasarnos todos los fines de semana trabajando."},
+            {"v": "ES_M1", "who": "Hombre", "t": "Pues entonces está claro: o contratamos a alguien a media jornada, o empezamos a decir que no."}
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 1, "clip": "t1c1",
+          "stem": "¿Qué le pide la mujer a su compañero?",
+          "options": [
+            {"t": "Que termine el informe por ella.", "trap": "opposite", "why": "Отчёт уже готов: «Ya lo tengo terminado». Коллеге нужно только прочитать его заранее."},
+            {"t": "Que la sustituya en una reunión.", "ok": true},
+            {"t": "Que la acompañe al médico.", "trap": "same_word", "why": "Врач упоминается только как причина: у неё перенесли приём («me han cambiado la cita con el médico»)."}
+          ],
+          "evidence": "¿te importaría presentar tú el informe en la reunión del jueves?",
+          "whyRu": "Она просит его представить отчёт на встрече вместо неё. «Presentar tú» = заменить её."
+        },
+        {
+          "n": 2, "clip": "t1c2",
+          "stem": "Según el empleado, el tren...",
+          "options": [
+            {"t": "se ha cancelado por las obras.", "trap": "same_word", "why": "Слово «obras» есть, но из-за ремонта поменялся только путь. Поезд не отменили."},
+            {"t": "saldrá a las seis y media.", "trap": "time_number", "why": "Поезд опаздывает на двадцать минут («lleva veinte minutos de retraso»), значит уйдёт не в 6:30."},
+            {"t": "hoy sale de otra vía.", "ok": true}
+          ],
+          "evidence": "hoy hay obras y sale de la vía siete",
+          "whyRu": "Обычно поезд уходит с этого пути, но сегодня из-за ремонта — с седьмого."
+        },
+        {
+          "n": 3, "clip": "t1c3",
+          "stem": "La mujer no alquiló el piso porque...",
+          "options": [
+            {"t": "el contrato era demasiado largo.", "ok": true},
+            {"t": "no le gustaba el barrio.", "trap": "opposite", "why": "Наоборот: «Nos encantaban la terraza y el barrio»."},
+            {"t": "el alquiler era demasiado caro.", "trap": "assumption", "why": "О цене вообще ничего не сказано. Причина логичная, но выдуманная."}
+          ],
+          "evidence": "el dueño quería que firmáramos un contrato de cinco años",
+          "whyRu": "Хозяин хотел договор на пять лет, а они не знают, где будут через два года."
+        },
+        {
+          "n": 4, "clip": "t1c4",
+          "stem": "El profesor le dice a la estudiante que...",
+          "options": [
+            {"t": "puede entregar el trabajo el viernes.", "trap": "time_number", "why": "Пятница — это обычный срок. Профессор разрешает сдать в понедельник, если будет справка."},
+            {"t": "le va a bajar la nota.", "trap": "opposite", "why": "Он говорит «sin bajarte la nota» — оценку он НЕ снизит."},
+            {"t": "necesita un papel del médico.", "ok": true}
+          ],
+          "evidence": "si me traes un justificante médico",
+          "whyRu": "«Justificante médico» = справка от врача. Только с ней он примет работу в понедельник."
+        },
+        {
+          "n": 5, "clip": "t1c5",
+          "stem": "La mujer cuenta que en su viaje...",
+          "options": [
+            {"t": "el alojamiento no era como esperaba.", "ok": true},
+            {"t": "llovió casi todos los días.", "trap": "time_number", "why": "Дождь был «solo un día» — только один день."},
+            {"t": "se alojó en un apartamento.", "trap": "time_number", "why": "Апартаменты — это план на следующий раз («La próxima vez reservo»), а не то, что было."}
+          ],
+          "evidence": "las fotos de la web no tenían nada que ver con la realidad",
+          "whyRu": "Отель оказался совсем не таким, как на фотографиях на сайте."
+        },
+        {
+          "n": 6, "clip": "t1c6",
+          "stem": "¿Cuál es el problema del estudio?",
+          "options": [
+            {"t": "No tiene suficientes clientes.", "trap": "opposite", "why": "Наоборот, заказов слишком много: «nos han llegado tantos encargos»."},
+            {"t": "Tiene más trabajo del que puede hacer.", "ok": true},
+            {"t": "Tiene que cerrar los fines de semana.", "trap": "same_word", "why": "Выходные упоминаются, но наоборот: сейчас они работают по выходным и не хотят так всегда."}
+          ],
+          "evidence": "no damos abasto",
+          "whyRu": "«No damos abasto» = не справляемся, работы больше, чем успеваем сделать. Полезное выражение для экзамена."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "type": "who",
+      "readSec": 20,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar una conversación entre dos amigos, Javier y Lucía. Indique si los enunciados (7-12) se refieren a Javier (A), a Lucía (B) o a ninguno de los dos (C). Escuchará la conversación dos veces.",
+      "hintRu": "Кто это сказал или про кого это? Помните про вариант C: если никто такого не говорил, человек сказал противоположное или только «если…» — это C.",
+      "choices": {"A": "Javier", "B": "Lucía", "C": "Ninguno de los dos"},
+      "example": {"stem": "Vive en un pueblo desde hace poco.", "answer": "B"},
+      "clips": [
+        {
+          "id": "t2c1",
+          "intro": "Conversación entre Javier y Lucía.",
+          "lines": [
+            {"v": "ES_M1", "who": "Javier", "t": "¡Lucía! Cuánto tiempo. ¿Qué tal la vida en el pueblo?"},
+            {"v": "ES_F1", "who": "Lucía", "t": "Pues muy bien, aunque al principio me costó. Llevo ya tres meses en Cadaqués y todavía me pierdo por las calles, imagínate."},
+            {"v": "ES_M1", "who": "Javier", "t": "Yo no sé si podría. Me encanta la idea de vivir cerca del mar, pero aquí en Barcelona lo tengo todo a mano: el gimnasio, los amigos, el trabajo..."},
+            {"v": "ES_F1", "who": "Lucía", "t": "Ya, eso es lo que yo pensaba. Pero como trabajo desde casa, me daba igual dónde estar. Lo único que echo de menos son los conciertos. Aquí, en invierno, no hay casi nada."},
+            {"v": "ES_M1", "who": "Javier", "t": "Pues a mí me pasa lo contrario: aquí hay tantos planes que al final no voy a ninguno. Este año me apunté a clases de cerámica y he ido dos veces. ¡Dos!"},
+            {"v": "ES_F1", "who": "Lucía", "t": "Típico de ti. Oye, ¿y el piso nuevo? ¿Ya te has mudado?"},
+            {"v": "ES_M1", "who": "Javier", "t": "Qué va, sigo en el de siempre. El casero me ha subido el alquiler otra vez, pero buscar piso en esta ciudad es una pesadilla. Si encuentro algo antes del verano, me cambio."},
+            {"v": "ES_F1", "who": "Lucía", "t": "Deberías venirte unos días a mi casa a desconectar. Desde la habitación de invitados se ve el mar."},
+            {"v": "ES_M1", "who": "Javier", "t": "Me lo apunto. Aunque te aviso: si me gusta, igual no me voy."},
+            {"v": "ES_F1", "who": "Lucía", "t": "Pues mejor, así me ayudas a pagar la calefacción. Las casas aquí son preciosas, pero en enero hace un frío que no veas."}
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 7, "clip": "t2c1",
+          "stem": "Echa de menos la oferta cultural de la ciudad.",
+          "answer": "B",
+          "evidence": "Lo único que echo de menos son los conciertos.",
+          "whyRu": "Это Люсия: в деревне ей не хватает концертов.",
+          "wrong": {
+            "A": {"trap": "who", "why": "Хавьер живёт в городе, где «hay tantos planes». Скучает Люсия."},
+            "C": {"trap": "who", "why": "Люсия прямо это говорит: «echo de menos... los conciertos»."}
+          }
+        },
+        {
+          "n": 8, "clip": "t2c1",
+          "stem": "Ahora paga más por su vivienda.",
+          "answer": "A",
+          "evidence": "El casero me ha subido el alquiler otra vez",
+          "whyRu": "Хавьеру хозяин снова поднял аренду.",
+          "wrong": {
+            "B": {"trap": "same_word", "why": "Люсия говорит про оплату отопления («pagar la calefacción»), но не про подорожание жилья."},
+            "C": {"trap": "who", "why": "Хавьер прямо говорит: «me ha subido el alquiler»."}
+          }
+        },
+        {
+          "n": 9, "clip": "t2c1",
+          "stem": "Puede trabajar desde cualquier lugar.",
+          "answer": "B",
+          "evidence": "como trabajo desde casa, me daba igual dónde estar",
+          "whyRu": "Люсия работает из дома, поэтому ей было всё равно, где жить.",
+          "wrong": {
+            "A": {"trap": "same_word", "why": "Хавьер упоминает работу («el trabajo»), но как место в городе, которое у него рядом."},
+            "C": {"trap": "who", "why": "Люсия: «como trabajo desde casa, me daba igual dónde estar»."}
+          }
+        },
+        {
+          "n": 10, "clip": "t2c1",
+          "stem": "Se va a mudar antes del verano.",
+          "answer": "C",
+          "evidence": "Si encuentro algo antes del verano, me cambio.",
+          "whyRu": "Ни один. Хавьер говорит только «si encuentro algo» — ЕСЛИ найдёт. Это условие, а не решение. Люсия уже переехала.",
+          "wrong": {
+            "A": {"trap": "time_number", "why": "«Si encuentro algo...» — это только условие. Хавьер не знает, переедет ли."},
+            "B": {"trap": "time_number", "why": "Люсия уже переехала три месяца назад, это прошлое, а не план."}
+          }
+        },
+        {
+          "n": 11, "clip": "t2c1",
+          "stem": "Casi no ha ido a unas clases que empezó.",
+          "answer": "A",
+          "evidence": "me apunté a clases de cerámica y he ido dos veces",
+          "whyRu": "Хавьер записался на керамику и был только два раза.",
+          "wrong": {
+            "B": {"trap": "who", "why": "Люсия про занятия ничего не говорит. Это Хавьер."},
+            "C": {"trap": "who", "why": "Хавьер: «me apunté a clases de cerámica y he ido dos veces»."}
+          }
+        },
+        {
+          "n": 12, "clip": "t2c1",
+          "stem": "Se queja del calor que hace en su casa.",
+          "answer": "C",
+          "evidence": "en enero hace un frío que no veas",
+          "whyRu": "Ни один. Люсия жалуется на ХОЛОД, а не на жару.",
+          "wrong": {
+            "A": {"trap": "who", "why": "Хавьер ничего не говорит о температуре дома."},
+            "B": {"trap": "opposite", "why": "Люсия жалуется наоборот на холод: «hace un frío que no veas»."}
+          }
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar parte de una entrevista a Marta Ríos, ilustradora. Escuchará la entrevista dos veces. Después debe contestar a las preguntas (13-18). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Интервью. Вопросы идут в том же порядке, что и аудио. Если пропустили ответ — не застревайте, слушайте следующий.",
+      "clips": [
+        {
+          "id": "t3c1",
+          "intro": "Entrevista a Marta Ríos, ilustradora.",
+          "lines": [
+            {"v": "ES_M2", "who": "Periodista", "t": "Hoy nos acompaña Marta Ríos, ilustradora, que acaba de ganar el Premio Nacional de Ilustración. Marta, enhorabuena. ¿Te lo esperabas?"},
+            {"v": "ES_F2", "who": "Marta", "t": "Para nada. De hecho, cuando me llamaron pensé que era una broma de mi hermano, que siempre está con esas cosas. Tuve que mirar la página web del ministerio para creérmelo."},
+            {"v": "ES_M2", "who": "Periodista", "t": "Tú no empezaste en el mundo de los libros, ¿verdad?"},
+            {"v": "ES_F2", "who": "Marta", "t": "No. Estudié diseño gráfico y trabajé ocho años en una agencia de publicidad en Madrid. Me iba bien, ganaba bastante, pero sentía que solo hacía lo que querían los clientes. Dibujaba por las noches, para mí, y un día una amiga editora vio esos dibujos y me propuso ilustrar un cuento."},
+            {"v": "ES_M2", "who": "Periodista", "t": "Y lo dejaste todo."},
+            {"v": "ES_F2", "who": "Marta", "t": "Bueno, no de golpe. Durante un año compaginé las dos cosas, y fue agotador. Cuando vi que con los libros podía pagar el alquiler, me despedí de la agencia y me fui a vivir a Granada, que siempre me había encantado."},
+            {"v": "ES_M2", "who": "Periodista", "t": "¿Cómo es tu día a día ahora?"},
+            {"v": "ES_F2", "who": "Marta", "t": "Mucho más tranquilo de lo que la gente imagina. Me levanto temprano, paseo una hora y dibujo hasta la hora de comer. Por la tarde contesto correos y hago lo que llamo la parte aburrida: facturas, presupuestos... Eso nadie lo cuenta cuando habla de ser autónoma."},
+            {"v": "ES_M2", "who": "Periodista", "t": "Tus ilustraciones tienen mucho color. ¿De dónde viene ese estilo?"},
+            {"v": "ES_F2", "who": "Marta", "t": "Supongo que de mi infancia. Mi abuela tenía una tienda de telas en Sevilla y yo me pasaba las tardes allí, rodeada de estampados. Durante años intenté dibujar de una forma más seria, porque en la agencia me decían que el color distraía. Ahora hago justo lo contrario."},
+            {"v": "ES_M2", "who": "Periodista", "t": "Para terminar, ¿qué le dirías a alguien que quiere dedicarse a la ilustración?"},
+            {"v": "ES_F2", "who": "Marta", "t": "Que no espere a tener el portafolio perfecto. Yo tardé años en enseñar mi trabajo por miedo a que no fuera suficientemente bueno. Hay que publicar, equivocarse y seguir."}
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 13, "clip": "t3c1",
+          "stem": "Cuando le comunicaron el premio, Marta...",
+          "options": [
+            {"t": "pensó que le estaban gastando una broma.", "ok": true},
+            {"t": "ya sabía que podía ganarlo.", "trap": "opposite", "why": "На вопрос «¿Te lo esperabas?» она отвечает «Para nada» — совсем нет."},
+            {"t": "se enteró por la página web del ministerio.", "trap": "time_number", "why": "Порядок событий: сначала ей позвонили, а сайт министерства она открыла ПОТОМ, чтобы поверить."}
+          ],
+          "evidence": "pensé que era una broma de mi hermano",
+          "whyRu": "Когда ей позвонили, она подумала, что это шутка брата."
+        },
+        {
+          "n": 14, "clip": "t3c1",
+          "stem": "Marta empezó a ilustrar libros porque...",
+          "options": [
+            {"t": "la despidieron de la agencia.", "trap": "same_word", "why": "«Me despedí de la agencia» = она САМА ушла (despedirse). «Despedir a alguien» = уволить. Классическая ловушка."},
+            {"t": "quería ganar más dinero.", "trap": "opposite", "why": "«Me iba bien, ganaba bastante» — деньги не были причиной."},
+            {"t": "una amiga le propuso un proyecto.", "ok": true}
+          ],
+          "evidence": "una amiga editora vio esos dibujos y me propuso ilustrar un cuento",
+          "whyRu": "Подруга-редактор увидела её рисунки и предложила проиллюстрировать сказку."
+        },
+        {
+          "n": 15, "clip": "t3c1",
+          "stem": "Antes de dejar la agencia, Marta...",
+          "options": [
+            {"t": "se fue a vivir a Granada.", "trap": "time_number", "why": "Порядок событий: в Гранаду она переехала ПОСЛЕ того, как ушла из агентства."},
+            {"t": "compaginó los dos trabajos durante un tiempo.", "ok": true},
+            {"t": "pasó un año sin trabajar.", "trap": "same_word", "why": "«Un año» есть в аудио, но этот год она работала сразу в двух местах."}
+          ],
+          "evidence": "Durante un año compaginé las dos cosas",
+          "whyRu": "«Compaginar» = совмещать. Год она работала и в агентстве, и над книгами."
+        },
+        {
+          "n": 16, "clip": "t3c1",
+          "stem": "Sobre su rutina actual, Marta dice que...",
+          "options": [
+            {"t": "es más tranquila de lo que se piensa.", "ok": true},
+            {"t": "dibuja sobre todo por la tarde.", "trap": "time_number", "why": "Рисует она утром, до обеда. После обеда — почта и счета."},
+            {"t": "disfruta con las tareas administrativas.", "trap": "opposite", "why": "Она называет их «la parte aburrida» — скучная часть."}
+          ],
+          "evidence": "Mucho más tranquilo de lo que la gente imagina.",
+          "whyRu": "Её день гораздо спокойнее, чем люди думают."
+        },
+        {
+          "n": 17, "clip": "t3c1",
+          "stem": "El estilo de sus ilustraciones...",
+          "options": [
+            {"t": "se inspira en los colores de Granada.", "trap": "same_word", "why": "Гранада упоминается, но только как город, куда она переехала. Цвета — из детства в Севилье."},
+            {"t": "es el mismo desde que empezó.", "trap": "opposite", "why": "Годами она рисовала «más seria», без цвета. Стиль изменился."},
+            {"t": "tiene que ver con su infancia.", "ok": true}
+          ],
+          "evidence": "Supongo que de mi infancia.",
+          "whyRu": "Стиль — из детства: она проводила дни в магазине тканей бабушки, среди узоров."
+        },
+        {
+          "n": 18, "clip": "t3c1",
+          "stem": "¿Qué aconseja Marta?",
+          "options": [
+            {"t": "Esperar a tener un buen portafolio.", "trap": "opposite", "why": "Она говорит наоборот: «Que no espere a tener el portafolio perfecto»."},
+            {"t": "Enseñar el trabajo aunque no sea perfecto.", "ok": true},
+            {"t": "Trabajar primero en una agencia.", "trap": "assumption", "why": "Она сама работала в агентстве, но этого не советует."}
+          ],
+          "evidence": "Hay que publicar, equivocarse y seguir.",
+          "whyRu": "Показывать работы, ошибаться и продолжать, не ждать идеального портфолио."
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "type": "match",
+      "readSec": 20,
+      "pauseBetween": 5,
+      "pauseAfter": 10,
+      "instr": "Usted va a escuchar a seis personas que dan consejos para mudarse a otra ciudad. Escuchará a cada persona dos veces. Seleccione el enunciado (A-I) que corresponde al tema del que habla cada persona (19-24). Hay nueve enunciados. Seleccione seis.",
+      "hintRu": "Слушайте главную мысль человека, а не отдельные слова. Говорящие специально упоминают слова из других вариантов. Три варианта лишние.",
+      "statements": {
+        "A": "Aprender la lengua del lugar.",
+        "B": "Alquilar algo temporal al principio.",
+        "C": "Visitar la ciudad antes de mudarse.",
+        "D": "Llevarse solo lo necesario.",
+        "E": "Hacer actividades para conocer gente.",
+        "F": "Calcular bien el coste de vida.",
+        "G": "Tener paciencia con los trámites.",
+        "H": "Mantener el contacto con la familia.",
+        "I": "Tener un trabajo antes de irse."
+      },
+      "clips": [
+        {"id": "t4c1", "intro": "Persona 1", "lines": [{"v": "ES_F1", "who": "Persona 1", "t": "Cuando me vine a Bilbao, cometí el error de firmar un contrato de un año por un piso que solo había visto en fotos. Resultó que estaba lejísimos de todo. Si lo volviera a hacer, alquilaría una habitación un par de meses, conocería los barrios y luego decidiría dónde quedarme."}]},
+        {"id": "t4c2", "intro": "Persona 2", "lines": [{"v": "ES_M1", "who": "Persona 2", "t": "Lo más difícil para mí no fue el trabajo ni el piso, sino la soledad. Los primeros meses volvía a casa y no tenía con quién hablar. Lo que me salvó fue un grupo de senderismo: cada domingo salíamos a la montaña, y ahí hice a mis mejores amigos."}]},
+        {"id": "t4c3", "intro": "Persona 3", "lines": [{"v": "ES_F2", "who": "Persona 3", "t": "Prepárate para hacer colas. Para empadronarme, sacar el número de extranjero y abrir una cuenta en el banco necesité casi tres meses y un montón de papeles. Mi consejo es no desesperarse: al final todo sale, pero a su ritmo, no al tuyo."}]},
+        {"id": "t4c4", "intro": "Persona 4", "lines": [{"v": "ES_M2", "who": "Persona 4", "t": "Mucha gente se fija solo en el sueldo, pero un buen sueldo en Madrid no es lo mismo que en Murcia. Antes de aceptar la oferta, hice una lista con el alquiler, el transporte, la comida... y me di cuenta de que, en realidad, iba a ahorrar menos que antes."}]},
+        {"id": "t4c5", "intro": "Persona 5", "lines": [{"v": "ES_F1", "who": "Persona 5", "t": "Yo llegué a Barcelona hablando solo castellano, y nadie me obligó a aprender catalán, pero me apunté a un curso gratuito y fue la mejor decisión. La gente te trata de otra manera cuando haces el esfuerzo, aunque lo hables fatal."}]},
+        {"id": "t4c6", "intro": "Persona 6", "lines": [{"v": "ES_M1", "who": "Persona 6", "t": "En mi primera mudanza llevé tres maletas enormes, y la mitad de las cosas no las usé nunca. Ahora pienso justo lo contrario: lo justo para las primeras semanas. Todo lo demás se puede comprar allí, y muchas veces más barato."}]}
+      ],
+      "questions": [
+        {"n": 19, "clip": "t4c1", "stem": "Persona 1", "answer": "B", "evidence": "alquilaría una habitación un par de meses", "whyRu": "Её совет: сначала снять комнату на пару месяцев, узнать районы, а потом решать.",
+          "wrong": {"C": {"trap": "assumption", "why": "Она видела квартиру только на фото, но совет не «съездить заранее», а «сначала снять что-то временное»."}}},
+        {"n": 20, "clip": "t4c2", "stem": "Persona 2", "answer": "E", "evidence": "Lo que me salvó fue un grupo de senderismo", "whyRu": "От одиночества его спасла группа походов: там он нашёл лучших друзей.",
+          "wrong": {"I": {"trap": "same_word", "why": "Работа упоминается («no fue el trabajo»), но как то, что было НЕ трудно."}, "B": {"trap": "same_word", "why": "Квартира упоминается только как то, что было НЕ трудно."}}},
+        {"n": 21, "clip": "t4c3", "stem": "Persona 3", "answer": "G", "evidence": "Mi consejo es no desesperarse", "whyRu": "Прописка, номер иностранца (NIE), банк — это «trámites». Совет: не отчаиваться, всё делается в своём темпе.",
+          "wrong": {}},
+        {"n": 22, "clip": "t4c4", "stem": "Persona 4", "answer": "F", "evidence": "hice una lista con el alquiler, el transporte, la comida", "whyRu": "Он посчитал все расходы и понял, что будет откладывать меньше.",
+          "wrong": {"I": {"trap": "same_word", "why": "«Antes de aceptar la oferta» — работа уже была, но совет про расходы, а не про то, чтобы найти работу заранее."}}},
+        {"n": 23, "clip": "t4c5", "stem": "Persona 5", "answer": "A", "evidence": "me apunté a un curso gratuito y fue la mejor decisión", "whyRu": "Она пошла на курс каталанского: местный язык меняет отношение людей.",
+          "wrong": {"E": {"trap": "same_word", "why": "«Me apunté a un curso» похоже на «занятия, чтобы знакомиться», но это курс языка. Главное — выучить местный язык."}}},
+        {"n": 24, "clip": "t4c6", "stem": "Persona 6", "answer": "D", "evidence": "lo justo para las primeras semanas", "whyRu": "Брать только самое нужное: остальное можно купить на месте.",
+          "wrong": {}}
+      ]
+    },
+    {
+      "n": 5,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar una conferencia de una diseñadora mexicana. Escuchará la audición dos veces. Después debe contestar a las preguntas (25-30). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Длинный монолог с мексиканским акцентом (на экзамене тоже бывают латиноамериканцы). Вопросы по порядку. Ищите конструкции «no... sino...» и «lo que más...» — там часто ответ.",
+      "clips": [
+        {
+          "id": "t5c1",
+          "intro": "Conferencia de Daniela Ortiz, diseñadora.",
+          "lines": [
+            {"v": "LA_F1", "who": "Daniela", "t": "Buenas tardes a todos. Me llamo Daniela Ortiz y soy diseñadora industrial. Les quiero contar cómo un proyecto de la universidad se convirtió, casi sin querer, en mi empresa. Todo empezó en Oaxaca, en el taller de mi tío, que es carpintero. Él tiraba cada semana kilos de restos de madera, y a mí se me ocurrió usarlos para hacer juguetes. Al principio era solo un trabajo de clase. De hecho, mi profesora me dijo que la idea era bonita, pero que nadie iba a pagar por juguetes de madera teniendo los de plástico tan baratos. Ese comentario me dolió, pero también me motivó. Un sábado llevé veinte juguetes a un mercado de artesanía y los vendí todos en dos horas. Ahí entendí que había un público que buscaba algo diferente: padres que querían juguetes sin pantallas, hechos a mano y que duraran. El primer año fue duro. Yo hacía todo: diseñaba, cortaba, pintaba y además llevaba las cuentas, que es lo que peor se me da. Lo que cambió todo fue asociarme con mi prima, que había estudiado administración. Ella se encargó de los números y yo pude volver a lo que de verdad me gusta, que es diseñar. Hoy somos once personas en el taller, casi todas mujeres del barrio, y exportamos a Canadá y a España. Pero les confieso que lo que más me enorgullece no son las ventas, sino que seguimos usando madera que otros iban a tirar. ¿Y ahora qué? Queremos abrir una escuela de oficios para jóvenes, porque cada vez quedan menos carpinteros. Si no transmitimos este conocimiento, en veinte años no habrá quien haga lo que hacemos. Muchas gracias."}
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 25, "clip": "t5c1",
+          "stem": "La idea de hacer juguetes surgió...",
+          "options": [
+            {"t": "de un encargo de su tío.", "trap": "same_word", "why": "Дядя упоминается, но он ничего не заказывал. Он просто выбрасывал обрезки."},
+            {"t": "de una sugerencia de su profesora.", "trap": "who", "why": "Профессор, наоборот, сомневалась в идее."},
+            {"t": "al ver que se desperdiciaba material.", "ok": true}
+          ],
+          "evidence": "Él tiraba cada semana kilos de restos de madera, y a mí se me ocurrió usarlos para hacer juguetes.",
+          "whyRu": "Дядя каждую неделю выбрасывал обрезки дерева, и ей пришла идея делать из них игрушки."
+        },
+        {
+          "n": 26, "clip": "t5c1",
+          "stem": "Según Daniela, su profesora...",
+          "options": [
+            {"t": "no creía que el producto fuera a venderse.", "ok": true},
+            {"t": "le ayudó a vender los primeros juguetes.", "trap": "assumption", "why": "Об этом ни слова: на рынок Даниэла пошла сама."},
+            {"t": "pensaba que la idea era fea.", "trap": "opposite", "why": "Наоборот, профессор сказала, что идея «bonita» — красивая."}
+          ],
+          "evidence": "nadie iba a pagar por juguetes de madera",
+          "whyRu": "Профессор считала, что никто не будет платить за деревянные игрушки."
+        },
+        {
+          "n": 27, "clip": "t5c1",
+          "stem": "En el mercado de artesanía, Daniela...",
+          "options": [
+            {"t": "vendió solo una parte de los juguetes.", "trap": "opposite", "why": "«Los vendí todos en dos horas» — продала все."},
+            {"t": "comprobó que había interés por sus juguetes.", "ok": true},
+            {"t": "conoció a otros fabricantes de juguetes.", "trap": "assumption", "why": "Про других мастеров ничего не сказано."}
+          ],
+          "evidence": "Ahí entendí que había un público que buscaba algo diferente",
+          "whyRu": "Всё раскупили за два часа, и она поняла, что у её игрушек есть покупатели."
+        },
+        {
+          "n": 28, "clip": "t5c1",
+          "stem": "Durante el primer año, Daniela...",
+          "options": [
+            {"t": "contrató a alguien para llevar las cuentas.", "trap": "who", "why": "Она никого не нанимала: позже она стала партнёром (asociarse) с кузиной."},
+            {"t": "dejó de diseñar.", "trap": "opposite", "why": "Наоборот, благодаря кузине она смогла вернуться к дизайну."},
+            {"t": "se encargaba ella sola de todo.", "ok": true}
+          ],
+          "evidence": "Yo hacía todo: diseñaba, cortaba, pintaba y además llevaba las cuentas",
+          "whyRu": "В первый год она делала всё сама: дизайн, резку, покраску и бухгалтерию."
+        },
+        {
+          "n": 29, "clip": "t5c1",
+          "stem": "¿Qué es lo que más orgullo le da a Daniela?",
+          "options": [
+            {"t": "Que siguen usando madera que iba a la basura.", "ok": true},
+            {"t": "Que venden en otros países.", "trap": "partial", "why": "Экспорт упоминается, но она прямо говорит: «no son las ventas»."},
+            {"t": "Que en el taller trabajan once personas.", "trap": "partial", "why": "Это правда, их одиннадцать, но гордится она не этим."}
+          ],
+          "evidence": "lo que más me enorgullece no son las ventas, sino que seguimos usando madera que otros iban a tirar",
+          "whyRu": "Конструкция «no son... sino...»: гордится она не продажами, а тем, что используют дерево, которое другие выбросили бы."
+        },
+        {
+          "n": 30, "clip": "t5c1",
+          "stem": "¿Qué planes tiene la empresa?",
+          "options": [
+            {"t": "Abrir una tienda en España.", "trap": "same_word", "why": "Испания упоминается только как страна, куда они экспортируют."},
+            {"t": "Formar a jóvenes en un oficio.", "ok": true},
+            {"t": "Contratar a veinte carpinteros.", "trap": "time_number", "why": "«Veinte» — это «en veinte años», через двадцать лет, а не двадцать плотников."}
+          ],
+          "evidence": "Queremos abrir una escuela de oficios para jóvenes",
+          "whyRu": "Они хотят открыть школу ремёсел для молодёжи."
+        }
+      ]
+    }
+  ]
+}
