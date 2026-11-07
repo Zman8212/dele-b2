@@ -1,0 +1,1038 @@
+{
+ "id": "t6",
+ "title": "Práctica 6",
+ "titleRu": "Тренировочный тест 6",
+ "blurbRu": "30 вопросов, ~9 минут аудио. Темы: поход в Пиренеях и права в тридцать с лишним, биолог из Кадиса и пластик в море, где лучше работать (аргентинец в задании 4), городской огород на месте свалки в Мехико (мексиканский акцент).",
+ "official": false,
+ "tasks": [
+  {
+   "n": 1,
+   "type": "mc",
+   "readSec": 30,
+   "pauseBetween": 5,
+   "pauseAfter": 10,
+   "instr": "Usted va a escuchar seis conversaciones breves. Escuchará cada conversación dos veces. Después debe contestar a las preguntas (1-6). Seleccione la opción correcta (a / b / c).",
+   "hintRu": "Люди часто поправляют себя на ходу: «bueno, mejor...», «pues...», «no, no». Ответ — то, что сказано после поправки, а не первая мысль.",
+   "clips": [
+    {
+     "id": "t1c1",
+     "intro": "Conversación 1. Va a escuchar a una mujer que habla con un empleado de un aeropuerto.",
+     "lines": [
+      {
+       "v": "ES_F1",
+       "who": "Mujer",
+       "t": "Perdone, vengo del vuelo de Roma y mi maleta no ha salido."
+      },
+      {
+       "v": "ES_M2",
+       "who": "Hombre",
+       "t": "Vaya, lo siento. Según el sistema, se quedó en Roma al cambiar de avión. Llegará mañana por la mañana y se la llevamos a casa, no hace falta que vuelva. Rellene esto con su dirección."
+      }
+     ]
+    },
+    {
+     "id": "t1c2",
+     "intro": "Conversación 2. Va a escuchar a un hombre que habla con una bibliotecaria.",
+     "lines": [
+      {
+       "v": "ES_M1",
+       "who": "Hombre",
+       "t": "Hola, vengo a devolver estos dos libros. Ya sé que me he retrasado una semana... ¿Tengo que pagar algo?"
+      },
+      {
+       "v": "ES_F2",
+       "who": "Mujer",
+       "t": "No, aquí no cobramos multas. Pero durante quince días no podrá llevarse nada prestado. Eso sí, en la sala puede leer lo que quiera."
+      }
+     ]
+    },
+    {
+     "id": "t1c3",
+     "intro": "Conversación 3. Va a escuchar a un hombre que llama a una peluquería.",
+     "lines": [
+      {
+       "v": "ES_M2",
+       "who": "Hombre",
+       "t": "Buenos días, quería cita para cortarme el pelo el sábado por la mañana."
+      },
+      {
+       "v": "ES_F1",
+       "who": "Mujer",
+       "t": "El sábado está completo. Tengo hueco el viernes a las siete de la tarde o el lunes a primera hora."
+      },
+      {
+       "v": "ES_M2",
+       "who": "Hombre",
+       "t": "El lunes entro a las ocho... Pues el viernes, aunque salga corriendo de la oficina."
+      }
+     ]
+    },
+    {
+     "id": "t1c4",
+     "intro": "Conversación 4. Va a escuchar a dos vecinos.",
+     "lines": [
+      {
+       "v": "ES_F2",
+       "who": "Mujer",
+       "t": "Oye, Andrés, me voy diez días a Galicia. ¿Podrías regarme las plantas de la terraza? Te dejo las llaves."
+      },
+      {
+       "v": "ES_M1",
+       "who": "Hombre",
+       "t": "Claro, mujer. Pero ojo, que del quince al dieciocho estoy en Sevilla por trabajo. Le pido a mi hija que pase esos días, que vive aquí al lado."
+      }
+     ]
+    },
+    {
+     "id": "t1c5",
+     "intro": "Conversación 5. Va a escuchar a una mujer en un taller de bicicletas.",
+     "lines": [
+      {
+       "v": "ES_F2",
+       "who": "Mujer",
+       "t": "¿Ya está la bici? Era solo cambiar la rueda pinchada, ¿no?"
+      },
+      {
+       "v": "ES_M2",
+       "who": "Hombre",
+       "t": "Sí, la rueda ya está, pero he visto que la cadena está muy gastada. Yo la cambiaría, son veinte euros más. Si tiene prisa, se la lleva ahora y vuelve otro día."
+      },
+      {
+       "v": "ES_F2",
+       "who": "Mujer",
+       "t": "No, no, cámbiela ya. Espero."
+      }
+     ]
+    },
+    {
+     "id": "t1c6",
+     "intro": "Conversación 6. Va a escuchar a dos compañeros de trabajo.",
+     "lines": [
+      {
+       "v": "ES_M1",
+       "who": "Hombre",
+       "t": "Marta, ¿tienes un minuto? La presentación no se abre en el ordenador de la sala, y la reunión empieza en diez minutos."
+      },
+      {
+       "v": "ES_F1",
+       "who": "Mujer",
+       "t": "Será por la versión del programa. Guárdala en otro formato y... bueno, mejor mándamela y la abro desde mi portátil, que ya me ha pasado otras veces."
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "n": 1,
+     "clip": "t1c1",
+     "stem": "¿Qué le dice el empleado a la mujer?",
+     "options": [
+      {
+       "t": "Que tendrá que volver al aeropuerto a recogerla.",
+       "trap": "opposite",
+       "why": "Наоборот: «no hace falta que vuelva» — возвращаться в аэропорт не нужно."
+      },
+      {
+       "t": "Que la maleta llegará esta misma noche.",
+       "trap": "time_number",
+       "why": "Чемодан прилетит «mañana por la mañana» — завтра утром, а не сегодня вечером."
+      },
+      {
+       "t": "Que le entregarán la maleta en su domicilio.",
+       "ok": true
+      }
+     ],
+     "evidence": "se la llevamos a casa",
+     "whyRu": "Сотрудник говорит, что чемодан привезут ей домой: «se la llevamos a casa». «Domicilio» = дом, адрес проживания."
+    },
+    {
+     "n": 2,
+     "clip": "t1c2",
+     "stem": "¿Qué consecuencia tiene el retraso para el hombre?",
+     "options": [
+      {
+       "t": "No podrá sacar libros durante un tiempo.",
+       "ok": true
+      },
+      {
+       "t": "Tendrá que pagar una pequeña multa.",
+       "trap": "opposite",
+       "why": "Штрафов в библиотеке нет: «aquí no cobramos multas»."
+      },
+      {
+       "t": "No podrá usar la sala de lectura durante dos semanas.",
+       "trap": "same_word",
+       "why": "Две недели («quince días») относятся к выдаче книг на дом. В читальном зале, наоборот, можно читать что угодно: «en la sala puede leer lo que quiera»."
+      }
+     ],
+     "evidence": "durante quince días no podrá llevarse nada prestado",
+     "whyRu": "Пятнадцать дней он не сможет брать книги домой. «Sacar libros» = «llevarse libros prestados»."
+    },
+    {
+     "n": 3,
+     "clip": "t1c3",
+     "stem": "¿Cuándo irá el hombre a la peluquería?",
+     "options": [
+      {
+       "t": "El sábado por la mañana, como quería.",
+       "trap": "partial",
+       "why": "Он хотел в субботу, но этот день занят: «El sábado está completo»."
+      },
+      {
+       "t": "Un día entre semana, por la tarde.",
+       "ok": true
+      },
+      {
+       "t": "El lunes, antes de ir a la oficina.",
+       "trap": "opposite",
+       "why": "Понедельник он отклоняет: в восемь ему на работу («El lunes entro a las ocho...»)."
+      }
+     ],
+     "evidence": "Pues el viernes, aunque salga corriendo de la oficina.",
+     "whyRu": "Он выбирает пятницу в семь вечера: «Pues el viernes». Пятница — рабочий день, «entre semana», а семь часов — вечер."
+    },
+    {
+     "n": 4,
+     "clip": "t1c4",
+     "stem": "¿Qué problema menciona el hombre?",
+     "options": [
+      {
+       "t": "Que estará fuera parte de esos días.",
+       "ok": true
+      },
+      {
+       "t": "Que su hija no podrá ayudar esos días.",
+       "trap": "opposite",
+       "why": "Наоборот: дочь как раз поможет, она живёт рядом («le pido a mi hija que pase esos días»)."
+      },
+      {
+       "t": "Que tiene que viajar a Galicia por trabajo.",
+       "trap": "same_word",
+       "why": "В Галисию едет соседка. Он сам едет по работе в Севилью: «estoy en Sevilla por trabajo»."
+      }
+     ],
+     "evidence": "del quince al dieciocho estoy en Sevilla por trabajo",
+     "whyRu": "С пятнадцатого по восемнадцатое он будет в Севилье, то есть часть её отпуска его не будет дома. Поэтому он предлагает попросить дочь."
+    },
+    {
+     "n": 5,
+     "clip": "t1c5",
+     "stem": "¿Qué decide la mujer?",
+     "options": [
+      {
+       "t": "Llevarse la bici ahora y volver otro día.",
+       "trap": "who",
+       "why": "Это вариант, который предлагает механик («Si tiene prisa, se la lleva ahora»). Она отказывается: «No, no»."
+      },
+      {
+       "t": "Arreglar solo la rueda, como había pedido.",
+       "trap": "opposite",
+       "why": "Сначала речь шла только о колесе, но она соглашается поменять и цепь: «cámbiela ya»."
+      },
+      {
+       "t": "Quedarse mientras hacen otro arreglo.",
+       "ok": true
+      }
+     ],
+     "evidence": "cámbiela ya. Espero.",
+     "whyRu": "Она просит сразу поменять цепь и подождать на месте: «cámbiela ya. Espero». «Otro arreglo» = замена цепи."
+    },
+    {
+     "n": 6,
+     "clip": "t1c6",
+     "stem": "¿Qué va a hacer la mujer?",
+     "options": [
+      {
+       "t": "Guardar la presentación en otro formato.",
+       "trap": "partial",
+       "why": "Это она начала советовать, но передумала на полуслове: «bueno, mejor...». Последнее решение — другое."
+      },
+      {
+       "t": "Abrir el archivo en su propio equipo.",
+       "ok": true
+      },
+      {
+       "t": "Retrasar la reunión diez minutos.",
+       "trap": "time_number",
+       "why": "«Diez minutos» — это время до начала встречи («empieza en diez minutos»), а не перенос."
+      }
+     ],
+     "evidence": "mejor mándamela y la abro desde mi portátil",
+     "whyRu": "Она поправляет себя («bueno, mejor...») и решает открыть презентацию на своём ноутбуке. Слушайте реплику до конца: решение звучит после «mejor»."
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "type": "who",
+   "readSec": 20,
+   "pauseBetween": 10,
+   "pauseAfter": 30,
+   "instr": "Usted va a escuchar una conversación entre dos amigos, Diego e Irene. Indique si los enunciados (7-12) se refieren a Diego (A), a Irene (B) o a ninguno de los dos (C). Escuchará la conversación dos veces.",
+   "hintRu": "Утверждения пересказывают реплики другими словами: «estar harta de que me lleven» = «depender de otros», «que me multen» = «sanción». Перед прослушиванием подумайте, какими словами это может прозвучать.",
+   "choices": {
+    "A": "Diego",
+    "B": "Irene",
+    "C": "Ninguno de los dos"
+   },
+   "example": {
+    "stem": "Ya ha buscado dónde alojarse.",
+    "answer": "A"
+   },
+   "clips": [
+    {
+     "id": "t2c1",
+     "intro": "Diego e Irene hablan de una excursión.",
+     "lines": [
+      {
+       "v": "ES_M2",
+       "who": "Diego",
+       "t": "Irene, ¿sigue en pie lo del Pirineo para el fin de semana que viene? Ya he mirado un par de refugios cerca de Benasque."
+      },
+      {
+       "v": "ES_F2",
+       "who": "Irene",
+       "t": "¡Claro que sí! Tengo unas ganas locas. Aunque el sábado por la mañana tengo clase de conducir. A mis treinta y cuatro años, ya ves, rodeada de chavales de dieciocho."
+      },
+      {
+       "v": "ES_M2",
+       "who": "Diego",
+       "t": "Pues haces muy bien. Yo me lo saqué a los dieciocho y casi no lo uso: vivo en el centro y voy a todas partes en bici."
+      },
+      {
+       "v": "ES_F2",
+       "who": "Irene",
+       "t": "Ya, pero yo estoy harta de que siempre me tengan que llevar. El teórico lo aprobé a la primera, eso sí. Lo que me da pánico es el práctico, sobre todo aparcar."
+      },
+      {
+       "v": "ES_M2",
+       "who": "Diego",
+       "t": "Le pasa a todo el mundo, mujer. Entonces, ¿salimos el sábado después de comer? Le pido el coche a mi hermano y conduzco yo."
+      },
+      {
+       "v": "ES_F2",
+       "who": "Irene",
+       "t": "Vale, y en cuanto tenga el carné, te llevo yo a ti. ¿Y la ruta? Nada extremo, ¿eh?, que llevo meses sin pisar el gimnasio."
+      },
+      {
+       "v": "ES_M2",
+       "who": "Diego",
+       "t": "Había pensado en subir a un lago. Son cinco horas, pero sin tramos difíciles. El año pasado hice una mucho más dura y acabé con las rodillas fatal, así que tampoco quiero repetir."
+      },
+      {
+       "v": "ES_F2",
+       "who": "Irene",
+       "t": "Perfecto. Oye, ¿y si llevamos tienda de campaña? Nos ahorraríamos el refugio."
+      },
+      {
+       "v": "ES_M2",
+       "who": "Diego",
+       "t": "Uf, a mí me encantaría, pero en esa zona no se puede acampar, y no me apetece nada que me multen. Mejor reservo."
+      },
+      {
+       "v": "ES_F2",
+       "who": "Irene",
+       "t": "Bueno, vale. Pues yo me encargo de la comida, que tus bocadillos dan pena."
+      },
+      {
+       "v": "ES_M2",
+       "who": "Diego",
+       "t": "¡Oye! Que mis bocadillos son famosos en toda la oficina."
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "n": 7,
+     "clip": "t2c1",
+     "stem": "Apenas utiliza su permiso de conducir.",
+     "answer": "A",
+     "evidence": "casi no lo uso",
+     "whyRu": "Диего получил права в восемнадцать, но почти ими не пользуется: «casi no lo uso». Он везде ездит на велосипеде.",
+     "wrong": {
+      "B": {
+       "trap": "time_number",
+       "why": "У Ирены прав ещё нет: она только учится водить («tengo clase de conducir»)."
+      },
+      "C": {
+       "trap": "who",
+       "why": "Диего прямо это говорит: «me lo saqué a los dieciocho y casi no lo uso»."
+      }
+     }
+    },
+    {
+     "n": 8,
+     "clip": "t2c1",
+     "stem": "Ha suspendido un examen.",
+     "answer": "C",
+     "evidence": "El teórico lo aprobé a la primera",
+     "whyRu": "Никто. Ирена сдала теорию с первого раза («lo aprobé a la primera»), а практический экзамен ещё не сдавала, только боится его. Диего об экзаменах не говорит: он просто получил права в восемнадцать.",
+     "wrong": {
+      "A": {
+       "trap": "assumption",
+       "why": "Диего про экзамены ничего не рассказывает: он просто получил права в восемнадцать («me lo saqué»)."
+      },
+      "B": {
+       "trap": "opposite",
+       "why": "Наоборот: Ирена сдала теорию с первого раза. Практический экзамен её пугает, но она его ещё не сдавала."
+      }
+     }
+    },
+    {
+     "n": 9,
+     "clip": "t2c1",
+     "stem": "Quiere depender menos de otras personas.",
+     "answer": "B",
+     "evidence": "estoy harta de que siempre me tengan que llevar",
+     "whyRu": "Ирена устала от того, что её всё время должен кто-то подвозить: «estoy harta de que siempre me tengan que llevar». Поэтому она учится водить.",
+     "wrong": {
+      "A": {
+       "trap": "assumption",
+       "why": "Диего ездит на велосипеде, но ни о какой зависимости от других он не говорит."
+      },
+      "C": {
+       "trap": "who",
+       "why": "Ирена прямо это говорит: «estoy harta de que siempre me tengan que llevar»."
+      }
+     }
+    },
+    {
+     "n": 10,
+     "clip": "t2c1",
+     "stem": "Se ha estado preparando físicamente para la excursión.",
+     "answer": "C",
+     "evidence": "llevo meses sin pisar el gimnasio",
+     "whyRu": "Никто. Ирена, наоборот, несколько месяцев не была в спортзале («llevo meses sin pisar el gimnasio»). Диего вспоминает тяжёлый поход прошлого года, но о тренировках не говорит.",
+     "wrong": {
+      "A": {
+       "trap": "time_number",
+       "why": "Тяжёлый маршрут Диего прошёл в прошлом году («El año pasado»), и это не подготовка к этому походу."
+      },
+      "B": {
+       "trap": "opposite",
+       "why": "Ирена говорит обратное: «llevo meses sin pisar el gimnasio» — месяцами не ходила в спортзал."
+      }
+     }
+    },
+    {
+     "n": 11,
+     "clip": "t2c1",
+     "stem": "Sugiere una opción para gastar menos.",
+     "answer": "B",
+     "evidence": "Nos ahorraríamos el refugio.",
+     "whyRu": "Ирена предлагает взять палатку, чтобы не платить за приют: «Nos ahorraríamos el refugio».",
+     "wrong": {
+      "A": {
+       "trap": "opposite",
+       "why": "Диего, наоборот, выбирает платный вариант: «Mejor reservo» — забронирует приют. Машину брата он берёт потому, что Ирена ещё не водит, а не ради экономии."
+      },
+      "C": {
+       "trap": "who",
+       "why": "Ирена прямо предлагает палатку: «¿y si llevamos tienda de campaña? Nos ahorraríamos el refugio»."
+      }
+     }
+    },
+    {
+     "n": 12,
+     "clip": "t2c1",
+     "stem": "Le preocupa recibir una sanción.",
+     "answer": "A",
+     "evidence": "no me apetece nada que me multen",
+     "whyRu": "Диего был бы рад взять палатку («a mí me encantaría»), но там запрещено ставить лагерь, а он не хочет получить штраф: «no me apetece nada que me multen». «Sanción» = штраф.",
+     "wrong": {
+      "B": {
+       "trap": "who",
+       "why": "Ирена предлагает палатку, но о штрафе не думает. Боится штрафа Диего."
+      },
+      "C": {
+       "trap": "who",
+       "why": "Диего прямо это говорит: «no me apetece nada que me multen»."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "type": "mc",
+   "readSec": 30,
+   "pauseBetween": 10,
+   "pauseAfter": 30,
+   "instr": "Usted va a escuchar parte de una entrevista radiofónica a Elena Barroso, bióloga marina. Escuchará la entrevista dos veces. Después debe contestar a las preguntas (13-18). Seleccione la opción correcta (a / b / c).",
+   "hintRu": "Следите за тем, КТО что делает: «ellos» (рыбаки) или «nosotros» (команда биолога). Ловушка «who» часто прячется в смене местоимения.",
+   "clips": [
+    {
+     "id": "t3c1",
+     "intro": "Entrevista a Elena Barroso, bióloga marina.",
+     "lines": [
+      {
+       "v": "ES_M1",
+       "who": "Periodista",
+       "t": "Hoy hablamos con Elena Barroso, bióloga marina en Cádiz, que trabaja con pescadores para sacar plástico del mar. Elena, ¿cómo empezó todo?"
+      },
+      {
+       "v": "ES_F1",
+       "who": "Elena",
+       "t": "Pues casi por casualidad. Yo estudiaba los peces de la bahía y un día un pescador me enseñó lo que había salido en su red: más botellas que pescado. Me soltó, medio en broma, que los biólogos solo veníamos a contar peces y nunca a echar una mano. Me sentó fatal, pero tenía razón."
+      },
+      {
+       "v": "ES_M1",
+       "who": "Periodista",
+       "t": "¿Y cómo funciona?"
+      },
+      {
+       "v": "ES_F1",
+       "who": "Elena",
+       "t": "Los pescadores no salen a buscar plástico. Lo que hacen es traer a puerto todo lo que se les mete en las redes mientras faenan, en lugar de devolverlo al agua. Nosotros lo pesamos, lo separamos y lo mandamos a reciclar. Ellos no cobran nada, aunque el puerto les ha rebajado algunas tasas."
+      },
+      {
+       "v": "ES_M1",
+       "who": "Periodista",
+       "t": "¿Fue fácil convencerlos?"
+      },
+      {
+       "v": "ES_F1",
+       "who": "Elena",
+       "t": "Qué va. Al principio se apuntaron tres barcos, y los demás se reían de ellos. Lo que cambió las cosas no fueron mis charlas, sino los números: cuando vieron cuántos kilos sacaban cada mes, empezaron a sentirse orgullosos. Hoy participa casi todo el puerto."
+      },
+      {
+       "v": "ES_M1",
+       "who": "Periodista",
+       "t": "¿Qué es lo que más sacáis?"
+      },
+      {
+       "v": "ES_F1",
+       "who": "Elena",
+       "t": "La gente se imagina bolsas, pero lo que más aparece son restos de la propia pesca: redes viejas, cuerdas, cajas. Para ellos fue un golpe descubrir que eran parte del problema. Pero en lugar de esconderlo, empezaron a cambiar de materiales."
+      },
+      {
+       "v": "ES_M1",
+       "who": "Periodista",
+       "t": "¿Y ahora qué?"
+      },
+      {
+       "v": "ES_F1",
+       "who": "Elena",
+       "t": "Queremos llevar el proyecto a los colegios de la zona. Muchos hijos de pescadores ya vienen los sábados al puerto a separar plástico, y son los que más preguntan. Si los niños lo ven como algo normal, el cambio durará."
+      },
+      {
+       "v": "ES_M1",
+       "who": "Periodista",
+       "t": "Para terminar, ¿qué te ha enseñado todo esto?"
+      },
+      {
+       "v": "ES_F1",
+       "who": "Elena",
+       "t": "Que la ciencia sirve de poco si se queda en un despacho. Antes publicaba artículos que leían cuatro colegas. Ahora paso más tiempo en el muelle que en el laboratorio, y nunca había aprendido tanto."
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "n": 13,
+     "clip": "t3c1",
+     "stem": "El proyecto de Elena empezó...",
+     "options": [
+      {
+       "t": "cuando ella decidió limpiar la bahía por su cuenta.",
+       "trap": "assumption",
+       "why": "Сама она ничего не решала: всё началось со слов рыбака. Об уборке залива в одиночку не сказано."
+      },
+      {
+       "t": "porque había cada vez menos peces en la bahía.",
+       "trap": "same_word",
+       "why": "Рыба и залив упоминаются («estudiaba los peces de la bahía»), но о том, что рыбы стало меньше, ничего не сказано."
+      },
+      {
+       "t": "a raíz de la crítica de un pescador.",
+       "ok": true
+      }
+     ],
+     "evidence": "los biólogos solo veníamos a contar peces y nunca a echar una mano",
+     "whyRu": "Рыбак упрекнул её: биологи только считают рыбу и никогда не помогают. Ей было обидно, но он был прав. «A raíz de» = вследствие, после."
+    },
+    {
+     "n": 14,
+     "clip": "t3c1",
+     "stem": "Según Elena, los pescadores...",
+     "options": [
+      {
+       "t": "salen al mar expresamente a recoger plástico.",
+       "trap": "opposite",
+       "why": "Наоборот: «Los pescadores no salen a buscar plástico». Специально за пластиком они не выходят."
+      },
+      {
+       "t": "llevan a tierra lo que atrapan sin querer.",
+       "ok": true
+      },
+      {
+       "t": "separan el plástico para mandarlo a reciclar.",
+       "trap": "who",
+       "why": "Это делает команда Элены: «Nosotros lo pesamos, lo separamos y lo mandamos a reciclar». Рыбаки только привозят."
+      }
+     ],
+     "evidence": "traer a puerto todo lo que se les mete en las redes mientras faenan",
+     "whyRu": "Рыбаки привозят в порт всё, что случайно попадает в сети во время лова, а не выбрасывают обратно в море. «Faenar» = ловить рыбу, работать в море."
+    },
+    {
+     "n": 15,
+     "clip": "t3c1",
+     "stem": "Según Elena, lo que convenció a los demás pescadores fue...",
+     "options": [
+      {
+       "t": "comprobar lo que conseguían cada mes.",
+       "ok": true
+      },
+      {
+       "t": "las charlas que ella daba en el puerto.",
+       "trap": "opposite",
+       "why": "Она прямо говорит: «no fueron mis charlas» — дело было не в её беседах."
+      },
+      {
+       "t": "pagar menos tasas en el puerto.",
+       "trap": "partial",
+       "why": "Порт действительно снизил сборы, но Элена называет причиной не это, а цифры: «Lo que cambió las cosas... sino los números»."
+      }
+     ],
+     "evidence": "Lo que cambió las cosas no fueron mis charlas, sino los números",
+     "whyRu": "Конструкция «no... sino...»: убедили не беседы, а цифры. Увидев, сколько килограммов они вытаскивают в месяц, рыбаки стали гордиться."
+    },
+    {
+     "n": 16,
+     "clip": "t3c1",
+     "stem": "¿Qué dice Elena sobre el plástico que sacan?",
+     "options": [
+      {
+       "t": "Que la mayor parte son bolsas.",
+       "trap": "opposite",
+       "why": "Пакеты — это то, что представляют себе люди («La gente se imagina bolsas»), а на самом деле больше всего другого."
+      },
+      {
+       "t": "Que buena parte viene de la pesca.",
+       "ok": true
+      },
+      {
+       "t": "Que las cajas son lo más difícil de reciclar.",
+       "trap": "same_word",
+       "why": "Ящики упоминаются в списке рыбацкого мусора («redes viejas, cuerdas, cajas»), но о сложности переработки ничего не сказано."
+      }
+     ],
+     "evidence": "lo que más aparece son restos de la propia pesca",
+     "whyRu": "Больше всего попадается остатков самой рыбалки: старые сети, верёвки, ящики. Для рыбаков было ударом узнать, что они сами часть проблемы."
+    },
+    {
+     "n": 17,
+     "clip": "t3c1",
+     "stem": "¿Qué planes tiene el proyecto?",
+     "options": [
+      {
+       "t": "Llevar su trabajo a las escuelas.",
+       "ok": true
+      },
+      {
+       "t": "Que los niños empiecen a ayudar los sábados.",
+       "trap": "time_number",
+       "why": "Дети рыбаков уже приходят по субботам: «ya vienen los sábados». Это настоящее, а не план."
+      },
+      {
+       "t": "Dar trabajo a los hijos de los pescadores.",
+       "trap": "assumption",
+       "why": "Дети рыбаков упоминаются, но о работе для них ничего не сказано."
+      }
+     ],
+     "evidence": "Queremos llevar el proyecto a los colegios de la zona.",
+     "whyRu": "Они хотят прийти с проектом в местные школы. «Colegios» = «escuelas»."
+    },
+    {
+     "n": 18,
+     "clip": "t3c1",
+     "stem": "¿Qué ha aprendido Elena?",
+     "options": [
+      {
+       "t": "Que sus artículos llegaban a mucha gente.",
+       "trap": "opposite",
+       "why": "Наоборот: её статьи читали «cuatro colegas» — горстка коллег."
+      },
+      {
+       "t": "Que debería volver a publicar artículos.",
+       "trap": "assumption",
+       "why": "Статьи упоминаются только как её прошлое. Возвращаться к ним она не собирается."
+      },
+      {
+       "t": "Que la ciencia debe salir a la calle.",
+       "ok": true
+      }
+     ],
+     "evidence": "Que la ciencia sirve de poco si se queda en un despacho.",
+     "whyRu": "Наука мало чего стоит, если остаётся в кабинете. Теперь она больше времени проводит на причале, чем в лаборатории, и многому научилась."
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "type": "match",
+   "readSec": 20,
+   "pauseBetween": 5,
+   "pauseAfter": 10,
+   "instr": "Usted va a escuchar a seis personas que hablan de dónde y cómo prefieren trabajar. Escuchará a cada persona dos veces. Seleccione el enunciado (A-I) que corresponde al tema del que habla cada persona (19-24). Hay nueve enunciados. Seleccione seis.",
+   "hintRu": "Многие начинают с плюсов («cómodo, sí», «parecía un chollo»), а главное говорят после «pero» или «el problema es». Ответ обычно после этого слова.",
+   "statements": {
+    "A": "Le cuesta desconectar cuando trabaja en casa.",
+    "B": "Ha vuelto a la oficina porque ha querido.",
+    "C": "Elige el lugar según lo que tenga que hacer.",
+    "D": "Rinde más con un horario fijo.",
+    "E": "Gana mucho tiempo al no desplazarse.",
+    "F": "Le enriquece tratar con gente de otros oficios.",
+    "G": "No le dejan elegir dónde trabajar.",
+    "H": "Necesita un ambiente sin ruido.",
+    "I": "Echa de menos aprender de alguien con más experiencia."
+   },
+   "clips": [
+    {
+     "id": "t4c1",
+     "intro": "Persona 1",
+     "lines": [
+      {
+       "v": "ES_F1",
+       "who": "Persona 1",
+       "t": "Soy traductora y llevaba años trabajando sola en casa. Ahora voy a un coworking. Tardo media hora en llegar, pero compensa. En la mesa de al lado tengo a un arquitecto, una ilustradora, un programador... Charlar con ellos en la pausa del café me da ideas que yo sola nunca tendría."
+      }
+     ]
+    },
+    {
+     "id": "t4c2",
+     "intro": "Persona 2",
+     "lines": [
+      {
+       "v": "LA_M2",
+       "who": "Persona 2",
+       "t": "Hace dos años que laburo desde casa. Cómodo, sí, aunque tampoco gano tanto tiempo: vivo a diez cuadras de la oficina. Pero mirá, lo que más extraño es tener cerca a alguien que sepa más que yo. Antes vos le preguntabas algo al jefe y en dos minutos aprendías lo que ahora te lleva una tarde."
+      }
+     ]
+    },
+    {
+     "id": "t4c3",
+     "intro": "Persona 3",
+     "lines": [
+      {
+       "v": "ES_F2",
+       "who": "Persona 3",
+       "t": "En mi empresa podemos elegir, y casi todos siguen en casa. Yo aguanté un año así, pero mi piso es pequeñito y trabajaba en la mesa de la cocina. En enero pedí volver a la oficina, y que conste que nadie me obligó. Mis compañeros no lo entienden, pero yo estoy encantada."
+      }
+     ]
+    },
+    {
+     "id": "t4c4",
+     "intro": "Persona 4",
+     "lines": [
+      {
+       "v": "ES_M1",
+       "who": "Persona 4",
+       "t": "Yo no me caso con ningún sitio. Los días de reuniones voy a la oficina, porque quiero ver a mi equipo. Si tengo que escribir un informe largo, me quedo en casa. Y cuando me agobio, me llevo el portátil a la biblioteca. Eso de fichar a las ocho todos los días no va conmigo."
+      }
+     ]
+    },
+    {
+     "id": "t4c5",
+     "intro": "Persona 5",
+     "lines": [
+      {
+       "v": "ES_F1",
+       "who": "Persona 5",
+       "t": "Me apunté a un coworking porque me lo vendieron como un sitio para conocer gente. Duré dos semanas. Todo el mundo hablaba por teléfono, había música, gente entrando y saliendo... Yo, para concentrarme, necesito no oír ni una mosca. Así que he vuelto a mi despacho de casa, con la puerta cerrada y tapones."
+      }
+     ]
+    },
+    {
+     "id": "t4c6",
+     "intro": "Persona 6",
+     "lines": [
+      {
+       "v": "ES_M2",
+       "who": "Persona 6",
+       "t": "Trabajar desde casa parecía un chollo: sin atascos, en zapatillas... El problema es que el ordenador siempre está ahí. Termino a las seis, ceno, y a las diez ya estoy otra vez contestando correos. Mi pareja ya está harta. Estoy pensando en alquilar un despacho fuera, solo para poder cerrar la puerta e irme."
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "n": 19,
+     "clip": "t4c1",
+     "stem": "Persona 1",
+     "answer": "F",
+     "evidence": "Charlar con ellos en la pausa del café me da ideas",
+     "whyRu": "В коворкинге рядом с ней архитектор, иллюстратор, программист. Разговоры с людьми других профессий дают ей идеи.",
+     "wrong": {
+      "E": {
+       "trap": "opposite",
+       "why": "Время на дорогу она, наоборот, тратит: «Tardo media hora en llegar, pero compensa»."
+      }
+     }
+    },
+    {
+     "n": 20,
+     "clip": "t4c2",
+     "stem": "Persona 2",
+     "answer": "I",
+     "evidence": "lo que más extraño es tener cerca a alguien que sepa más que yo",
+     "whyRu": "Главное для него: ему не хватает рядом человека, который знает больше. Раньше он спрашивал начальника и учился за две минуты. «Extrañar» (в Латинской Америке) = «echar de menos».",
+     "wrong": {
+      "E": {
+       "trap": "opposite",
+       "why": "Он говорит, что времени почти не выигрывает: «tampoco gano tanto tiempo», живёт в десяти кварталах от офиса."
+      }
+     }
+    },
+    {
+     "n": 21,
+     "clip": "t4c3",
+     "stem": "Persona 3",
+     "answer": "B",
+     "evidence": "pedí volver a la oficina, y que conste que nadie me obligó",
+     "whyRu": "Она сама попросила вернуться в офис, никто её не заставлял. Квартира маленькая, работать на кухне было неудобно.",
+     "wrong": {
+      "G": {
+       "trap": "opposite",
+       "why": "Наоборот, в её компании можно выбирать: «En mi empresa podemos elegir»."
+      }
+     }
+    },
+    {
+     "n": 22,
+     "clip": "t4c4",
+     "stem": "Persona 4",
+     "answer": "C",
+     "evidence": "Los días de reuniones voy a la oficina",
+     "whyRu": "Он меняет место в зависимости от задачи: встречи — в офисе, длинные отчёты — дома, когда тяжело — в библиотеке. «No me caso con ningún sitio» = не привязан ни к одному месту.",
+     "wrong": {
+      "D": {
+       "trap": "opposite",
+       "why": "Фиксированный график ему, наоборот, не подходит: «Eso de fichar a las ocho todos los días no va conmigo»."
+      },
+      "B": {
+       "trap": "partial",
+       "why": "В офис он ходит, но только в дни встреч. Это лишь одна часть его схемы."
+      }
+     }
+    },
+    {
+     "n": 23,
+     "clip": "t4c5",
+     "stem": "Persona 5",
+     "answer": "H",
+     "evidence": "para concentrarme, necesito no oír ni una mosca",
+     "whyRu": "Ей нужна полная тишина, чтобы сосредоточиться. В коворкинге было шумно, и она вернулась в домашний кабинет. «No oír ni una mosca» = абсолютная тишина.",
+     "wrong": {
+      "F": {
+       "trap": "same_word",
+       "why": "«Conocer gente» звучит, но это то, что ей обещали («me lo vendieron»). Она ушла оттуда через две недели."
+      },
+      "B": {
+       "trap": "same_word",
+       "why": "«He vuelto» — но вернулась она в свой домашний кабинет, а не в офис."
+      }
+     }
+    },
+    {
+     "n": 24,
+     "clip": "t4c6",
+     "stem": "Persona 6",
+     "answer": "A",
+     "evidence": "a las diez ya estoy otra vez contestando correos",
+     "whyRu": "Дома он не может отключиться от работы: в десять вечера снова отвечает на письма. Поэтому думает снять кабинет вне дома.",
+     "wrong": {
+      "E": {
+       "trap": "partial",
+       "why": "«Sin atascos» — плюс работы дома, который он упоминает, но главная мысль о другом: компьютер всегда рядом."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "type": "mc",
+   "readSec": 30,
+   "pauseBetween": 10,
+   "pauseAfter": 30,
+   "instr": "Usted va a escuchar una conferencia de una mujer mexicana sobre los huertos urbanos. Escuchará la audición dos veces. Después debe contestar a las preguntas (25-30). Seleccione la opción correcta (a / b / c).",
+   "hintRu": "Мексиканские слова в этой лекции: «lote» = участок земли, «azotea» = плоская крыша, «jitomate» = помидор, «tianguis» = уличный рынок, «colonia» = район, «platicar» = рассказывать. Фразы «creíamos que... pero no» и «ojo, no les voy a decir que...» предупреждают: дальше будет ответ.",
+   "clips": [
+    {
+     "id": "t5c1",
+     "intro": "Conferencia de Mariana Soto sobre huertos urbanos.",
+     "lines": [
+      {
+       "v": "LA_F1",
+       "who": "Mariana",
+       "t": "Buenas tardes. Soy Mariana Soto, vivo en Iztapalapa, en la Ciudad de México. Hoy les quiero platicar cómo un terreno abandonado de mi calle se convirtió en huerto. Durante años ese lote fue un basurero. La gente tiraba de todo y, de noche, nadie se atrevía a pasar por ahí."
+      },
+      {
+       "v": "LA_F1",
+       "who": "Mariana",
+       "t": "Todo empezó por mi mamá. Ella creció en un pueblo de Puebla y siempre se quejaba de que en la ciudad los jitomates no saben a nada. Un domingo agarró unas semillas y se puso a sembrar en una esquina del lote. Yo pensé que estaba loca, la verdad. Pero a las pocas semanas, los vecinos empezaron a acercarse a preguntar."
+      },
+      {
+       "v": "LA_F1",
+       "who": "Mariana",
+       "t": "Hoy somos unas cuarenta familias. Tenemos el lote y las azoteas de seis edificios, donde sembramos en cajas de madera. Creíamos que lo difícil sería el agua, pero no: lo difícil fue ponernos de acuerdo. Quién riega, quién cosecha, qué se hace con lo que sobra... Hubo discusiones muy fuertes."
+      },
+      {
+       "v": "LA_F1",
+       "who": "Mariana",
+       "t": "Lo que más me sorprendió no fue la cosecha, sino lo que pasó con la gente. Vecinos que llevaban veinte años sin saludarse ahora comparten herramientas y recetas. Y los muchachos que antes se pasaban el día en la esquina ahora se encargan de la composta, y con mucho orgullo."
+      },
+      {
+       "v": "LA_F1",
+       "who": "Mariana",
+       "t": "Ojo, no les voy a decir que el huerto nos da de comer a todos. Lo que sí pasa es que comemos mejor: los niños prueban verduras que ni conocían, porque las sembraron ellos. Lo que sobra lo vendemos los sábados en el tianguis, para comprar semillas. ¿Y ahora qué? Queremos que la alcaldía nos ceda otros dos lotes vacíos de la colonia, porque ya hay familias esperando. Y a quien quiera empezar, le digo: con una maceta en la ventana ya está sembrando. Muchas gracias."
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "n": 25,
+     "clip": "t5c1",
+     "stem": "Antes de convertirse en huerto, el terreno...",
+     "options": [
+      {
+       "t": "era un parque que nadie cuidaba.",
+       "trap": "assumption",
+       "why": "О парке ничего не сказано: участок был заброшенным и служил свалкой («fue un basurero»)."
+      },
+      {
+       "t": "era un sitio sucio e inseguro.",
+       "ok": true
+      },
+      {
+       "t": "se usaba para aparcar de noche.",
+       "trap": "same_word",
+       "why": "«De noche» звучит, но смысл другой: ночью там никто не решался проходить."
+      }
+     ],
+     "evidence": "ese lote fue un basurero",
+     "whyRu": "Участок был свалкой («basurero» = грязно), а ночью там боялись ходить («nadie se atrevía a pasar» = небезопасно)."
+    },
+    {
+     "n": 26,
+     "clip": "t5c1",
+     "stem": "La madre de Mariana empezó a sembrar porque...",
+     "options": [
+      {
+       "t": "echaba de menos los sabores de su pueblo.",
+       "ok": true
+      },
+      {
+       "t": "los vecinos le pidieron que lo hiciera.",
+       "trap": "time_number",
+       "why": "Порядок событий: соседи подошли «a las pocas semanas», уже ПОСЛЕ того, как мама начала сажать."
+      },
+      {
+       "t": "su hija la convenció de que era buena idea.",
+       "trap": "opposite",
+       "why": "Наоборот: Мариана подумала, что мама сошла с ума («Yo pensé que estaba loca»)."
+      }
+     ],
+     "evidence": "siempre se quejaba de que en la ciudad los jitomates no saben a nada",
+     "whyRu": "Мама выросла в деревне и жаловалась, что в городе помидоры безвкусные. Значит, ей не хватало вкуса деревенских овощей. «Jitomate» (Мексика) = «tomate»."
+    },
+    {
+     "n": 27,
+     "clip": "t5c1",
+     "stem": "Según Mariana, lo más complicado fue...",
+     "options": [
+      {
+       "t": "conseguir agua para todas las plantas.",
+       "trap": "opposite",
+       "why": "Они думали, что трудно будет с водой, но «pero no» — оказалось иначе."
+      },
+      {
+       "t": "conseguir permiso para usar las azoteas.",
+       "trap": "assumption",
+       "why": "Крыши шести домов упоминаются, но о разрешениях ничего не сказано."
+      },
+      {
+       "t": "organizar el trabajo entre todos.",
+       "ok": true
+      }
+     ],
+     "evidence": "lo difícil fue ponernos de acuerdo",
+     "whyRu": "Труднее всего было договориться: кто поливает, кто собирает урожай, что делать с излишками. То есть организоваться всем вместе."
+    },
+    {
+     "n": 28,
+     "clip": "t5c1",
+     "stem": "¿Qué es lo que más sorprendió a Mariana?",
+     "options": [
+      {
+       "t": "Cómo cambió la convivencia en el barrio.",
+       "ok": true
+      },
+      {
+       "t": "La cantidad de verdura que sacaron.",
+       "trap": "opposite",
+       "why": "Она прямо говорит: «no fue la cosecha» — удивил не урожай."
+      },
+      {
+       "t": "Que los vecinos llevaran veinte años en el barrio.",
+       "trap": "time_number",
+       "why": "«Veinte años» — это сколько лет соседи не здоровались друг с другом, а не сколько живут в районе."
+      }
+     ],
+     "evidence": "Lo que más me sorprendió no fue la cosecha, sino lo que pasó con la gente.",
+     "whyRu": "Снова «no... sino...»: удивил не урожай, а люди. Соседи, которые двадцать лет не здоровались, теперь делятся инструментами и рецептами. «Convivencia» = совместная жизнь, отношения между соседями."
+    },
+    {
+     "n": 29,
+     "clip": "t5c1",
+     "stem": "¿Qué dice Mariana sobre lo que producen?",
+     "options": [
+      {
+       "t": "Que alcanza para alimentar a todas las familias.",
+       "trap": "opposite",
+       "why": "Она говорит обратное: «no les voy a decir que el huerto nos da de comer a todos»."
+      },
+      {
+       "t": "Que las familias viven de lo que venden.",
+       "trap": "assumption",
+       "why": "Продают только излишки, и деньги идут на семена («para comprar semillas»), а не на жизнь семей."
+      },
+      {
+       "t": "Que los niños comen de forma más variada.",
+       "ok": true
+      }
+     ],
+     "evidence": "los niños prueban verduras que ni conocían",
+     "whyRu": "Дети пробуют овощи, которых раньше даже не знали, потому что сами их посадили. Значит, питаются разнообразнее."
+    },
+    {
+     "n": 30,
+     "clip": "t5c1",
+     "stem": "¿Qué quieren conseguir ahora?",
+     "options": [
+      {
+       "t": "Comprar dos terrenos más en la colonia.",
+       "trap": "assumption",
+       "why": "Покупать они ничего не собираются: они хотят, чтобы районная администрация им участки ПЕРЕДАЛА («nos ceda»)."
+      },
+      {
+       "t": "Nuevos espacios para ampliar el huerto.",
+       "ok": true
+      },
+      {
+       "t": "Un puesto fijo en el tianguis.",
+       "trap": "same_word",
+       "why": "Рынок («tianguis») упоминается, но там они уже продают излишки по субботам. Это не новый план."
+      }
+     ],
+     "evidence": "Queremos que la alcaldía nos ceda otros dos lotes vacíos de la colonia",
+     "whyRu": "Они хотят получить ещё два пустых участка в районе, потому что желающих уже много. «Ceder» = передать, уступить. «Colonia» (Мексика) = район."
+    }
+   ]
+  }
+ ]
+}

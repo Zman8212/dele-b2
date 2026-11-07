@@ -1,0 +1,1043 @@
+{
+  "id": "t7",
+  "title": "Práctica 7",
+  "titleRu": "Тренировочный тест 7",
+  "blurbRu": "30 вопросов, ~9 минут аудио. Темы: книжный магазин с кафе в деревне в провинции Теруэль, как выбрать район в большом городе, на работу на велосипеде в Росарио (аргентинский акцент).",
+  "official": false,
+  "tasks": [
+    {
+      "n": 1,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 5,
+      "pauseAfter": 10,
+      "instr": "Usted va a escuchar seis conversaciones breves. Escuchará cada conversación dos veces. Después debe contestar a las preguntas (1-6). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Цифры, дни и планы из начала диалога — любимые ловушки. Дослушайте до конца: что в итоге предлагают или решают, обычно звучит в последней реплике.",
+      "clips": [
+        {
+          "id": "t1c1",
+          "intro": "Conversación 1. Va a escuchar a una mujer que llama a su compañía de internet.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "Buenas, el técnico tenía que venir esta mañana a instalarme la fibra y no ha aparecido. Y he pedido el día libre en el trabajo para nada."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "Lo siento, ha sido un fallo nuestro. Mañana a primera hora va alguien y, por las molestias, este mes no le cobramos la cuota."
+            }
+          ]
+        },
+        {
+          "id": "t1c2",
+          "intro": "Conversación 2. Va a escuchar a un cliente y a una camarera en una cafetería.",
+          "lines": [
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Perdona, te pedí el café con leche de avena y esto sabe a leche normal. No es por ser pesado, pero me sienta fatal."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Mujer",
+              "t": "Uy, culpa mía: lo he confundido con el de la mesa de al lado. Ahora te preparo otro, y el cruasán te lo invito yo."
+            }
+          ]
+        },
+        {
+          "id": "t1c3",
+          "intro": "Conversación 3. Va a escuchar a dos compañeros de clase.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "¿Te has matriculado ya en el curso de inglés? Dicen que el plazo acaba el viernes."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Eso es para los antiguos. Los nuevos tenemos hasta el quince, pero antes hay que hacer una prueba de nivel, y esa sí es esta semana. Así que mañana me la quito de encima."
+            }
+          ]
+        },
+        {
+          "id": "t1c4",
+          "intro": "Conversación 4. Va a escuchar a dos amigos.",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "Marta, ¿me dejas el coche el sábado? Tengo que llevar unos muebles a casa de mis padres."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Mujer",
+              "t": "Te lo dejaría encantada, pero el sábado lo tiene mi hermano. El domingo sí, siempre que me lo devuelvas con el depósito lleno, que la última vez..."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "Hecho. El domingo me viene incluso mejor."
+            }
+          ]
+        },
+        {
+          "id": "t1c5",
+          "intro": "Conversación 5. Va a escuchar a una mujer en una oficina de objetos perdidos.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "Hola. Ayer me dejé una mochila azul en el autobús veintisiete. ¿La ha entregado alguien?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Aquí todavía no ha llegado nada. Lo que se encuentra en los autobuses pasa antes por las cocheras y tarda dos o tres días en llegar aquí. Déjeme su teléfono y la llamamos si aparece."
+            }
+          ]
+        },
+        {
+          "id": "t1c6",
+          "intro": "Conversación 6. Va a escuchar a dos amigas que preparan un regalo.",
+          "lines": [
+            {
+              "v": "ES_F2",
+              "who": "Mujer 1",
+              "t": "Oye, el regalo de Inés ha salido por ciento veinte euros. Somos seis, así que tocamos a veinte."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Mujer 2",
+              "t": "Ya, pero Carla y Pilar dijeron que solo podían poner diez, que van justas. Yo pondría lo que falta entre las cuatro que quedamos."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Mujer 1",
+              "t": "Vale, pues a veinticinco. Se lo digo al grupo."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 1,
+          "clip": "t1c1",
+          "stem": "¿Qué le ofrece el empleado a la mujer?",
+          "options": [
+            {
+              "t": "Que el técnico vaya esa misma tarde.",
+              "trap": "time_number",
+              "why": "Техник придёт не сегодня вечером, а завтра рано утром: «mañana a primera hora»."
+            },
+            {
+              "t": "No pagar el servicio de este mes.",
+              "ok": true
+            },
+            {
+              "t": "Pagarle el día de trabajo perdido.",
+              "trap": "assumption",
+              "why": "Она жалуется, что зря взяла выходной, но компенсировать этот день ей никто не предлагает."
+            }
+          ],
+          "evidence": "este mes no le cobramos la cuota",
+          "whyRu": "«No le cobramos la cuota» = не возьмём абонентскую плату. То есть за этот месяц она ничего не платит."
+        },
+        {
+          "n": 2,
+          "clip": "t1c2",
+          "stem": "¿Qué ha pasado en la cafetería?",
+          "options": [
+            {
+              "t": "El cliente ha pedido una leche que no tienen.",
+              "trap": "assumption",
+              "why": "Овсяное молоко у них есть: официантка сейчас сделает новый кофе. О том, что чего-то нет, не сказано."
+            },
+            {
+              "t": "La camarera se ha equivocado de pedido.",
+              "ok": true
+            },
+            {
+              "t": "Al cliente no le van a cobrar el café.",
+              "trap": "same_word",
+              "why": "«Te lo invito» относится к круассану («el cruasán te lo invito yo»), а не к кофе."
+            }
+          ],
+          "evidence": "lo he confundido con el de la mesa de al lado",
+          "whyRu": "Она перепутала его кофе с заказом соседнего столика, то есть принесла не тот заказ."
+        },
+        {
+          "n": 3,
+          "clip": "t1c3",
+          "stem": "¿Qué va a hacer el hombre mañana?",
+          "options": [
+            {
+              "t": "Formalizar su matrícula en el curso.",
+              "trap": "time_number",
+              "why": "Записаться он может до пятнадцатого числа («hasta el quince»). Завтра — только тест."
+            },
+            {
+              "t": "Preguntar si le amplían el plazo.",
+              "trap": "assumption",
+              "why": "Продлевать срок ему не нужно: у новых учеников время есть до пятнадцатого."
+            },
+            {
+              "t": "Demostrar qué nivel de inglés tiene.",
+              "ok": true
+            }
+          ],
+          "evidence": "antes hay que hacer una prueba de nivel",
+          "whyRu": "Сначала нужно пройти тест на уровень, и он сделает его завтра: «mañana me la quito de encima» = завтра с ним разделаюсь."
+        },
+        {
+          "n": 4,
+          "clip": "t1c4",
+          "stem": "¿Qué condición pone la mujer?",
+          "options": [
+            {
+              "t": "Que le ponga gasolina antes de devolverlo.",
+              "ok": true
+            },
+            {
+              "t": "Que se lo devuelva ese mismo sábado.",
+              "trap": "time_number",
+              "why": "В субботу машина у её брата. Она даёт её на воскресенье."
+            },
+            {
+              "t": "Que lleve también unos muebles de su hermano.",
+              "trap": "same_word",
+              "why": "И мебель, и брат упоминаются, но мебель — его, для родителей, а брат просто занял машину в субботу."
+            }
+          ],
+          "evidence": "siempre que me lo devuelvas con el depósito lleno",
+          "whyRu": "«Siempre que» = при условии, что. Вернуть машину с полным баком = заправить её перед возвратом."
+        },
+        {
+          "n": 5,
+          "clip": "t1c5",
+          "stem": "¿Qué le explica el empleado?",
+          "options": [
+            {
+              "t": "Que alguien ya ha entregado la mochila.",
+              "trap": "opposite",
+              "why": "Наоборот: «Aquí todavía no ha llegado nada» — пока ничего не поступало."
+            },
+            {
+              "t": "Que tiene que volver dentro de tres días.",
+              "trap": "assumption",
+              "why": "Приходить снова не нужно: ей позвонят, если рюкзак найдётся («la llamamos si aparece»)."
+            },
+            {
+              "t": "Que los objetos tardan en llegar allí.",
+              "ok": true
+            }
+          ],
+          "evidence": "tarda dos o tres días en llegar aquí",
+          "whyRu": "Найденные вещи сначала попадают в автобусный парк и только через два-три дня — в это бюро."
+        },
+        {
+          "n": 6,
+          "clip": "t1c6",
+          "stem": "¿Qué deciden al final?",
+          "options": [
+            {
+              "t": "Que no todas paguen lo mismo.",
+              "ok": true
+            },
+            {
+              "t": "Que cada una ponga veinte euros.",
+              "trap": "time_number",
+              "why": "По двадцать — это первый расчёт. В итоге четверо платят по двадцать пять."
+            },
+            {
+              "t": "Que Carla y Pilar no pongan nada.",
+              "trap": "opposite",
+              "why": "Карла и Пилар платят, но меньше: по десять евро («solo podían poner diez»)."
+            }
+          ],
+          "evidence": "Vale, pues a veinticinco.",
+          "whyRu": "Двое платят по десять, остальные четверо — по двадцать пять. Суммы разные."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "type": "who",
+      "readSec": 20,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar una conversación entre dos amigos, Óscar e Irene. Indique si los enunciados (7-12) se refieren a Óscar (A), a Irene (B) o a ninguno de los dos (C). Escuchará la conversación dos veces.",
+      "hintRu": "Оба рассказывают про свои курсы: цена, расписание, успехи. Следите за временем: «ya he...» — уже сделал, «estoy pensando en...» — только думает (это C).",
+      "choices": {
+        "A": "Óscar",
+        "B": "Irene",
+        "C": "Ninguno de los dos"
+      },
+      "example": {
+        "stem": "Al principio pensó en abandonar el curso.",
+        "answer": "A"
+      },
+      "clips": [
+        {
+          "id": "t2c1",
+          "intro": "Óscar e Irene hablan de sus cursos.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Irene",
+              "t": "¡Óscar! ¿Qué tal va el curso de cocina? Ya llevas un mes, ¿no?"
+            },
+            {
+              "v": "ES_M1",
+              "who": "Óscar",
+              "t": "Un mes y medio. Y estoy encantado, aunque al principio pensaba dejarlo. El primer día se me quemó el arroz delante de todos y me quería morir de vergüenza."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Irene",
+              "t": "Yo con la cerámica no lo pasé tan mal, aunque las primeras semanas no me salía nada en el torno. Pero la profesora tiene una paciencia infinita, y ahora ya hago tazas que se pueden usar."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Óscar",
+              "t": "¿Y a ti te sale caro? El mío no es barato, la verdad, pero los ingredientes van incluidos, así que no me quejo."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Irene",
+              "t": "El curso no, lo paga en parte el ayuntamiento. Lo que me cuesta un dineral es el barro, que se paga aparte."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Óscar",
+              "t": "Lo peor para mí es el horario. Salgo de la oficina a las siete y llego siempre corriendo, sin cenar, con un hambre que no veas."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Irene",
+              "t": "Yo lo tengo más fácil, la escuela está a dos calles de casa. Aunque estoy pensando en cambiarme al grupo de los sábados, que es más tranquilo."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Óscar",
+              "t": "Pues yo ya he cocinado tres veces para mis compañeros de piso, y se lo comen todo. Se han acostumbrado demasiado rápido."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Irene",
+              "t": "Yo todavía no le he regalado nada a nadie. Me da corte, no sé, me parece que lo mío aún no está a la altura."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Óscar",
+              "t": "Ya será menos. Oye, ¿y si el mes que viene hacemos una cena? Yo cocino y tú pones los platos."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Irene",
+              "t": "¡Trato hecho! Aunque si se rompen, la culpa será tuya, que conste."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 7,
+          "clip": "t2c1",
+          "stem": "Ha progresado gracias a la persona que le da clase.",
+          "answer": "B",
+          "evidence": "la profesora tiene una paciencia infinita, y ahora ya hago tazas que se pueden usar",
+          "whyRu": "Это Ирене: у преподавательницы бесконечное терпение, и теперь у неё получаются чашки, которыми можно пользоваться.",
+          "wrong": {
+            "A": {
+              "trap": "who",
+              "why": "Оскар доволен курсом, но про преподавателя ничего не говорит."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Ирене прямо это говорит: «la profesora tiene una paciencia infinita, y ahora ya hago tazas...»."
+            }
+          }
+        },
+        {
+          "n": 8,
+          "clip": "t2c1",
+          "stem": "No paga nada por su curso.",
+          "answer": "C",
+          "evidence": "lo paga en parte el ayuntamiento",
+          "whyRu": "Ни один. Курс Ирене мэрия оплачивает только частично («en parte»), а курс Оскара «no es barato».",
+          "wrong": {
+            "A": {
+              "trap": "opposite",
+              "why": "Оскар говорит наоборот: «El mío no es barato»."
+            },
+            "B": {
+              "trap": "partial",
+              "why": "Мэрия платит только часть («en parte»), а глину Ирене покупает сама, и это дорого."
+            }
+          }
+        },
+        {
+          "n": 9,
+          "clip": "t2c1",
+          "stem": "Llega a clase sin haber comido.",
+          "answer": "A",
+          "evidence": "llego siempre corriendo, sin cenar",
+          "whyRu": "Оскар выходит из офиса в семь и приходит на занятие без ужина, голодный.",
+          "wrong": {
+            "B": {
+              "trap": "assumption",
+              "why": "Ирене живёт в двух улицах от школы, ей как раз проще. Про еду она не говорит."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Оскар прямо говорит: «llego siempre corriendo, sin cenar»."
+            }
+          }
+        },
+        {
+          "n": 10,
+          "clip": "t2c1",
+          "stem": "Ya ha cambiado de horario de clase.",
+          "answer": "C",
+          "evidence": "estoy pensando en cambiarme al grupo de los sábados",
+          "whyRu": "Ни один. Ирене только думает перейти в субботнюю группу («estoy pensando»), Оскар просто жалуется на расписание.",
+          "wrong": {
+            "A": {
+              "trap": "same_word",
+              "why": "Оскар говорит про расписание («el horario»), но только жалуется на него, ничего не меняя."
+            },
+            "B": {
+              "trap": "time_number",
+              "why": "«Estoy pensando en cambiarme» — это только план, а не то, что уже сделано."
+            }
+          }
+        },
+        {
+          "n": 11,
+          "clip": "t2c1",
+          "stem": "Ya ha compartido con otros lo que aprende.",
+          "answer": "A",
+          "evidence": "ya he cocinado tres veces para mis compañeros de piso",
+          "whyRu": "Оскар уже три раза готовил для соседей по квартире, и они всё съедают.",
+          "wrong": {
+            "B": {
+              "trap": "opposite",
+              "why": "Ирене наоборот: «todavía no le he regalado nada a nadie»."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Оскар: «ya he cocinado tres veces para mis compañeros de piso»."
+            }
+          }
+        },
+        {
+          "n": 12,
+          "clip": "t2c1",
+          "stem": "Aún duda de la calidad de lo que hace.",
+          "answer": "B",
+          "evidence": "me parece que lo mío aún no está a la altura",
+          "whyRu": "Ирене стесняется дарить свои вещи: ей кажется, что они пока недостаточно хороши («no está a la altura»).",
+          "wrong": {
+            "A": {
+              "trap": "time_number",
+              "why": "Оскару было стыдно только в первый день. Сейчас он «encantado» и уже кормит соседей."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Ирене прямо говорит: «lo mío aún no está a la altura»."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar parte de una entrevista a Andrés Gil, librero. Escuchará la entrevista dos veces. Después debe contestar a las preguntas (13-18). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Ответ часто стоит после поправки: «no fue... como la gente cree», «ni mucho menos», «y qué va». То, что звучит до неё, — это ловушка.",
+      "clips": [
+        {
+          "id": "t3c1",
+          "intro": "Entrevista a Andrés Gil, librero.",
+          "lines": [
+            {
+              "v": "ES_F2",
+              "who": "Periodista",
+              "t": "Hoy nos acompaña Andrés Gil, que dejó su trabajo en Madrid para abrir una librería con café en un pueblo de Teruel. Andrés, ¿cómo surgió la idea?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Andrés",
+              "t": "Pues no fue en un momento de crisis, como la gente cree. Yo trabajaba en una consultora y me iba bien. Pero un verano vine a casa de mi abuela y me di cuenta de que en el pueblo no había ningún sitio donde quedar, salvo el bar de siempre. Y pensé: aquí falta un lugar para leer, charlar, estar a gusto."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Periodista",
+              "t": "¿Y cómo reaccionó tu entorno?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Andrés",
+              "t": "Mis padres pensaron que me había vuelto loco. Mis amigos me animaron, aunque ninguno pensaba que fuera a durar. Los que más me sorprendieron fueron los vecinos: al principio desconfiaban, pero cuando vieron que iba en serio, me ayudaron hasta a pintar el local."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Periodista",
+              "t": "¿Vives de los libros?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Andrés",
+              "t": "Ni mucho menos. Los libros dejan muy poco margen. Lo que mantiene el negocio es el café y, sobre todo, los fines de semana: organizo clubes de lectura y talleres de escritura, y viene gente de Valencia y de Zaragoza a pasar el día."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Periodista",
+              "t": "¿Cuál ha sido el mayor reto?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Andrés",
+              "t": "Internet, sin duda. Los primeros meses la conexión era tan mala que ni siquiera podía cobrar con tarjeta. Tardaron medio año en instalarme una antena, y estuve a punto de tirar la toalla."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Periodista",
+              "t": "¿Echas de menos la ciudad?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Andrés",
+              "t": "Menos de lo que esperaba. Creía que añoraría los cines y los restaurantes, y qué va. Lo que sí echo de menos es el anonimato. Aquí todo el mundo sabe a qué hora abres, con quién hablas... y eso a veces agobia."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Periodista",
+              "t": "¿Qué le dirías a alguien que quiera hacer lo mismo?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Andrés",
+              "t": "Que no lo idealice: tener un negocio en un pueblo no es vivir de vacaciones, es trabajar más que antes. Y que empiece pequeño, sin endeudarse, y que hable mucho con la gente del lugar antes de abrir."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 13,
+          "clip": "t3c1",
+          "stem": "Andrés decidió abrir su negocio porque...",
+          "options": [
+            {
+              "t": "vio que al pueblo le faltaba un punto de encuentro.",
+              "ok": true
+            },
+            {
+              "t": "estaba harto de su trabajo en la consultora de Madrid.",
+              "trap": "opposite",
+              "why": "Он говорит наоборот: «no fue en un momento de crisis» и «me iba bien» — на работе всё было хорошо."
+            },
+            {
+              "t": "había heredado la casa de su abuela en el pueblo.",
+              "trap": "assumption",
+              "why": "Бабушка упоминается только потому, что он приехал к ней летом. О наследстве ни слова."
+            }
+          ],
+          "evidence": "en el pueblo no había ningún sitio donde quedar",
+          "whyRu": "В деревне не было места, где встретиться, кроме обычного бара. «Punto de encuentro» = место встречи."
+        },
+        {
+          "n": 14,
+          "clip": "t3c1",
+          "stem": "Según Andrés, los vecinos del pueblo...",
+          "options": [
+            {
+              "t": "le apoyaron con entusiasmo desde el primer día.",
+              "trap": "who",
+              "why": "Поддержали его друзья. Соседи сначала относились с недоверием: «al principio desconfiaban»."
+            },
+            {
+              "t": "creyeron que se había vuelto loco.",
+              "trap": "who",
+              "why": "Так подумали его родители («Mis padres pensaron...»), а не соседи."
+            },
+            {
+              "t": "terminaron echándole una mano con el local.",
+              "ok": true
+            }
+          ],
+          "evidence": "me ayudaron hasta a pintar el local",
+          "whyRu": "Сначала соседи не доверяли, но потом даже помогли покрасить помещение. «Echar una mano» = помочь."
+        },
+        {
+          "n": 15,
+          "clip": "t3c1",
+          "stem": "Lo que permite que el negocio salga adelante es...",
+          "options": [
+            {
+              "t": "principalmente, las actividades del sábado y el domingo.",
+              "ok": true
+            },
+            {
+              "t": "la venta de libros, que le deja buen margen.",
+              "trap": "opposite",
+              "why": "Наоборот: «Los libros dejan muy poco margen» — на книгах он почти не зарабатывает."
+            },
+            {
+              "t": "la gente de otras ciudades que viene a diario.",
+              "trap": "time_number",
+              "why": "Люди из Валенсии и Сарагосы приезжают по выходным, а не каждый день."
+            }
+          ],
+          "evidence": "sobre todo, los fines de semana: organizo clubes de lectura y talleres de escritura",
+          "whyRu": "Бизнес держится на кафе и прежде всего на выходных: книжные клубы и писательские мастерские."
+        },
+        {
+          "n": 16,
+          "clip": "t3c1",
+          "stem": "¿Qué dificultad tuvo Andrés al principio?",
+          "options": [
+            {
+              "t": "Le costó mucho que entraran clientes en la tienda.",
+              "trap": "assumption",
+              "why": "О нехватке клиентов в начале он не говорит. Его главная проблема — связь."
+            },
+            {
+              "t": "Tenía serios problemas de cobertura en el local.",
+              "ok": true
+            },
+            {
+              "t": "Tuvo que cerrar la tienda durante medio año.",
+              "trap": "time_number",
+              "why": "Полгода — это сколько ставили антенну. Закрывать магазин ему не пришлось."
+            }
+          ],
+          "evidence": "la conexión era tan mala que ni siquiera podía cobrar con tarjeta",
+          "whyRu": "Интернет был таким плохим, что нельзя было даже принять оплату картой."
+        },
+        {
+          "n": 17,
+          "clip": "t3c1",
+          "stem": "Sobre la vida en el pueblo, Andrés comenta que...",
+          "options": [
+            {
+              "t": "añora mucho el ocio que ofrece la ciudad.",
+              "trap": "opposite",
+              "why": "Он думал, что будет скучать по кино и ресторанам, «y qué va» — а вот и нет."
+            },
+            {
+              "t": "le gustaría tener algún restaurante más.",
+              "trap": "same_word",
+              "why": "Рестораны упоминаются, но как то, по чему он, оказалось, НЕ скучает."
+            },
+            {
+              "t": "le pesa que todos estén pendientes de él.",
+              "ok": true
+            }
+          ],
+          "evidence": "Lo que sí echo de menos es el anonimato.",
+          "whyRu": "Ему не хватает анонимности: в деревне все знают, во сколько он открывает магазин и с кем разговаривает."
+        },
+        {
+          "n": 18,
+          "clip": "t3c1",
+          "stem": "¿Qué aconseja Andrés?",
+          "options": [
+            {
+              "t": "Pedir un préstamo para empezar con fuerza.",
+              "trap": "opposite",
+              "why": "Он советует наоборот: «sin endeudarse» — не влезать в долги."
+            },
+            {
+              "t": "Conocer bien a los vecinos antes de inaugurar.",
+              "ok": true
+            },
+            {
+              "t": "Tomarse unas vacaciones antes de decidir.",
+              "trap": "same_word",
+              "why": "«Vacaciones» звучит в другом смысле: он говорит, что бизнес в деревне — «no es vivir de vacaciones», то есть совсем не отпуск."
+            }
+          ],
+          "evidence": "que hable mucho con la gente del lugar antes de abrir",
+          "whyRu": "Много разговаривать с местными до открытия = хорошо узнать соседей. Ещё он советует начинать с малого и без долгов."
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "type": "match",
+      "readSec": 20,
+      "pauseBetween": 5,
+      "pauseAfter": 10,
+      "instr": "Usted va a escuchar a seis personas que hablan de qué tienen en cuenta para elegir barrio en una gran ciudad. Escuchará a cada persona dos veces. Seleccione el enunciado (A-I) que corresponde al tema del que habla cada persona (19-24). Hay nueve enunciados. Seleccione seis.",
+      "hintRu": "Каждый называет главное для себя и то, чем ради этого пожертвовал («aunque...», «sí, pero...»). Жертва — ловушка, ответ — то, ради чего человек на неё идёт.",
+      "statements": {
+        "A": "Que sea un barrio tranquilo, sin ruido.",
+        "B": "Tener naturaleza cerca de casa.",
+        "C": "Tardar poco en llegar al trabajo.",
+        "D": "Un ambiente de barrio de toda la vida.",
+        "E": "Pagar un alquiler bajo.",
+        "F": "Estar cerca de los suyos.",
+        "G": "Que haya buenos centros educativos.",
+        "H": "Tener una oferta cultural cerca.",
+        "I": "Sentirse seguro al volver de noche."
+      },
+      "clips": [
+        {
+          "id": "t4c1",
+          "intro": "Persona 1",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Persona 1",
+              "t": "Durante años viví en un barrio precioso, lleno de terrazas y bares, pero tardaba más de una hora en llegar a la oficina. Cuando me mudé, puse una sola condición: ir sin hacer transbordos. Ahora tardo veinte minutos y, aunque la zona es más aburrida, gano casi dos horas al día."
+            }
+          ]
+        },
+        {
+          "id": "t4c2",
+          "intro": "Persona 2",
+          "lines": [
+            {
+              "v": "ES_M2",
+              "who": "Persona 2",
+              "t": "No tengo hijos, así que lo de los colegios me da exactamente igual. Para mí lo importante es bajar a la calle y tener cerca un teatro pequeño, una sala de conciertos, alguna librería con presentaciones. Si a cambio tengo que aguantar algo de ruido los fines de semana, lo aguanto."
+            }
+          ]
+        },
+        {
+          "id": "t4c3",
+          "intro": "Persona 3",
+          "lines": [
+            {
+              "v": "LA_M1",
+              "who": "Persona 3",
+              "t": "Cuando llegué de Medellín, alquilé un apartamento en una zona nueva, con piscina y todo, pero allá no había ni una panadería: todo era centro comercial y carro. Ahora vivo en un barrio viejo, el frutero me llama por mi nombre y en la plaza siempre hay algún conocido. Eso no tiene precio."
+            }
+          ]
+        },
+        {
+          "id": "t4c4",
+          "intro": "Persona 4",
+          "lines": [
+            {
+              "v": "ES_F2",
+              "who": "Persona 4",
+              "t": "Trabajo de enfermera en un hospital y muchas veces salgo de madrugada. Mis amigas me recomendaban zonas más baratas a las afueras, pero yo necesitaba calles con luz y con gente, sin cruzar ningún parque oscuro para llegar al portal. Pago algo más de alquiler, sí, pero vuelvo a casa tranquila."
+            }
+          ]
+        },
+        {
+          "id": "t4c5",
+          "intro": "Persona 5",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Persona 5",
+              "t": "Salgo a correr casi todas las mañanas y no soporto hacerlo entre coches. Por eso elegí un piso junto al parque del río, aunque el metro me pilla lejos y tengo que coger dos autobuses para ir a trabajar. Abrir la ventana y ver árboles me cambia el humor por completo."
+            }
+          ]
+        },
+        {
+          "id": "t4c6",
+          "intro": "Persona 6",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Persona 6",
+              "t": "Cuando nació mi hija lo tuve claro: había que vivir a un paso de mis padres. Mi pareja prefería un barrio con mejores colegios, y es verdad que el nuestro no destaca en eso. Pero que mi madre pueda recoger a la niña cuando salimos tarde nos salva la vida."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 19,
+          "clip": "t4c1",
+          "stem": "Persona 1",
+          "answer": "C",
+          "evidence": "Ahora tardo veinte minutos",
+          "whyRu": "Раньше дорога на работу занимала больше часа. Её единственное условие при переезде — ездить без пересадок, и теперь она тратит двадцать минут.",
+          "wrong": {
+            "H": {
+              "trap": "partial",
+              "why": "Террасы и бары были в старом районе, и от них она как раз отказалась: новый район «más aburrida»."
+            }
+          }
+        },
+        {
+          "n": 20,
+          "clip": "t4c2",
+          "stem": "Persona 2",
+          "answer": "H",
+          "evidence": "tener cerca un teatro pequeño, una sala de conciertos",
+          "whyRu": "Ему важно, чтобы рядом были театр, концертный зал, книжный с презентациями, то есть культурная жизнь.",
+          "wrong": {
+            "G": {
+              "trap": "opposite",
+              "why": "Про школы он говорит, что ему «me da exactamente igual» — детей у него нет."
+            },
+            "A": {
+              "trap": "opposite",
+              "why": "Тишина ему не главное: ради культуры он готов терпеть шум по выходным."
+            }
+          }
+        },
+        {
+          "n": 21,
+          "clip": "t4c3",
+          "stem": "Persona 3",
+          "answer": "D",
+          "evidence": "el frutero me llama por mi nombre y en la plaza siempre hay algún conocido",
+          "whyRu": "Он переехал из нового района с торговым центром в старый квартал, где продавец знает его по имени, а на площади всегда есть знакомые.",
+          "wrong": {
+            "E": {
+              "trap": "same_word",
+              "why": "«No tiene precio» — выражение «бесценно», а не про дешёвую аренду. О цене жилья он не говорит."
+            }
+          }
+        },
+        {
+          "n": 22,
+          "clip": "t4c4",
+          "stem": "Persona 4",
+          "answer": "I",
+          "evidence": "yo necesitaba calles con luz y con gente",
+          "whyRu": "Она возвращается с работы глубокой ночью, поэтому ей нужны освещённые улицы с людьми, без тёмного парка по дороге.",
+          "wrong": {
+            "E": {
+              "trap": "opposite",
+              "why": "Дешёвые районы ей советовали подруги, но она выбрала другое и платит больше: «Pago algo más de alquiler»."
+            },
+            "A": {
+              "trap": "same_word",
+              "why": "«Vuelvo a casa tranquila» = возвращаюсь спокойно, без страха. Это про безопасность, а не про тихий район."
+            }
+          }
+        },
+        {
+          "n": 23,
+          "clip": "t4c5",
+          "stem": "Persona 5",
+          "answer": "B",
+          "evidence": "elegí un piso junto al parque del río",
+          "whyRu": "Он бегает по утрам и выбрал квартиру у парка: видеть деревья из окна для него важнее всего.",
+          "wrong": {
+            "C": {
+              "trap": "opposite",
+              "why": "Дорога на работу у него как раз неудобная: метро далеко, нужно два автобуса."
+            }
+          }
+        },
+        {
+          "n": 24,
+          "clip": "t4c6",
+          "stem": "Persona 6",
+          "answer": "F",
+          "evidence": "había que vivir a un paso de mis padres",
+          "whyRu": "Главное для неё — жить рядом с родителями, чтобы мама могла забирать дочку. «Los suyos» = свои, родные.",
+          "wrong": {
+            "G": {
+              "trap": "who",
+              "why": "Хорошие школы хотел её партнёр. Она признаёт, что их район в этом не лучший."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar una charla de un argentino que va al trabajo en bicicleta. Escuchará la audición dos veces. Después debe contestar a las preguntas (25-30). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Аргентинский акцент: «ll» и «y» звучат почти как «ш». Слова: «plata» = деньги, «auto» = машина, «colectivo» = автобус, «estudio» = контора, «transpirado» = вспотевший. «Vos tenés», «probá» — это просто «ты».",
+      "clips": [
+        {
+          "id": "t5c1",
+          "intro": "Charla de Martín Sosa, contador.",
+          "lines": [
+            {
+              "v": "LA_M2",
+              "who": "Martín",
+              "t": "Buenas noches a todos. Me llamo Martín Sosa, soy contador, y hace seis años era la persona menos deportista de Rosario. Iba al estudio en auto y tardaba cuarenta minutos en hacer cinco kilómetros. La bici no apareció por salud ni por ecología, como la gente suele pensar. Apareció porque se me rompió el auto y no tenía plata para arreglarlo."
+            },
+            {
+              "v": "LA_M2",
+              "who": "Martín",
+              "t": "Las primeras semanas fueron un desastre, no les voy a mentir. Llegaba transpirado, me perdía y más de una vez pensé en volver al colectivo. Me salvó un compañero del estudio que llevaba años pedaleando: me enseñó un recorrido junto al río, más largo, pero muchísimo más tranquilo."
+            },
+            {
+              "v": "LA_M2",
+              "who": "Martín",
+              "t": "Con los meses empecé a dormir mejor, y eso lo esperaba. Lo que de verdad me sorprendió fue la ciudad. En auto, Rosario era una sucesión de semáforos. En bici empecé a fijarme en los edificios, en los negocios del barrio, a saludar al kiosquero. Conocí mi propia ciudad a los cuarenta años."
+            },
+            {
+              "v": "LA_M2",
+              "who": "Martín",
+              "t": "En el estudio también hubo cambios. Al principio me miraban raro cuando llegaba con el casco en la mano. Hoy somos seis los que vamos en bici, y la empresa terminó poniendo duchas y un lugar para guardar las bicis. Yo no pedí nada: cuando los demás vieron que se podía, se fueron sumando solos."
+            },
+            {
+              "v": "LA_M2",
+              "who": "Martín",
+              "t": "Ahora, ojo, no les voy a pintar un paraíso. Todavía hay autos que no respetan a nadie, y faltan ciclovías que unan los barrios del sur con el centro. Hace falta que la ciudad lo planifique en serio, y para eso hay que pedirlo, y pedirlo muchos."
+            },
+            {
+              "v": "LA_M2",
+              "who": "Martín",
+              "t": "Mi hija tiene doce años y el otro día me pidió ir sola en bici a la escuela. Hace seis años me habría parecido una locura. Le dije que sí, pero que la primera semana la acompaño yo. Y vos, si tenés dudas, probá un día. Uno solo. Después me contás. Gracias."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 25,
+          "clip": "t5c1",
+          "stem": "Martín empezó a ir en bicicleta porque...",
+          "options": [
+            {
+              "t": "su médico se lo había recomendado.",
+              "trap": "opposite",
+              "why": "Он прямо говорит, что велосипед появился «no por salud» — не из-за здоровья."
+            },
+            {
+              "t": "quería ahorrar en gasolina.",
+              "trap": "assumption",
+              "why": "Про деньги речь идёт, но не про бензин: у него не было денег на ремонт машины."
+            },
+            {
+              "t": "no podía pagar una reparación.",
+              "ok": true
+            }
+          ],
+          "evidence": "se me rompió el auto y no tenía plata para arreglarlo",
+          "whyRu": "Машина сломалась, а денег («plata») на ремонт не было. Не здоровье и не экология, как обычно думают."
+        },
+        {
+          "n": 26,
+          "clip": "t5c1",
+          "stem": "Al principio, a Martín le ayudó...",
+          "options": [
+            {
+              "t": "que un colega le mostrara otra ruta.",
+              "ok": true
+            },
+            {
+              "t": "volver al colectivo los días más duros.",
+              "trap": "time_number",
+              "why": "Он только думал вернуться к автобусу («pensé en volver»), но не вернулся."
+            },
+            {
+              "t": "encontrar el camino más corto.",
+              "trap": "opposite",
+              "why": "Маршрут вдоль реки «más largo» — длиннее, зато спокойнее."
+            }
+          ],
+          "evidence": "me enseñó un recorrido junto al río",
+          "whyRu": "Коллега, который давно ездит на велосипеде, показал ему маршрут вдоль реки."
+        },
+        {
+          "n": 27,
+          "clip": "t5c1",
+          "stem": "¿Qué fue lo que más sorprendió a Martín?",
+          "options": [
+            {
+              "t": "Que empezó a dormir mejor.",
+              "trap": "partial",
+              "why": "Это правда, но он сам говорит: «eso lo esperaba» — этого он ожидал."
+            },
+            {
+              "t": "Descubrir su ciudad con otros ojos.",
+              "ok": true
+            },
+            {
+              "t": "Tener que parar en tantos semáforos.",
+              "trap": "same_word",
+              "why": "Светофоры — это город, каким он видел его из машины, а не то, что его удивило."
+            }
+          ],
+          "evidence": "Lo que de verdad me sorprendió fue la ciudad.",
+          "whyRu": "На велосипеде он стал замечать здания, магазины, людей: «Conocí mi propia ciudad a los cuarenta años»."
+        },
+        {
+          "n": 28,
+          "clip": "t5c1",
+          "stem": "En la empresa de Martín...",
+          "options": [
+            {
+              "t": "él pidió que pusieran duchas.",
+              "trap": "opposite",
+              "why": "Он подчёркивает: «Yo no pedí nada». Душевые компания поставила сама."
+            },
+            {
+              "t": "otros compañeros siguieron su ejemplo.",
+              "ok": true
+            },
+            {
+              "t": "le prohibieron llegar en bicicleta al estudio.",
+              "trap": "assumption",
+              "why": "На него только странно смотрели («me miraban raro»). Никто ничего не запрещал."
+            }
+          ],
+          "evidence": "se fueron sumando solos",
+          "whyRu": "Коллеги увидели, что так можно, и сами начали ездить на велосипеде: теперь их шестеро."
+        },
+        {
+          "n": 29,
+          "clip": "t5c1",
+          "stem": "Según Martín, lo que todavía falta en la ciudad es...",
+          "options": [
+            {
+              "t": "una red de carriles bien conectada.",
+              "ok": true
+            },
+            {
+              "t": "más respeto por parte de los ciclistas.",
+              "trap": "who",
+              "why": "Не уважают других водители: «hay autos que no respetan a nadie». О велосипедистах он такого не говорит."
+            },
+            {
+              "t": "interés de los vecinos de los barrios del sur.",
+              "trap": "same_word",
+              "why": "Южные районы упоминаются, но проблема в том, что их не соединяют с центром велодорожки."
+            }
+          ],
+          "evidence": "faltan ciclovías que unan los barrios del sur con el centro",
+          "whyRu": "Не хватает велодорожек, которые соединяли бы южные районы с центром, и город должен это планировать."
+        },
+        {
+          "n": 30,
+          "clip": "t5c1",
+          "stem": "¿Qué ha decidido Martín sobre su hija?",
+          "options": [
+            {
+              "t": "No permitirle ir sola en bici a la escuela.",
+              "trap": "opposite",
+              "why": "Он ответил «sí». Безумием это показалось бы ему шесть лет назад, а не сейчас."
+            },
+            {
+              "t": "Llevarla él mismo en bici todos los días.",
+              "trap": "time_number",
+              "why": "Провожать её он будет только первую неделю («la primera semana»), а не всегда."
+            },
+            {
+              "t": "Dejarla ir sola tras acompañarla unos días.",
+              "ok": true
+            }
+          ],
+          "evidence": "Le dije que sí, pero que la primera semana la acompaño yo.",
+          "whyRu": "Он разрешил ей ездить одной, но первую неделю будет её сопровождать."
+        }
+      ]
+    }
+  ]
+}

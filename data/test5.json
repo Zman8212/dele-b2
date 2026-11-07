@@ -1,0 +1,1044 @@
+{
+  "id": "t5",
+  "title": "Práctica 5",
+  "titleRu": "Тренировочный тест 5",
+  "blurbRu": "30 вопросов, ~9 минут аудио. Темы: домашние животные из приюта, пчёлы на крышах Мадрида (колумбийский акцент), волонтёрство, сон и вечерние привычки.",
+  "official": false,
+  "tasks": [
+    {
+      "n": 1,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 5,
+      "pauseAfter": 10,
+      "instr": "Usted va a escuchar seis conversaciones breves. Escuchará cada conversación dos veces. Después debe contestar a las preguntas (1-6). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "В бытовых диалогах человеку часто предлагают два-три варианта. Неправильные ответы — это как раз те варианты, которые он отклонил. Ждите его последней реплики: «vale», «entonces», «mejor...».",
+      "clips": [
+        {
+          "id": "t1c1",
+          "intro": "Conversación 1. Va a escuchar a una inquilina que llama a su antiguo casero.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "Hola, Andrés, soy Elena. Te llamo por la fianza del piso: hace un mes que te devolví las llaves y no me ha llegado nada."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Perdona, tengo que descontar el arreglo de la lavadora, que me la dejasteis rota. El resto te lo ingreso esta semana."
+            }
+          ]
+        },
+        {
+          "id": "t1c2",
+          "intro": "Conversación 2. Va a escuchar a un cliente y a una farmacéutica.",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "Buenas, quería este antibiótico. Es el que me mandaron el año pasado para la garganta."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Mujer",
+              "t": "Lo siento, sin receta no puedo dárselo. Pida cita con su médico y, mientras tanto, para el dolor le puedo dar unas pastillas que no la necesitan."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "Vale, pues deme esas de momento."
+            }
+          ]
+        },
+        {
+          "id": "t1c3",
+          "intro": "Conversación 3. Va a escuchar a una mujer y al recepcionista de su centro de yoga.",
+          "lines": [
+            {
+              "v": "ES_M2",
+              "who": "Hombre",
+              "t": "Hola, Carmen. Te llamo porque hoy se suspende el yoga de las siete: la profesora está enferma. Te puedo pasar a la clase de mañana o devolverte la sesión al bono."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Mujer",
+              "t": "Mañana me viene fatal. Mejor guárdamela y ya la usaré otro día."
+            }
+          ]
+        },
+        {
+          "id": "t1c4",
+          "intro": "Conversación 4. Va a escuchar a dos vecinos.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "Perdona, ¿el perro que ladra por las tardes es tuyo? Trabajo de noche y duermo a esas horas."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Hombre",
+              "t": "Sí, perdona, es Toby. Ladra cuando se queda solo. Ya he contratado a una adiestradora que empieza el lunes, y mientras, mi hermano se lo llevará por las tardes."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Mujer",
+              "t": "Genial, gracias."
+            }
+          ]
+        },
+        {
+          "id": "t1c5",
+          "intro": "Conversación 5. Va a escuchar a una clienta y a una empleada de una empresa de alquiler de coches.",
+          "lines": [
+            {
+              "v": "ES_F2",
+              "who": "Empleada",
+              "t": "Aquí tiene las llaves. El depósito está lleno y tiene que devolverlo igual, o le cobraremos la gasolina más cara."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Clienta",
+              "t": "Vale. ¿Y el seguro a todo riesgo? ¿Merece la pena?"
+            },
+            {
+              "v": "ES_F2",
+              "who": "Empleada",
+              "t": "Son quince euros al día. Sin él, cualquier arañazo lo paga usted."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Clienta",
+              "t": "Entonces lo cojo."
+            }
+          ]
+        },
+        {
+          "id": "t1c6",
+          "intro": "Conversación 6. Va a escuchar a dos compañeros de trabajo.",
+          "lines": [
+            {
+              "v": "ES_M2",
+              "who": "Hombre 1",
+              "t": "Óscar, ¿me cambias el turno del sábado por la mañana? Se casa mi hermana. Si quieres, te hago el domingo por la noche."
+            },
+            {
+              "v": "ES_M1",
+              "who": "Hombre 2",
+              "t": "El domingo ya me lo cubre Marta. Pero si me haces el viernes que viene, trato hecho."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Hombre 1",
+              "t": "Hecho. Se lo digo a la encargada."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 1,
+          "clip": "t1c1",
+          "stem": "¿Qué le dice el casero a Elena?",
+          "options": [
+            {
+              "t": "Que no le devolverá toda la cantidad.",
+              "ok": true
+            },
+            {
+              "t": "Que ya le ha hecho la transferencia.",
+              "trap": "time_number",
+              "why": "Деньги он только собирается перевести: «te lo ingreso esta semana» — на этой неделе, а не уже."
+            },
+            {
+              "t": "Que ella todavía le debe un mes de alquiler.",
+              "trap": "same_word",
+              "why": "«Un mes» звучит, но это сколько времени прошло с тех пор, как она вернула ключи. О долге за аренду ни слова."
+            }
+          ],
+          "evidence": "tengo que descontar el arreglo de la lavadora",
+          "whyRu": "Он вычтет из залога ремонт стиральной машины, а остальное («el resto») вернёт. Значит, вся сумма к ней не вернётся."
+        },
+        {
+          "n": 2,
+          "clip": "t1c2",
+          "stem": "Al final, el hombre...",
+          "options": [
+            {
+              "t": "compra el mismo antibiótico que el año pasado.",
+              "trap": "opposite",
+              "why": "Без рецепта антибиотик не продают: «sin receta no puedo dárselo»."
+            },
+            {
+              "t": "se lleva algo para aliviar el dolor.",
+              "ok": true
+            },
+            {
+              "t": "consigue una receta de la farmacéutica.",
+              "trap": "same_word",
+              "why": "Слово «receta» звучит, но рецепт выписывает врач. Фармацевт советует записаться к нему на приём."
+            }
+          ],
+          "evidence": "Vale, pues deme esas de momento.",
+          "whyRu": "Фармацевт предлагает таблетки от боли, для которых рецепт не нужен, и он соглашается: «deme esas de momento»."
+        },
+        {
+          "n": 3,
+          "clip": "t1c3",
+          "stem": "¿Qué decide Carmen?",
+          "options": [
+            {
+              "t": "Ir a la clase del día siguiente.",
+              "trap": "opposite",
+              "why": "Это ей предложили, но завтра ей неудобно: «Mañana me viene fatal»."
+            },
+            {
+              "t": "Que le devuelvan el dinero de la clase.",
+              "trap": "same_word",
+              "why": "«Devolver» звучит, но речь о том, чтобы вернуть занятие на абонемент («al bono»), а не деньги."
+            },
+            {
+              "t": "Dejar la sesión para más adelante.",
+              "ok": true
+            }
+          ],
+          "evidence": "Mejor guárdamela y ya la usaré otro día.",
+          "whyRu": "Она просит сохранить занятие и использовать его в другой день. «Más adelante» = позже."
+        },
+        {
+          "n": 4,
+          "clip": "t1c4",
+          "stem": "¿Qué ha hecho ya el hombre?",
+          "options": [
+            {
+              "t": "Ha dejado al perro con su hermano.",
+              "trap": "time_number",
+              "why": "Это будущее: брат будет забирать собаку («se lo llevará»), пока не начнёт работу дрессировщица."
+            },
+            {
+              "t": "Ha pedido ayuda a una experta.",
+              "ok": true
+            },
+            {
+              "t": "Ha cambiado su horario de trabajo.",
+              "trap": "assumption",
+              "why": "О его работе ничего не сказано. По ночам работает соседка."
+            }
+          ],
+          "evidence": "Ya he contratado a una adiestradora",
+          "whyRu": "Он уже нанял дрессировщицу («adiestradora»), то есть специалистку. Она начнёт в понедельник."
+        },
+        {
+          "n": 5,
+          "clip": "t1c5",
+          "stem": "¿Qué decide la clienta?",
+          "options": [
+            {
+              "t": "Contratar una cobertura adicional.",
+              "ok": true
+            },
+            {
+              "t": "Devolver el coche sin llenar el depósito.",
+              "trap": "opposite",
+              "why": "Наоборот: машину нужно вернуть с полным баком, иначе бензин будет дороже."
+            },
+            {
+              "t": "Pagar quince euros por todo el alquiler.",
+              "trap": "time_number",
+              "why": "Пятнадцать евро — это «al día», за каждый день, а не за всю аренду."
+            }
+          ],
+          "evidence": "Entonces lo cojo.",
+          "whyRu": "Она берёт полную страховку («el seguro a todo riesgo»): «lo cojo» = беру его. «Cobertura» = страховое покрытие."
+        },
+        {
+          "n": 6,
+          "clip": "t1c6",
+          "stem": "Al final, el primer hombre se compromete a...",
+          "options": [
+            {
+              "t": "trabajar el domingo por la noche.",
+              "trap": "opposite",
+              "why": "Это он предлагал сам, но воскресенье уже не нужно: «El domingo ya me lo cubre Marta»."
+            },
+            {
+              "t": "pedirle a Marta que trabaje el sábado.",
+              "trap": "who",
+              "why": "Марта заменит Óscar в воскресенье, а не его в субботу."
+            },
+            {
+              "t": "hacer un turno de Óscar más adelante.",
+              "ok": true
+            }
+          ],
+          "evidence": "si me haces el viernes que viene, trato hecho",
+          "whyRu": "Óscar согласен поменяться, если коллега выйдет за него в следующую пятницу. Тот отвечает «Hecho» — договорились."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "type": "who",
+      "readSec": 20,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar una conversación entre dos amigos, Dani e Irene. Indique si los enunciados (7-12) se refieren a Dani (A), a Irene (B) o a ninguno de los dos (C). Escuchará la conversación dos veces.",
+      "hintRu": "Следите за другими людьми, о которых говорят: сестра, соседка, брат. Если что-то сделал не сам говорящий, а его родственник, это ловушка, и ответ часто C. «Ni me puso pegas» = вообще не возражал.",
+      "choices": {
+        "A": "Dani",
+        "B": "Irene",
+        "C": "Ninguno de los dos"
+      },
+      "example": {
+        "stem": "Tiene perro desde hace poco.",
+        "answer": "A"
+      },
+      "clips": [
+        {
+          "id": "t2c1",
+          "intro": "Dani e Irene hablan en una cafetería.",
+          "lines": [
+            {
+              "v": "ES_F2",
+              "who": "Irene",
+              "t": "¡Dani! Me ha contado tu hermano que ya tienes perro. ¿Al final fuiste a la protectora?"
+            },
+            {
+              "v": "ES_M2",
+              "who": "Dani",
+              "t": "Sí, hace dos semanas. Yo iba decidido a por un cachorro, pero los voluntarios me convencieron de llevarme a Lola, que tiene ocho años. Dicen que a los perros mayores casi nadie los quiere."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Irene",
+              "t": "Qué majo. Yo sigo dándole vueltas a lo del gato. Mi compañera de piso está encantada, pero en el contrato pone que no se admiten animales y no me atrevo a preguntarle al casero."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Dani",
+              "t": "Pregúntale, mujer. El mío ni me puso pegas. Eso sí, la rutina me ha cambiado: ahora me levanto una hora antes para sacarla, yo, que odiaba madrugar."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Irene",
+              "t": "Bueno, yo con el trabajo ya madrugo bastante, eso no me asusta. Lo que me frena es el dinero. Mi hermana tiene dos gatos y entre el veterinario y la comida se deja un dineral."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Dani",
+              "t": "Ya, barato no es. Pero a Lola me la dieron vacunada y con el chip puesto, y solo pagué una pequeña cuota. De momento, el veterinario ni lo he pisado."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Irene",
+              "t": "¿Y en verano qué harás con ella? Yo en agosto me voy tres semanas fuera, y eso también me echa para atrás."
+            },
+            {
+              "v": "ES_M2",
+              "who": "Dani",
+              "t": "Ni idea todavía. Igual se la dejo a mis padres. Oye, ¿por qué no te pasas por la protectora? Así ves a los gatos sin compromiso."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Irene",
+              "t": "Vale, el sábado me paso con mi compañera, solo a mirar. Aunque ya me conozco: si veo uno que me mira con pena, me lo traigo."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 7,
+          "clip": "t2c1",
+          "stem": "Ha adoptado un animal muy joven.",
+          "answer": "C",
+          "evidence": "que tiene ocho años",
+          "whyRu": "Ни один. Дани хотел щенка, но взял восьмилетнюю собаку. Ирене пока никого не взяла.",
+          "wrong": {
+            "A": {
+              "trap": "opposite",
+              "why": "Щенок («cachorro») был только его планом. В итоге он взял Лолу, которой восемь лет."
+            },
+            "B": {
+              "trap": "assumption",
+              "why": "Ирене только думает о кошке («sigo dándole vueltas»), никого она ещё не взяла."
+            }
+          }
+        },
+        {
+          "n": 8,
+          "clip": "t2c1",
+          "stem": "Al elegir, otras personas le hicieron cambiar de opinión.",
+          "answer": "A",
+          "evidence": "los voluntarios me convencieron de llevarme a Lola",
+          "whyRu": "Это Дани: он шёл за щенком, но волонтёры уговорили его взять Лолу. «Convencer» = уговорить.",
+          "wrong": {
+            "B": {
+              "trap": "assumption",
+              "why": "Соседка Ирене по квартире в восторге («está encantada»), но Ирене своего мнения не поменяла: она всё ещё думает."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Дани прямо говорит: «los voluntarios me convencieron»."
+            }
+          }
+        },
+        {
+          "n": 9,
+          "clip": "t2c1",
+          "stem": "Las condiciones de su alquiler le ponen un obstáculo.",
+          "answer": "B",
+          "evidence": "en el contrato pone que no se admiten animales",
+          "whyRu": "Это Ирене: в её договоре аренды написано, что животных держать нельзя.",
+          "wrong": {
+            "A": {
+              "trap": "opposite",
+              "why": "У Дани наоборот: хозяин квартиры не возражал («ni me puso pegas»)."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Ирене говорит это прямо: «no se admiten animales»."
+            }
+          }
+        },
+        {
+          "n": 10,
+          "clip": "t2c1",
+          "stem": "Ahora se levanta más temprano que antes.",
+          "answer": "A",
+          "evidence": "ahora me levanto una hora antes para sacarla",
+          "whyRu": "Это Дани: теперь он встаёт на час раньше, чтобы гулять с собакой.",
+          "wrong": {
+            "B": {
+              "trap": "same_word",
+              "why": "Ирене тоже говорит про «madrugar», но она и раньше рано вставала из-за работы. Ничего не изменилось."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Дани: «ahora me levanto una hora antes»."
+            }
+          }
+        },
+        {
+          "n": 11,
+          "clip": "t2c1",
+          "stem": "Se ha gastado mucho dinero en el veterinario.",
+          "answer": "C",
+          "evidence": "el veterinario ni lo he pisado",
+          "whyRu": "Ни один. Дани у ветеринара ещё даже не был, а у Ирене животного нет. Много тратит её сестра.",
+          "wrong": {
+            "A": {
+              "trap": "opposite",
+              "why": "Наоборот: Лолу отдали с прививками, а у ветеринара он не был ни разу («ni lo he pisado»)."
+            },
+            "B": {
+              "trap": "who",
+              "why": "Тратит на ветеринара сестра Ирене («mi hermana... se deja un dineral»), а не она сама."
+            }
+          }
+        },
+        {
+          "n": 12,
+          "clip": "t2c1",
+          "stem": "Tiene pensado ir a ver animales en adopción.",
+          "answer": "B",
+          "evidence": "el sábado me paso con mi compañera, solo a mirar",
+          "whyRu": "Это Ирене: в субботу она с соседкой по квартире зайдёт в приют «просто посмотреть».",
+          "wrong": {
+            "A": {
+              "trap": "time_number",
+              "why": "Дани в приюте уже был две недели назад. Это прошлое, а не план."
+            },
+            "C": {
+              "trap": "who",
+              "why": "Ирене прямо говорит, что пойдёт в субботу: «el sábado me paso»."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar parte de una entrevista a Julián Ospina, apicultor. Escuchará la entrevista dos veces. Después debe contestar a las preguntas (13-18). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Колумбийский гость говорит журналистке «usted» — для Колумбии это нормально даже в дружеской беседе. «Chévere» = здорово, классно. «Ni mucho menos» и «qué va» = вовсе нет: ответ после них обычно противоположен вопросу.",
+      "clips": [
+        {
+          "id": "t3c1",
+          "intro": "Entrevista a Julián Ospina, apicultor.",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "Hoy nos acompaña Julián Ospina, un colombiano que cuida colmenas en las azoteas de Madrid. Julián, ¿cómo empezó todo?"
+            },
+            {
+              "v": "LA_M1",
+              "who": "Julián",
+              "t": "Pues mire, en mi familia, en Boyacá, siempre hubo abejas, pero a mí me daban miedo. Vine a Madrid a estudiar ingeniería y, cuando me quedé sin trabajo, un vecino jubilado me pidió que le echara una mano con sus dos colmenas del techo. Acepté por hacerle el favor, y ya llevo nueve años."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "¿No es peligroso tener abejas en plena ciudad?"
+            },
+            {
+              "v": "LA_M1",
+              "who": "Julián",
+              "t": "Las abejas no buscan a la gente; si usted no las molesta, ni la miran. En nueve años solo he tenido una queja, de un señor que confundió mis abejas con avispas."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "Dicen que en la ciudad no hay flores suficientes."
+            },
+            {
+              "v": "LA_M1",
+              "who": "Julián",
+              "t": "Es justo al revés. En el campo a veces hay kilómetros de un solo cultivo, y encima lo fumigan. En Madrid hay parques, balcones, flores distintas casi todo el año. Mis abejas sacan menos miel que las de mi tío en Colombia, eso sí, pero con un sabor mucho más variado."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "¿Y vive de esa miel?"
+            },
+            {
+              "v": "LA_M1",
+              "who": "Julián",
+              "t": "Qué va. Vendo un poco en un mercado de barrio, pero trabajo media jornada en una empresa de energía. Lo que de verdad me llena son los talleres en colegios: los niños llegan muertos de miedo y se van queriendo ser apicultores."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "¿Cualquiera puede poner una colmena en su terraza?"
+            },
+            {
+              "v": "LA_M1",
+              "who": "Julián",
+              "t": "Ni mucho menos, y eso me preocupa. Ahora está de moda y hay quien compra una colmena por internet sin tener ni idea. Si la descuidas, las abejas enferman o se van a la chimenea del vecino. Hay que formarse y pedir permiso al ayuntamiento."
+            },
+            {
+              "v": "ES_F1",
+              "who": "Periodista",
+              "t": "Para terminar, ¿qué proyectos tiene?"
+            },
+            {
+              "v": "LA_M1",
+              "who": "Julián",
+              "t": "Me encantaría poner colmenas en los techos de los hospitales. Tienen mucho espacio libre, y para un paciente, ver un poco de vida desde la ventana sería chévere. Ya se lo propuse a uno y estoy esperando respuesta."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 13,
+          "clip": "t3c1",
+          "stem": "Julián empezó a dedicarse a las abejas...",
+          "options": [
+            {
+              "t": "porque desde niño le apasionaban.",
+              "trap": "opposite",
+              "why": "Наоборот: в детстве он их боялся («a mí me daban miedo»)."
+            },
+            {
+              "t": "ayudando a otra persona.",
+              "ok": true
+            },
+            {
+              "t": "mientras estudiaba en la universidad.",
+              "trap": "time_number",
+              "why": "Порядок событий: пчёлами он занялся, когда остался без работы, то есть уже после учёбы."
+            }
+          ],
+          "evidence": "un vecino jubilado me pidió que le echara una mano",
+          "whyRu": "Сосед-пенсионер попросил помочь ему с двумя ульями, и Хулиан согласился, чтобы сделать ему одолжение. «Echar una mano» = помочь."
+        },
+        {
+          "n": 14,
+          "clip": "t3c1",
+          "stem": "Según Julián, las abejas en la ciudad...",
+          "options": [
+            {
+              "t": "han provocado varias quejas entre los vecinos.",
+              "trap": "time_number",
+              "why": "За девять лет была всего одна жалоба («solo he tenido una queja»), и то человек перепутал пчёл с осами."
+            },
+            {
+              "t": "son más agresivas que las del campo.",
+              "trap": "assumption",
+              "why": "Сравнения с деревенскими пчёлами здесь нет. Он говорит, что пчёлы вообще не ищут людей («no buscan a la gente»)."
+            },
+            {
+              "t": "no atacan si se las deja tranquilas.",
+              "ok": true
+            }
+          ],
+          "evidence": "si usted no las molesta, ni la miran",
+          "whyRu": "Пчёлы не ищут людей: если их не трогать, они на тебя даже не посмотрят."
+        },
+        {
+          "n": 15,
+          "clip": "t3c1",
+          "stem": "¿Qué dice Julián de la miel de sus abejas?",
+          "options": [
+            {
+              "t": "Tiene un sabor con más matices.",
+              "ok": true
+            },
+            {
+              "t": "Es más abundante que la de su tío.",
+              "trap": "opposite",
+              "why": "Наоборот: его пчёлы дают меньше мёда, чем пчёлы дяди («sacan menos miel»)."
+            },
+            {
+              "t": "Procede de un solo tipo de flor.",
+              "trap": "same_word",
+              "why": "«Un solo cultivo» звучит, но это про деревню. В Мадриде как раз много разных цветов."
+            }
+          ],
+          "evidence": "pero con un sabor mucho más variado",
+          "whyRu": "Мёда меньше, но вкус гораздо разнообразнее. «Matices» = оттенки."
+        },
+        {
+          "n": 16,
+          "clip": "t3c1",
+          "stem": "¿Qué es lo que más satisfacción le da a Julián?",
+          "options": [
+            {
+              "t": "Vender la miel en un mercado.",
+              "trap": "partial",
+              "why": "Он и правда продаёт немного мёда на рынке, но больше всего ему нравится не это."
+            },
+            {
+              "t": "Su empleo en una empresa de energía.",
+              "trap": "partial",
+              "why": "Это его работа на полставки, но о радости от неё он не говорит."
+            },
+            {
+              "t": "Enseñar a los más pequeños.",
+              "ok": true
+            }
+          ],
+          "evidence": "Lo que de verdad me llena son los talleres en colegios",
+          "whyRu": "«Lo que de verdad me llena» = что по-настоящему радует. Это занятия в школах: дети приходят испуганные, а уходят, мечтая стать пчеловодами."
+        },
+        {
+          "n": 17,
+          "clip": "t3c1",
+          "stem": "¿Qué le preocupa a Julián?",
+          "options": [
+            {
+              "t": "Que el ayuntamiento no conceda permisos.",
+              "trap": "assumption",
+              "why": "Мэрия упоминается только как место, где нужно просить разрешение. Что его не дают, не сказано."
+            },
+            {
+              "t": "Que haya gente sin preparación.",
+              "ok": true
+            },
+            {
+              "t": "Que la apicultura urbana pase de moda.",
+              "trap": "opposite",
+              "why": "Наоборот: сейчас это модно, и именно поэтому люди покупают ульи, ничего не зная."
+            }
+          ],
+          "evidence": "hay quien compra una colmena por internet sin tener ni idea",
+          "whyRu": "Его тревожит, что некоторые покупают улей в интернете, ничего не понимая в пчёлах. Сначала нужно учиться."
+        },
+        {
+          "n": 18,
+          "clip": "t3c1",
+          "stem": "¿Qué proyecto tiene Julián?",
+          "options": [
+            {
+              "t": "Llevar colmenas a centros sanitarios.",
+              "ok": true
+            },
+            {
+              "t": "Seguir colaborando con un hospital de Madrid.",
+              "trap": "time_number",
+              "why": "Он только предложил идею одной больнице и пока ждёт ответа («estoy esperando respuesta»)."
+            },
+            {
+              "t": "Poner flores en las ventanas de los hospitales.",
+              "trap": "same_word",
+              "why": "Окно упоминается, но речь о том, что пациенты увидят пчёл из окна, а не о цветах."
+            }
+          ],
+          "evidence": "Me encantaría poner colmenas en los techos de los hospitales.",
+          "whyRu": "Он хотел бы поставить ульи на крышах больниц. «Centros sanitarios» = больницы, поликлиники."
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "type": "match",
+      "readSec": 20,
+      "pauseBetween": 5,
+      "pauseAfter": 10,
+      "instr": "Usted va a escuchar a seis personas que hablan de su experiencia como voluntarios. Escuchará a cada persona dos veces. Seleccione el enunciado (A-I) que corresponde al tema del que habla cada persona (19-24). Hay nueve enunciados. Seleccione seis.",
+      "hintRu": "Тема у всех одна, поэтому ищите не «о чём», а «почему» и «как»: почему человек начал, когда и как часто помогает. Детали про будущее («cuando sean mayores») и про других людей — обычно ловушки.",
+      "statements": {
+        "A": "Quiso devolver la ayuda que recibió su familia.",
+        "B": "Colabora sin salir de casa.",
+        "C": "Gracias al voluntariado consiguió un empleo.",
+        "D": "Lo hace junto a otros miembros de su familia.",
+        "E": "Al principio dudó de si estaba preparado.",
+        "F": "Pone sus conocimientos profesionales al servicio de otros.",
+        "G": "Empezó para conocer gente nueva.",
+        "H": "Dedica a ello su periodo de vacaciones.",
+        "I": "Su situación personal no le permite colaborar con regularidad."
+      },
+      "clips": [
+        {
+          "id": "t4c1",
+          "intro": "Persona 1",
+          "lines": [
+            {
+              "v": "ES_F1",
+              "who": "Persona 1",
+              "t": "Mientras mis compañeros se van a la playa, yo cojo las vacaciones en julio y me voy dos semanas a un pueblo de Huesca a ayudar a reconstruir casas. Acabo agotada, pero vuelvo con las pilas cargadas. El año pasado convencí a mi hermano para que viniera, aunque no ha querido repetir."
+            }
+          ]
+        },
+        {
+          "id": "t4c2",
+          "intro": "Persona 2",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Persona 2",
+              "t": "Cuando me quedé en paro, me pasaba el día en casa y empecé a echar una mano en un banco de alimentos, solo por tener algo que hacer. Empecé descargando cajas y acabé coordinando el reparto. Uno de los proveedores se fijó en mí y, a los tres meses, me ofreció un puesto."
+            }
+          ]
+        },
+        {
+          "id": "t4c3",
+          "intro": "Persona 3",
+          "lines": [
+            {
+              "v": "LA_F1",
+              "who": "Persona 3",
+              "t": "Soy abogada, y desde hace años dedico los sábados a asesorar gratis a familias migrantes que no saben cómo arreglar sus papeles. Algunas organizaciones me han propuesto hacerlo en línea, pero yo prefiero platicar en persona, la gente se abre más. Es lo mismo que hago en el despacho, nomás que aquí nadie me paga."
+            }
+          ]
+        },
+        {
+          "id": "t4c4",
+          "intro": "Persona 4",
+          "lines": [
+            {
+              "v": "ES_M2",
+              "who": "Persona 4",
+              "t": "Hace seis años mi padre estuvo ingresado mucho tiempo, y yo no podía estar con él todas las tardes. Unos voluntarios del hospital le hacían compañía, le leían el periódico... Eso nunca lo olvidé. Cuando él se recuperó, me apunté yo. Ahora voy todos los martes y jueves sin falta."
+            }
+          ]
+        },
+        {
+          "id": "t4c5",
+          "intro": "Persona 5",
+          "lines": [
+            {
+              "v": "ES_F2",
+              "who": "Persona 5",
+              "t": "Con dos niños pequeños y un trabajo a turnos, no puedo comprometerme a ir cada semana a un sitio fijo. Así que colaboro cuando puedo: una carrera solidaria, una recogida de juguetes en Navidad... Tres o cuatro veces al año. Mis hijos dicen que, cuando sean mayores, vendrán conmigo. Ojalá."
+            }
+          ]
+        },
+        {
+          "id": "t4c6",
+          "intro": "Persona 6",
+          "lines": [
+            {
+              "v": "ES_M1",
+              "who": "Persona 6",
+              "t": "Me apunté a dar clases de apoyo a chavales de un instituto y la primera semana estuve a punto de dejarlo. Soy ingeniero, no profesor, y no tenía ni idea de cómo hablar con adolescentes. Un compañero me aconsejó no ir de experto, sino escucharlos. Desde entonces es lo mejor de mi semana."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 19,
+          "clip": "t4c1",
+          "stem": "Persona 1",
+          "answer": "H",
+          "evidence": "yo cojo las vacaciones en julio y me voy dos semanas",
+          "whyRu": "Пока коллеги едут на пляж, она тратит отпуск на то, чтобы две недели восстанавливать дома в деревне.",
+          "wrong": {
+            "D": {
+              "trap": "partial",
+              "why": "Брат поехал с ней один раз и больше не захотел («no ha querido repetir»). С семьёй она этим не занимается."
+            }
+          }
+        },
+        {
+          "n": 20,
+          "clip": "t4c2",
+          "stem": "Persona 2",
+          "answer": "C",
+          "evidence": "me ofreció un puesto",
+          "whyRu": "Он начал помогать в продовольственном банке, когда остался без работы, и один из поставщиков предложил ему место. «Puesto» = должность, работа.",
+          "wrong": {
+            "B": {
+              "trap": "same_word",
+              "why": "«Me pasaba el día en casa» — это до волонтёрства. Помогает он не из дома, а на складе."
+            },
+            "G": {
+              "trap": "assumption",
+              "why": "Начал он «solo por tener algo que hacer» — чтобы было чем заняться, а не чтобы знакомиться."
+            }
+          }
+        },
+        {
+          "n": 21,
+          "clip": "t4c3",
+          "stem": "Persona 3",
+          "answer": "F",
+          "evidence": "Es lo mismo que hago en el despacho",
+          "whyRu": "Она юрист и бесплатно консультирует семьи мигрантов: делает то же, что на работе, только без оплаты. «Platicar» = разговаривать, «nomás» = только (Мексика).",
+          "wrong": {
+            "B": {
+              "trap": "opposite",
+              "why": "Ей предлагали работать онлайн, но она предпочитает встречаться лично («prefiero platicar en persona»)."
+            }
+          }
+        },
+        {
+          "n": 22,
+          "clip": "t4c4",
+          "stem": "Persona 4",
+          "answer": "A",
+          "evidence": "Unos voluntarios del hospital le hacían compañía",
+          "whyRu": "Когда его отец лежал в больнице, с ним сидели волонтёры. Он этого не забыл и теперь сам стал волонтёром: возвращает помощь.",
+          "wrong": {
+            "I": {
+              "trap": "opposite",
+              "why": "Наоборот, он ходит регулярно: «todos los martes y jueves sin falta»."
+            }
+          }
+        },
+        {
+          "n": 23,
+          "clip": "t4c5",
+          "stem": "Persona 5",
+          "answer": "I",
+          "evidence": "no puedo comprometerme a ir cada semana a un sitio fijo",
+          "whyRu": "Маленькие дети и сменная работа не дают ей ходить каждую неделю, поэтому она помогает от случая к случаю, три-четыре раза в год.",
+          "wrong": {
+            "D": {
+              "trap": "time_number",
+              "why": "Дети пойдут с ней только в будущем, «cuando sean mayores». Сейчас она помогает одна."
+            }
+          }
+        },
+        {
+          "n": 24,
+          "clip": "t4c6",
+          "stem": "Persona 6",
+          "answer": "E",
+          "evidence": "no tenía ni idea de cómo hablar con adolescentes",
+          "whyRu": "В первую неделю он чуть не бросил: он не учитель и не знал, как говорить с подростками. Потом всё наладилось.",
+          "wrong": {
+            "F": {
+              "trap": "partial",
+              "why": "Он инженер, но рассказывает не о том, как применяет свои знания, а о том, что не умел говорить с подростками и чуть не бросил («estuve a punto de dejarlo»)."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "type": "mc",
+      "readSec": 30,
+      "pauseBetween": 10,
+      "pauseAfter": 30,
+      "instr": "Usted va a escuchar una conferencia de una investigadora del sueño. Escuchará la audición dos veces. Después debe contestar a las preguntas (25-30). Seleccione la opción correcta (a / b / c).",
+      "hintRu": "Лектор часто сначала называет популярное мнение, а потом поправляет его: «pensaba que... hoy creo», «es verdad que..., pero», «no les pido que..., sino que...». Правильный ответ — после поправки, а первая часть — ловушка.",
+      "clips": [
+        {
+          "id": "t5c1",
+          "intro": "Conferencia de Begoña Lasarte, investigadora del sueño.",
+          "lines": [
+            {
+              "v": "ES_F2",
+              "who": "Begoña",
+              "t": "Buenas tardes. Soy Begoña Lasarte y llevo quince años estudiando el sueño. Cuando empecé, pensaba que el gran enemigo del descanso era el estrés. Hoy creo que no es tanto lo que nos preocupa como lo que hacemos en las dos o tres horas antes de acostarnos."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Begoña",
+              "t": "Empecemos por las pantallas. Todo el mundo habla de la luz del móvil, y es verdad que influye, pero en nuestros estudios pesaba más otra cosa: lo que vemos. Una serie de suspense o una discusión en las redes nos mantienen alerta mucho después de apagar. Por eso no les pido que tiren el móvil, sino que lo cambien por algo tranquilo la última media hora."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Begoña",
+              "t": "Segundo tema, muy nuestro: la cena. En España cenamos tarde y nos vamos a la cama con el estómago lleno. El cuerpo, en vez de descansar, se pone a hacer la digestión, y el sueño es más ligero. No les voy a decir que cenen a las siete, que aquí es poco realista, sino que dejen unas dos horas entre la cena y la cama."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Begoña",
+              "t": "Y luego está el horario. Nos acostamos más tarde que en casi toda Europa y nos levantamos igual de pronto para ir a trabajar. Así que entre semana dormimos poco e intentamos recuperarlo el sábado hasta mediodía. Eso no funciona: es como sufrir un pequeño desfase horario cada lunes."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Begoña",
+              "t": "¿Y la siesta? Una siesta corta, de veinte minutos, no es ningún problema; al contrario, puede ayudar. Lo que desaconsejo es la siesta larga, de pijama y dos horas en la cama, porque luego por la noche no hay quien se duerma."
+            },
+            {
+              "v": "ES_F2",
+              "who": "Begoña",
+              "t": "Para terminar, muchos pacientes llegan obsesionados con dormir ocho horas exactas, y esa obsesión les quita el sueño. Lo importante no es contar las horas, sino cómo se siente uno por la mañana. Si se levantan descansados, aunque hayan dormido siete, están bien. Muchas gracias."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "n": 25,
+          "clip": "t5c1",
+          "stem": "Según Begoña, lo que más afecta al sueño es...",
+          "options": [
+            {
+              "t": "nuestros hábitos en las últimas horas del día.",
+              "ok": true
+            },
+            {
+              "t": "el estrés que acumulamos durante el día.",
+              "trap": "opposite",
+              "why": "Так она думала раньше («pensaba que...»). Сейчас она считает иначе: «no es tanto lo que nos preocupa como...»."
+            },
+            {
+              "t": "las condiciones del dormitorio.",
+              "trap": "assumption",
+              "why": "О спальне (свет, шум, температура) она вообще не говорит. Главное — что мы делаем за два-три часа до сна."
+            }
+          ],
+          "evidence": "lo que hacemos en las dos o tres horas antes de acostarnos",
+          "whyRu": "Конструкция «no es tanto... como...»: дело не столько в заботах, сколько в том, что мы делаем за два-три часа до сна."
+        },
+        {
+          "n": 26,
+          "clip": "t5c1",
+          "stem": "Sobre las pantallas, la investigadora afirma que...",
+          "options": [
+            {
+              "t": "su luz es lo que más perjudica el descanso.",
+              "trap": "opposite",
+              "why": "Свет влияет, но в их исследованиях важнее оказалось другое: «pesaba más otra cosa»."
+            },
+            {
+              "t": "conviene dejar de usar el móvil por completo.",
+              "trap": "opposite",
+              "why": "Она прямо говорит: «no les pido que tiren el móvil». Нужно только заменить его чем-то спокойным в последние полчаса."
+            },
+            {
+              "t": "influye más el contenido que la luz.",
+              "ok": true
+            }
+          ],
+          "evidence": "pesaba más otra cosa: lo que vemos",
+          "whyRu": "Больше всего влияет то, что мы смотрим: сериал с напряжённым сюжетом или спор в соцсетях. «Contenido» = содержание."
+        },
+        {
+          "n": 27,
+          "clip": "t5c1",
+          "stem": "¿Qué recomienda sobre la cena?",
+          "options": [
+            {
+              "t": "Adelantarla a las siete de la tarde.",
+              "trap": "opposite",
+              "why": "Она говорит, что ужинать в семь — «poco realista» для Испании, и этого не советует."
+            },
+            {
+              "t": "Saltársela si ya es muy tarde.",
+              "trap": "assumption",
+              "why": "Совета пропускать ужин нет. Полный желудок упоминается только как причина плохого сна."
+            },
+            {
+              "t": "Dejar pasar un tiempo antes de acostarse.",
+              "ok": true
+            }
+          ],
+          "evidence": "dejen unas dos horas entre la cena y la cama",
+          "whyRu": "Конструкция «no... sino...»: не ужинать в семь, а оставлять около двух часов между ужином и сном."
+        },
+        {
+          "n": 28,
+          "clip": "t5c1",
+          "stem": "Según Begoña, dormir hasta tarde los fines de semana...",
+          "options": [
+            {
+              "t": "permite recuperar el sueño perdido.",
+              "trap": "opposite",
+              "why": "Люди пытаются так восстановиться, но она говорит: «Eso no funciona»."
+            },
+            {
+              "t": "desajusta el cuerpo al empezar la semana.",
+              "ok": true
+            },
+            {
+              "t": "es una costumbre típica del resto de Europa.",
+              "trap": "same_word",
+              "why": "Европа упоминается, но только в сравнении: испанцы ложатся позже, чем в остальной Европе. О выходных там речи нет."
+            }
+          ],
+          "evidence": "es como sufrir un pequeño desfase horario cada lunes",
+          "whyRu": "Сон до обеда в субботу не помогает: каждый понедельник организм как будто сменил часовой пояс. «Desfase horario» = джетлаг."
+        },
+        {
+          "n": 29,
+          "clip": "t5c1",
+          "stem": "Sobre la siesta, dice que...",
+          "options": [
+            {
+              "t": "si es breve, puede ser beneficiosa.",
+              "ok": true
+            },
+            {
+              "t": "es preferible no dormirla nunca.",
+              "trap": "opposite",
+              "why": "Короткая сиеста «no es ningún problema» и даже может помочь."
+            },
+            {
+              "t": "lo ideal es que dure un par de horas.",
+              "trap": "time_number",
+              "why": "Двухчасовую сиесту она как раз не советует («desaconsejo»). Хорошая сиеста — минут двадцать."
+            }
+          ],
+          "evidence": "Una siesta corta, de veinte minutos, no es ningún problema; al contrario, puede ayudar.",
+          "whyRu": "Короткая сиеста, минут двадцать, не мешает, а наоборот может помочь. «Breve» = короткий."
+        },
+        {
+          "n": 30,
+          "clip": "t5c1",
+          "stem": "¿Qué idea final transmite la investigadora?",
+          "options": [
+            {
+              "t": "Lo ideal son ocho horas de sueño exactas.",
+              "trap": "opposite",
+              "why": "Наоборот: одержимость восемью часами как раз мешает спать."
+            },
+            {
+              "t": "Lo que cuenta es cómo nos sentimos al despertar.",
+              "ok": true
+            },
+            {
+              "t": "Sus pacientes duermen menos de siete horas.",
+              "trap": "time_number",
+              "why": "«Siete» звучит только в примере: «aunque hayan dormido siete» — даже если поспали семь. Сколько спят пациенты, она не говорит."
+            }
+          ],
+          "evidence": "Lo importante no es contar las horas, sino cómo se siente uno por la mañana.",
+          "whyRu": "Важно не считать часы, а то, как ты себя чувствуешь утром."
+        }
+      ]
+    }
+  ]
+}
